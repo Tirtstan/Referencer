@@ -1,4 +1,4 @@
-import Book from "./Media/Book.js";
+import Book from "./media/Book.js";
 import markdownIt from "https://cdn.jsdelivr.net/npm/markdown-it@14.1.0/+esm";
 
 const btn = document.querySelector("#btnClickMe");
