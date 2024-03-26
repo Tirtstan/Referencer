@@ -15,6 +15,7 @@
     -webkit-user-select: none;
     touch-action: manipulation;
     white-space: nowrap;
+    margin-bottom: 12px;
 }
 
 .button-1 {
@@ -70,5 +71,19 @@
     line-height: 1;
     list-style: none;
     overflow: hidden;
+    transition: transform 0.15s;
+    will-change: transform;
     padding-left: 8px;
+}
+
+.input-box-1:hover {
+    transform: translateY(-2px);
+}
+
+textarea {
+    appearance: none;
+    text-decoration: none;
+    resize: none;
+    height: 50px;
+    flex-grow: 1;
 }
