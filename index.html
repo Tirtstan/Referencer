@@ -8,6 +8,7 @@
     </head>
 
     <body class="center">
+        <script type="module" src="src/scripts/App.js"></script>
         <h1>Referencer</h1>
         <main>
             <section class="panel left-panel">
@@ -26,7 +27,7 @@
                         <button id="btnAdd" class="input-device button-1 add-button">Add</button>
                         <button id="btnClear" class="input-device button-1">Clear</button>
                     </div>
-                    <textarea name="authors-display" id="txtAuthorsOutput" class="input-device" readonly></textarea>
+                    <textarea id="txtAuthorsOutput" name="authors-display" class="input-device" readonly></textarea>
                     <div class="container-b">
                         <div class="container-b-input">
                             <label for="year"><u>Year:</u></label>
@@ -62,7 +63,7 @@
                         </div>
                         <div>
                             <label for="format"><u>Format:</u></label
-                            ><button class="input-device button-1">Format</button>
+                            ><button class="input-device button-1" id="btnFormat">Format</button>
                         </div>
                     </div>
                 </div>
@@ -70,14 +71,14 @@
             <section class="panel right-panel">
                 <div class="inner-panel info-panel top-panel">
                     <label for="other info"><u>Other Info:</u></label>
-                    <textarea name="other info" id="txtOtherInfo" class="input-device" readonly></textarea>
+                    <p id="txtOtherInfo" class="input-device text-area"></p>
                 </div>
                 <div class="inner-panel info-panel bottom-panel">
                     <div class="copy-panel">
                         <label for="output"><u>Output:</u></label>
-                        <button class="input-device button-1">Copy</button>
+                        <button class="input-device button-1" id="btnCopy">Copy</button>
                     </div>
-                    <textarea name="format output" id="txtOutput" class="input-device" readonly></textarea>
+                    <p id="txtOutput" class="input-device text-area"></p>
                 </div>
             </section>
         </main>

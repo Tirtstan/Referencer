@@ -1,4 +1,4 @@
-import Utilities from "../../Utilities.js";
+import Utilities from "../Utilities.js";
 
 export default class Book {
     constructor(year, bookName, editionNum, pubPlace, pubName, authors) {
@@ -13,11 +13,11 @@ export default class Book {
     toString() {
         const formattedAuthors = new Array(this.authors.length);
         for (let i = 0; i < formattedAuthors.length; i++) {
-            formattedAuthors[i] = Utilities.FormatFullName(this.authors[i]);
+            formattedAuthors[i] = Utilities.formatFullName(this.authors[i]);
         }
-        const edition = this.editionNum > 1 ? ` ${Utilities.AddOrdinal(this.editionNum)} ed. ` : "";
+        const edition = this.editionNum > 1 ? ` ${Utilities.addOrdinal(this.editionNum)} ed. ` : "";
 
-        return `${Utilities.ListNamesWithPeriods(formattedAuthors, "and")} ${this.year}. *${this.bookName}*.
+        return `${Utilities.listNamesWithPeriods(formattedAuthors, "and")} ${this.year}. <em>${this.bookName}</em>.
         ${edition} ${this.pubPlace}: ${this.pubName}.`;
     }
 

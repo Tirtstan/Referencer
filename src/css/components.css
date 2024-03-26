@@ -84,6 +84,12 @@ textarea {
     appearance: none;
     text-decoration: none;
     resize: none;
-    height: 50px;
     flex-grow: 1;
+}
+
+.text-area {
+    padding: 8px;
+    height: 100%;
+    word-break: break-word;
+    white-space: normal;
 }
