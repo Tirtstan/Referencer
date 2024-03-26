@@ -1,0 +1,74 @@
+:root {
+    --input-text: #36395a;
+    --shadow: 45, 35, 66;
+}
+
+.input-device {
+    font-size: 16px;
+    font-family: var(--font-family);
+    background-color: var(--accent);
+    color: var(--input-text);
+    border-radius: 4px;
+    box-shadow: rgba(var(--shadow), 0.4) 0 2px 4px, rgba(var(--shadow), 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+}
+
+.button-1 {
+    align-items: center;
+    appearance: none;
+    border-width: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    height: 36px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.15s;
+    will-change: transform;
+}
+
+.button-1:hover {
+    transform: translateY(-2px);
+}
+
+.button-1:active {
+    transform: translateY(2px);
+}
+
+.select-1 {
+    align-items: center;
+    border-width: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    height: 36px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 4px;
+    text-align: left;
+    transition: transform 0.15s;
+    will-change: transform;
+}
+
+.select-1:hover {
+    transform: translateY(-2px);
+}
+
+.input-box-1 {
+    appearance: none;
+    border-width: 0;
+    box-sizing: border-box;
+    cursor: text;
+    min-height: 36px;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 8px;
+}

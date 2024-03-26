@@ -1,16 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Referencer</title>
+        <link rel="stylesheet" href="src/css/style.css" />
+        <link rel="stylesheet" href="src/css/components.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Referencer</title>
-    <link rel="stylesheet" href="src/css/style.css" />
-</head>
-
-<body class="center">
-    <main>
-        dwadwad
-    </main>
-</body>
-
+    <body class="center">
+        <h1>Referencer</h1>
+        <main>
+            <section class="panel left-panel">
+                <div class="inner-panel media">
+                    <label for="media-types">Choose a Media Type</label>
+                    <select name="media-types" id="media-dropdown" class="input-device select-1">
+                        <option value="Book">Book</option>
+                        <option value="YouTube">YouTube</option>
+                    </select>
+                </div>
+                <div class="inner-panel info-panel">
+                    <label for="Reference Info"><u>Referencer Info:</u></label>
+                    <label for="Authors"><u>Authors:</u></label>
+                    <div class="authors">
+                        <input type="text" name="authors" id="txtAuthors" class="input-device input-box-1" />
+                        <button id="btnAdd" class="input-device button-1 add-button">Add</button>
+                        <button id="btnClear" class="input-device button-1">Clear</button>
+                    </div>
+                </div>
+            </section>
+            <section class="panel right-panel">
+                <div></div>
+            </section>
+        </main>
+    </body>
 </html>
