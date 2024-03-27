@@ -8,11 +8,15 @@
     </head>
 
     <body class="center">
-        <script src="src/scripts/web-components/BookElement.js"></script>
+        <script type="module" src="src/scripts/web-components/BookElement.js"></script>
         <script type="module" src="src/scripts/App.js"></script>
-        <h4 style="margin: 0; padding: 0">
-            <em>Hello, World!</em>
-        </h4>
+        <header>
+            <h4>Created By&nbsp;</h4>
+            <a href="https://github.com/Tirtstan"> <h4 class="creator-name">Tirt</h4></a>
+            <a href="https://github.com/Tirtstan/Referencer">
+                <img src="src/images/github-mark-white.svg" alt="GitHub Logo (White)"
+            /></a>
+        </header>
         <h1>Referencer</h1>
         <main>
             <section class="panel left-panel">
@@ -23,7 +27,9 @@
                         <option value="YouTube">YouTube</option>
                     </select>
                 </div>
-                <div id="pnlMedia"><book-element></book-element></div>
+                <div id="pnlMedia">
+                    <book-element></book-element>
+                </div>
             </section>
             <section class="panel right-panel">
                 <div class="inner-panel info-panel top-panel">
