@@ -1,4 +1,4 @@
-import Utilities from "../Utilities.js";
+import Utilities from "../helpers/Utilities.js";
 import YouTube from "../media/YouTube.js";
 
 class YouTubeElement extends HTMLElement {

@@ -1,3 +1,5 @@
+/* cSpell:disable */
+
 @font-face {
     font-family: "JetBrains Mono";
     src: url("../fonts/jetbrainsmono-regular-webfont.eot");
@@ -9,6 +11,8 @@
     font-weight: normal;
     font-style: normal;
 }
+
+/* cSpell:enable */
 
 :root {
     --font-family: JetBrains Mono, SF Mono, Consolas, monospace;
@@ -45,7 +49,6 @@ body {
 h1 {
     color: var(--text);
     margin: 0;
-    margin-bottom: 16px;
     padding: 0;
     font-size: 70px;
     background-image: linear-gradient(300deg, var(--primary), var(--secondary));
@@ -95,6 +98,7 @@ header {
     justify-content: center;
     align-items: center;
     height: 30px;
+    margin-bottom: 16px;
 }
 
 header img {
@@ -227,6 +231,7 @@ header a:hover {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 .copy-panel button {
