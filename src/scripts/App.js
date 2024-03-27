@@ -1,7 +1,24 @@
+const slctMedia = document.getElementById("slctMedia");
+const pnlMedia = document.getElementById("pnlMedia");
 const btnCopy = document.getElementById("btnCopy");
 
 const txtOtherInfo = document.getElementById("txtOtherInfo");
 const txtOutput = document.getElementById("txtOutput");
+
+loadScript("src/scripts/web-components/BookElement.js");
+loadScript("src/scripts/web-components/YouTubeElement.js");
+
+slctMedia.addEventListener("change", (event) => {
+    switch (event.target.value) {
+        default:
+        case "Book":
+            pnlMedia.innerHTML = "<book-element></book-element>";
+            break;
+        case "YouTube":
+            pnlMedia.innerHTML = "<youtube-element></youtube-element>";
+            break;
+    }
+});
 
 btnCopy.addEventListener("click", () => {
     if (txtOutput.value === null || txtOutput.value === "") {
@@ -29,4 +46,12 @@ async function copyToClipboard(rich, plain) {
         document.execCommand("copy");
         document.removeEventListener("copy", cb);
     }
+}
+
+function loadScript(url) {
+    var head = document.getElementsByTagName("head")[0];
+    var script = document.createElement("script");
+    script.type = "module";
+    script.src = url;
+    head.appendChild(script);
 }

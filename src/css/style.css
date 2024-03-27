@@ -82,7 +82,6 @@ main {
     border-color: var(--pri-border-color);
     border-style: solid;
     box-shadow: 4px 4px 4px rgba(26, 26, 26, 0.6);
-    padding: 12px;
     overflow: hidden;
 }
 
@@ -95,13 +94,13 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 34px;
+    height: 30px;
 }
 
 header img {
     padding: 0px 12px;
-    width: 34px;
-    height: 34px;
+    width: 30px;
+    height: 30px;
     transition: transform 0.15s;
     will-change: transform;
 }
@@ -128,12 +127,13 @@ header a:hover {
 }
 
 .left-panel {
-    margin-right: 8px;
     flex: 1 1 100px;
+    padding: 12px 6px 12px 12px;
 }
 
 .right-panel {
-    flex: 3 2 100px;
+    flex: 1 2 100px;
+    padding: 12px 12px 12px 6px;
 }
 
 .inner-panel {
