@@ -58,7 +58,8 @@ btnFormat.addEventListener("click", () => {
         authors
     );
 
-    txtOtherInfo.innerHTML = book.toString();
+    txtOtherInfo.innerHTML = `<u><strong>In-Text Paraphrase:</strong></u><br><br>${book.getParaphrased()}
+    <br><br><u><strong>In-Text Quote:</strong></u><br><br>${book.getQuote()}`;
     txtOutput.innerHTML = book.toString();
 });
 
