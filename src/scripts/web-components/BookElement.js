@@ -1,3 +1,6 @@
+import Utilities from "../Utilities.js";
+import Book from "../media/Book.js";
+
 class BookElement extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
@@ -50,6 +53,65 @@ class BookElement extends HTMLElement {
                     </div>
                 </div>
             </div>`;
+
+        const btnAdd = document.getElementById("btnAdd");
+        const btnClear = document.getElementById("btnClear");
+        const btnFormat = document.getElementById("btnFormat");
+
+        const txtAuthors = document.getElementById("txtAuthors");
+        const txtAuthorsOutput = document.getElementById("txtAuthorsOutput");
+
+        const txtYear = document.getElementById("txtYear");
+        const txtPubPlace = document.getElementById("txtPubPlace");
+        const txtBookName = document.getElementById("txtBookName");
+        const txtPubName = document.getElementById("txtPubName");
+        const txtEditionNum = document.getElementById("txtEditionNum");
+
+        const txtOtherInfo = document.getElementById("txtOtherInfo");
+        const txtOutput = document.getElementById("txtOutput");
+
+        let authors = [];
+        txtYear.value = new Date().getFullYear();
+        txtEditionNum.value = 1;
+
+        btnAdd.addEventListener("click", () => {
+            if (txtAuthors.value === null || txtAuthors.value === "") {
+                return;
+            }
+
+            authors.push(txtAuthors.value);
+            txtAuthors.value = "";
+            txtAuthorsOutput.value = "";
+
+            for (let i = 0; i < authors.length; i++) {
+                txtAuthorsOutput.value = Utilities.listNames(authors, "and");
+            }
+        });
+
+        btnClear.addEventListener("click", () => {
+            authors = [];
+            txtAuthors.value = "";
+            txtAuthorsOutput.value = "";
+        });
+
+        btnFormat.addEventListener("click", () => {
+            if (Utilities.areNullOrEmpty(txtBookName.value, txtPubPlace.value, txtPubName.value)) {
+                return;
+            }
+
+            const book = new Book(
+                txtYear.value,
+                txtBookName.value,
+                txtEditionNum.value,
+                txtPubPlace.value,
+                txtPubName.value,
+                authors
+            );
+
+            txtOtherInfo.innerHTML = `<u><strong>In-Text Paraphrase:</strong></u><br><br>${book.getParaphrased()}
+            <br><br><u><strong>In-Text Quote:</strong></u><br><br>${book.getQuote()}`;
+            txtOutput.innerHTML = book.toString();
+        });
     }
 }
 
