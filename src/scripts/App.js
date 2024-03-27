@@ -9,8 +9,6 @@ const btnCopy = document.getElementById("btnCopy");
 const txtAuthors = document.getElementById("txtAuthors");
 const txtAuthorsOutput = document.getElementById("txtAuthorsOutput");
 
-let authors = [];
-
 const txtYear = document.getElementById("txtYear");
 const txtPubPlace = document.getElementById("txtPubPlace");
 const txtBookName = document.getElementById("txtBookName");
@@ -19,6 +17,12 @@ const txtEditionNum = document.getElementById("txtEditionNum");
 
 const txtOtherInfo = document.getElementById("txtOtherInfo");
 const txtOutput = document.getElementById("txtOutput");
+
+let authors = [];
+
+const date = new Date();
+txtYear.value = date.getFullYear();
+txtEditionNum.value = 1;
 
 btnAdd.addEventListener("click", () => {
     if (txtAuthors.value === null || txtAuthors.value === "") {
