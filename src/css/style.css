@@ -1,11 +1,11 @@
 @font-face {
     font-family: "JetBrains Mono";
-    src: url("jetbrainsmono-regular-webfont.eot");
-    src: url("jetbrainsmono-regular-webfont.eot?#iefix") format("embedded-opentype"),
-        url("jetbrainsmono-regular-webfont.woff2") format("woff2"),
-        url("jetbrainsmono-regular-webfont.woff") format("woff"),
-        url("jetbrainsmono-regular-webfont.ttf") format("truetype"),
-        url("jetbrainsmono-regular-webfont.svg#jetbrains_monoregular") format("svg");
+    src: url("../fonts/jetbrainsmono-regular-webfont.eot");
+    src: url("../fonts/jetbrainsmono-regular-webfont.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/jetbrainsmono-regular-webfont.woff2") format("woff2"),
+        url("../fonts/jetbrainsmono-regular-webfont.woff") format("woff"),
+        url("../fonts/jetbrainsmono-regular-webfont.ttf") format("truetype"),
+        url("../fonts/jetbrainsmono-regular-webfont.svg#jetbrains_monoregular") format("svg");
     font-weight: normal;
     font-style: normal;
 }
@@ -72,6 +72,7 @@ main {
     border-style: solid;
     box-shadow: 4px 4px 4px rgba(26, 26, 26, 0.6);
     padding: 12px;
+    overflow: hidden;
 }
 
 p {
@@ -89,11 +90,11 @@ p {
 
 .left-panel {
     margin-right: 8px;
-    flex: 1;
+    flex: 1 1 100px;
 }
 
 .right-panel {
-    flex: 3;
+    flex: 3 2 100px;
 }
 
 .inner-panel {
@@ -101,6 +102,7 @@ p {
     padding: 8px;
     border-radius: 10px;
     border-color: var(--bg-border-color);
+    box-shadow: 4px 5px 5px rgba(45, 35, 66, 0.4);
     border-style: solid;
     display: flex;
     flex-direction: row;
@@ -174,6 +176,12 @@ p {
 .top-panel {
     margin: 0;
     margin-bottom: 8px;
+    max-height: 280px;
+}
+
+.bottom-panel {
+    max-height: 50%;
+    max-height: 280px;
 }
 
 .copy-panel {
@@ -183,5 +191,5 @@ p {
 }
 
 .copy-panel button {
-    width: 30%;
+    width: 40%;
 }

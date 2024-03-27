@@ -22,10 +22,46 @@ export default class Book {
     }
 
     getParaphrased() {
-        throw new Error("Method not implemented.");
+        let output = "";
+        let surnames = new Array(this.authors.length);
+        for (let i = 0; i < surnames.length; i++) {
+            surnames[i] = Utilities.getSurname(this.authors[i]);
+        }
+
+        if (this.authors.length === 1) {
+            output = `${surnames[0]} (${this.year}) argues...<br><strong>OR</strong><br>... (${surnames[0]}, ${this.year})`;
+        } else if (this.authors.length >= 2) {
+            output = "<u>For first use...</u><br>";
+            output += `${Utilities.listNames(surnames, "and")} (${this.year}) assert...<br><strong>OR</strong><br>`;
+            output += `...(${Utilities.listNames(surnames, "&")}, ${this.year})`;
+
+            output += "<br><br><u>For after first use...</u><br>";
+            output += `${surnames[0]} et al. (${this.year}) argues...<br><strong>OR</strong><br>`;
+            output += `(${surnames[0]} et al., ${this.year})`;
+        }
+
+        return output;
     }
 
     getQuote() {
-        throw new Error("Method not implemented.");
+        let output = "";
+        let surnames = new Array(this.authors.length);
+        for (let i = 0; i < surnames.length; i++) {
+            surnames[i] = Utilities.getSurname(this.authors[i]);
+        }
+
+        if (this.authors.length === 1) {
+            output = `According to ${surnames[0]} (${this.year}: page num)<br><strong>OR</strong><br>...(${surnames[0]}, ${this.year}: page num)`;
+        } else if (this.authors.length >= 2) {
+            output = "<u>For first use...</u><br>";
+            output += `${Utilities.listNames(surnames, "and")} (${this.year}: page num)<br><strong>OR</strong><br>`;
+            output += `...(${Utilities.listNames(surnames, "&")}, ${this.year}: page num)`;
+
+            output += "<br><br><u>For after first use...</u><br>";
+            output += `${surnames[0]} et al. (${this.year}: page num) argues...<br><strong>OR</strong><br>`;
+            output += `(${surnames[0]} et al., ${this.year}: page num)`;
+        }
+
+        return output;
     }
 }
