@@ -9,26 +9,6 @@ export default class YouTube {
         this.accessedWhen = accessedWhen;
     }
 
-    // https://stackoverflow.com/a/20438448/19860255
-    convertDate(date_str) {
-        const months = [
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December",
-        ];
-        let temp_date = date_str.split("-");
-        return temp_date[2] + " " + months[Number(temp_date[1]) - 1] + " " + temp_date[0];
-    }
-
     toString() {
         const date = moment(this.accessedWhen);
         const formattedDate = date.format("DD MMMM YYYY");

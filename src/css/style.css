@@ -26,6 +26,24 @@
     --sec-border-color: #72a0a1;
     --bg-border-color: #464a4e;
     --acc-border-color: #e7e7e7;
+    --box-shadow: rgba(45, 35, 66, 0.4);
+    --github: url(../images/github-mark-white.svg);
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --text: #061719;
+        --background: #e1e3e5;
+        --light-background: #f4f4f5;
+        --primary: #1c6569;
+        --secondary: #609d9f;
+        --accent: #35353a;
+        --pri-border-color: #237e83;
+        --sec-border-color: #6eb3b6;
+        --bg-border-color: #cecfcf;
+        --acc-border-color: #4e4e55;
+        --github: url(../images/github-mark.svg);
+    }
 }
 
 body {
@@ -84,24 +102,28 @@ main {
     border-radius: 20px;
     border-color: var(--pri-border-color);
     border-style: solid;
-    box-shadow: 4px 4px 4px rgba(26, 26, 26, 0.6);
+    box-shadow: 4px 4px 4px var(--box-shadow);
     overflow: hidden;
 }
 
 header {
+    color: var(--text);
     height: 30px;
     margin-bottom: 16px;
 }
 
-header img {
-    padding: 0px 12px;
+header div {
+    background-image: var(--github);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 8px;
     width: 30px;
     height: 30px;
     transition: transform 0.15s;
     will-change: transform;
 }
 
-header img:hover {
+header div:hover {
     transform: translateY(-2px);
 }
 
@@ -136,7 +158,7 @@ header a:hover {
     padding: 8px;
     border-radius: 10px;
     border-color: var(--bg-border-color);
-    box-shadow: 4px 5px 5px rgba(45, 35, 66, 0.4);
+    box-shadow: 4px 5px 5px var(--box-shadow);
     border-style: solid;
     display: flex;
     flex-direction: row;
