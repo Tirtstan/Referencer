@@ -1,3 +1,5 @@
+/* cSpell:disable */
+
 @font-face {
     font-family: "JetBrains Mono";
     src: url("../fonts/jetbrainsmono-regular-webfont.eot");
@@ -9,6 +11,8 @@
     font-weight: normal;
     font-style: normal;
 }
+
+/* cSpell:enable */
 
 :root {
     --font-family: JetBrains Mono, SF Mono, Consolas, monospace;
@@ -45,7 +49,6 @@ body {
 h1 {
     color: var(--text);
     margin: 0;
-    margin-bottom: 16px;
     padding: 0;
     font-size: 70px;
     background-image: linear-gradient(300deg, var(--primary), var(--secondary));
@@ -82,7 +85,6 @@ main {
     border-color: var(--pri-border-color);
     border-style: solid;
     box-shadow: 4px 4px 4px rgba(26, 26, 26, 0.6);
-    padding: 12px;
     overflow: hidden;
 }
 
@@ -95,13 +97,14 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 34px;
+    height: 30px;
+    margin-bottom: 16px;
 }
 
 header img {
     padding: 0px 12px;
-    width: 34px;
-    height: 34px;
+    width: 30px;
+    height: 30px;
     transition: transform 0.15s;
     will-change: transform;
 }
@@ -128,12 +131,13 @@ header a:hover {
 }
 
 .left-panel {
-    margin-right: 8px;
     flex: 1 1 100px;
+    padding: 12px 6px 12px 12px;
 }
 
 .right-panel {
-    flex: 3 2 100px;
+    flex: 1 2 100px;
+    padding: 12px 12px 12px 6px;
 }
 
 .inner-panel {
@@ -227,6 +231,7 @@ header a:hover {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 .copy-panel button {

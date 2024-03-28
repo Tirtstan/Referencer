@@ -1,4 +1,4 @@
-import Utilities from "../Utilities.js";
+import Utilities from "../helpers/Utilities.js";
 
 export default class Book {
     constructor(year, bookName, editionNum, pubPlace, pubName, authors) {

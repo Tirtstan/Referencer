@@ -1,4 +1,4 @@
-import Utilities from "../Utilities.js";
+import Utilities from "../helpers/Utilities.js";
 import Book from "../media/Book.js";
 
 class BookElement extends HTMLElement {
