@@ -1,3 +1,5 @@
+import moment from "moment/moment";
+
 export default class YouTube {
     constructor(title, year, channel, link, accessedWhen) {
         this.title = title;
@@ -28,9 +30,9 @@ export default class YouTube {
     }
 
     toString() {
-        return `<em>${this.title}</em>. ${this.year}. YouTube video, added by ${
-            this.channel
-        }. [Online]. Available at: ${this.link} [Accessed ${this.convertDate(this.accessedWhen)}]`;
+        const date = moment(this.accessedWhen);
+        const formattedDate = date.format("DD MMMM YYYY");
+        return `<em>${this.title}</em>. ${this.year}. YouTube video, added by ${this.channel}. [Online]. Available at: ${this.link} [Accessed ${formattedDate}]`;
     }
 
     getParaphrased() {

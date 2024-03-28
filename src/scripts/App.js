@@ -1,3 +1,5 @@
+import { gapi } from "gapi-script";
+
 const slctMedia = document.getElementById("slctMedia");
 const pnlMedia = document.getElementById("pnlMedia");
 const btnCopy = document.getElementById("btnCopy");
