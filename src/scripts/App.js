@@ -5,9 +5,6 @@ const pnlMedia = document.getElementById("pnlMedia");
 const btnCopy = document.getElementById("btnCopy");
 const txtOutput = document.getElementById("txtOutput");
 
-loadScript("src/scripts/web-components/BookElement.js");
-loadScript("src/scripts/web-components/YouTubeElement.js");
-
 slctMedia.addEventListener("change", (event) => {
     switch (event.target.value) {
         default:
@@ -46,12 +43,4 @@ async function copyToClipboard(rich, plain) {
         document.execCommand("copy");
         document.removeEventListener("copy", cb);
     }
-}
-
-function loadScript(url) {
-    var head = document.getElementsByTagName("head")[0];
-    var script = document.createElement("script");
-    script.type = "module";
-    script.src = url;
-    head.appendChild(script);
 }
