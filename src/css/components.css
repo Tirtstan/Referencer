@@ -1,6 +1,16 @@
 :root {
     --input-text: #36395a;
     --shadow: 45, 35, 66;
+    --shadow-inset: #d6d6e7;
+    --placeholder: rgb(128, 128, 128);
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --input-text: #f2f3ff;
+        --shadow-inset: #54595f;
+        --placeholder: #b4b5be;
+    }
 }
 
 .input-device {
@@ -9,7 +19,8 @@
     background-color: var(--accent);
     color: var(--input-text);
     border-radius: 4px;
-    box-shadow: rgba(var(--shadow), 0.4) 0 2px 4px, rgba(var(--shadow), 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+    box-shadow: rgba(var(--shadow), 0.4) 0 2px 4px, rgba(var(--shadow), 0.3) 0 7px 13px -3px,
+        var(--shadow-inset) 0 -3px 0 inset;
     text-decoration: none;
     user-select: none;
     -webkit-user-select: none;
@@ -78,6 +89,15 @@
 
 .input-box-1:hover {
     transform: translateY(-2px);
+}
+
+.input-box-1::placeholder {
+    color: var(--placeholder);
+    opacity: 1;
+}
+
+.input-box-1::-ms-input-placeholder {
+    color: var(--placeholder);
 }
 
 textarea {
