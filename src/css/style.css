@@ -88,15 +88,7 @@ main {
     overflow: hidden;
 }
 
-p {
-    padding: 0;
-    margin: 0;
-}
-
 header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 30px;
     margin-bottom: 16px;
 }
@@ -127,7 +119,6 @@ header a:hover {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    text-align: left;
 }
 
 .left-panel {
@@ -219,11 +210,12 @@ header a:hover {
 .top-panel {
     margin: 0;
     margin-bottom: 8px;
+    min-height: 200px;
     max-height: 280px;
 }
 
 .bottom-panel {
-    max-height: 50%;
+    min-height: 200px;
     max-height: 280px;
 }
 
@@ -236,4 +228,13 @@ header a:hover {
 
 .copy-panel button {
     width: 40%;
+}
+
+@media screen and (max-width: 1550px) {
+    .left-panel {
+        padding: 12px 12px 6px 12px;
+    }
+    .right-panel {
+        padding: 6px 12px 12px 12px;
+    }
 }

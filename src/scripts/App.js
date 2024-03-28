@@ -1,8 +1,6 @@
 const slctMedia = document.getElementById("slctMedia");
 const pnlMedia = document.getElementById("pnlMedia");
 const btnCopy = document.getElementById("btnCopy");
-
-const txtOtherInfo = document.getElementById("txtOtherInfo");
 const txtOutput = document.getElementById("txtOutput");
 
 loadScript("src/scripts/web-components/BookElement.js");
