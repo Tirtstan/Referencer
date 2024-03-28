@@ -76,6 +76,9 @@ class YouTubeElement extends HTMLElement {
         const dtAccessedWhen = document.getElementById("dtAccessedWhen");
         const txtYear = document.getElementById("txtYear");
 
+        const txtOtherInfo = document.getElementById("txtOtherInfo");
+        const txtOutput = document.getElementById("txtOutput");
+
         const date = new Date();
         dtAccessedWhen.valueAsDate = date;
         txtYear.value = date.getFullYear();
@@ -99,6 +102,8 @@ class YouTubeElement extends HTMLElement {
 
                         const dateString = snippet.publishedAt.split("T")[0];
                         txtYear.value = new Date(dateString).getFullYear();
+
+                        FillInfo();
                     },
                     function (err) {
                         console.error("Execute error", err);
@@ -106,7 +111,9 @@ class YouTubeElement extends HTMLElement {
                 );
         });
 
-        btnFormat.addEventListener("click", () => {
+        btnFormat.addEventListener("click", FillInfo);
+
+        function FillInfo() {
             if (Utilities.areNullOrEmpty(txtTitle.value, txtChannel.value, txtLink.value)) {
                 return;
             }
@@ -122,7 +129,7 @@ class YouTubeElement extends HTMLElement {
             txtOtherInfo.innerHTML = `<u><strong>In-Text Paraphrase:</strong></u><br><br>${youtube.getParaphrased()}
             <br><br><u><strong>In-Text Quote:</strong></u><br><br>${youtube.getQuote()}`;
             txtOutput.innerHTML = youtube.toString();
-        });
+        }
     }
 }
 
