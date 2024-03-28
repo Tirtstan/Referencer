@@ -1,3 +1,3 @@
-export default {
-    base: `/<REPO>/`,
-};
+/** @type {import('vite').UserConfig} */
+
+export default {};
