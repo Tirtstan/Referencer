@@ -1,5 +1,7 @@
 import Utilities from "../helpers/Utilities.js";
+import YouTubeHelper from "../helpers/YouTubeHelper.js";
 import YouTube from "../media/YouTube.js";
+import { gapi } from "gapi-script";
 
 class YouTubeElement extends HTMLElement {
     connectedCallback() {
@@ -79,7 +81,29 @@ class YouTubeElement extends HTMLElement {
         txtYear.value = date.getFullYear();
 
         btnAutoFill.addEventListener("click", () => {
-            console.log("coming soon...");
+            if (txtLink.value === "" || txtLink.value === null || !YouTubeHelper.isYouTubeLink(txtLink.value)) {
+                return;
+            }
+
+            gapi.client.youtube.videos
+                .list({
+                    part: ["snippet"],
+                    id: [YouTubeHelper.getYouTubeId(txtLink.value)],
+                })
+                .then(
+                    function (response) {
+                        const snippet = response.result.items[0].snippet;
+
+                        txtTitle.value = snippet.title;
+                        txtChannel.value = snippet.channelTitle;
+
+                        const dateString = snippet.publishedAt.split("T")[0];
+                        txtYear.value = new Date(dateString).getFullYear();
+                    },
+                    function (err) {
+                        console.error("Execute error", err);
+                    }
+                );
         });
 
         btnFormat.addEventListener("click", () => {
