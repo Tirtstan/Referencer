@@ -43,6 +43,7 @@
     text-align: center;
     transition: transform 0.15s;
     will-change: transform;
+    min-width: 120px;
 }
 
 .button-1:hover {
@@ -67,6 +68,8 @@
     text-align: left;
     transition: transform 0.15s;
     will-change: transform;
+
+    margin: 0 0 0 8px;
 }
 
 .select-1:hover {
