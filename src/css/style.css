@@ -233,12 +233,12 @@ header a:hover {
     margin: 0;
     margin-bottom: 8px;
     min-height: 200px;
-    max-height: 280px;
+    max-height: 50%;
 }
 
 .bottom-panel {
     min-height: 200px;
-    max-height: 280px;
+    max-height: 50%;
 }
 
 .copy-panel {
