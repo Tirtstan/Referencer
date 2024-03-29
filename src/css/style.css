@@ -153,6 +153,15 @@ header a:hover {
     padding: 12px 12px 12px 6px;
 }
 
+@media screen and (max-width: 1550px) {
+    .left-panel {
+        padding: 12px 12px 6px 12px;
+    }
+    .right-panel {
+        padding: 6px 12px 12px 12px;
+    }
+}
+
 .inner-panel {
     background-color: var(--light-background);
     padding: 8px;
@@ -170,6 +179,7 @@ header a:hover {
     display: flex;
     flex-direction: column;
     justify-content: start;
+    min-width: 200px;
     flex-grow: 1;
 }
 
@@ -206,12 +216,6 @@ header a:hover {
     margin-right: 12px;
 }
 
-.container-a input {
-    flex-grow: 1;
-    margin-right: 12px;
-    height: 30px;
-}
-
 .container-b {
     display: flex;
     flex-direction: row;
@@ -223,10 +227,6 @@ header a:hover {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-}
-
-.container-b-input {
-    margin-right: 12px;
 }
 
 .top-panel {
@@ -250,13 +250,4 @@ header a:hover {
 
 .copy-panel button {
     width: 40%;
-}
-
-@media screen and (max-width: 1550px) {
-    .left-panel {
-        padding: 12px 12px 6px 12px;
-    }
-    .right-panel {
-        padding: 6px 12px 12px 12px;
-    }
 }

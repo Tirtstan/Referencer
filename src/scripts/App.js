@@ -3,6 +3,7 @@ import { gapi } from "gapi-script";
 const slctMedia = document.getElementById("slctMedia");
 const pnlMedia = document.getElementById("pnlMedia");
 const btnCopy = document.getElementById("btnCopy");
+const txtOtherInfo = document.getElementById("txtOtherInfo");
 const txtOutput = document.getElementById("txtOutput");
 
 slctMedia.addEventListener("change", (event) => {
@@ -14,7 +15,13 @@ slctMedia.addEventListener("change", (event) => {
         case "YouTube":
             pnlMedia.innerHTML = "<youtube-element></youtube-element>";
             break;
+        case "OnlineImage":
+            pnlMedia.innerHTML = "<online-image-element></online-image-element>";
+            break;
     }
+
+    txtOtherInfo.innerHTML = "";
+    txtOutput.innerHTML = "";
 });
 
 btnCopy.addEventListener("click", () => {
@@ -46,10 +53,15 @@ async function copyToClipboard(rich, plain) {
 }
 
 function start() {
-    // Initializes the client with the API key and the Translate API.
+    const apiKey = import.meta.env.VITE_YOUTUBE_API_KEY;
+    if (apiKey === null || apiKey === undefined || apiKey === "") {
+        console.warn("YouTube API key not found");
+        return;
+    }
+
     gapi.client
         .init({
-            apiKey: import.meta.env.VITE_YOUTUBE_API_KEY,
+            apiKey: apiKey,
             discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest"],
         })
         .then(

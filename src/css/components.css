@@ -100,15 +100,21 @@
     color: var(--placeholder);
 }
 
+.input-space {
+    flex-grow: 1;
+    margin-right: 12px;
+}
+
 textarea {
     appearance: none;
     text-decoration: none;
     resize: none;
     flex-grow: 1;
+    padding: 8px;
 }
 
 .text-area {
-    padding: 4px;
+    padding: 8px;
     margin: 0;
     flex: 1;
     word-break: break-word;

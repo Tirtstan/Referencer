@@ -1,11 +1,19 @@
 export default class Utilities {
     static formatFullName(name) {
         const names = name.split(" ");
+        if (this.isNullOrEmpty(names[1])) {
+            return names[0];
+        }
         return `${names[1]}, ${names[0].substring(0, 1)}`;
     }
 
     static getSurname(name) {
-        return name.split(" ")[1];
+        const names = name.split(" ");
+        if (this.isNullOrEmpty(names[1])) {
+            return names[0];
+        }
+
+        return names[1];
     }
 
     static listNames(names, endingWith) {
@@ -47,10 +55,15 @@ export default class Utilities {
         return number.concat("th");
     }
 
+    static isNullOrEmpty(string) {
+        return string === null || string === "" || string === undefined;
+    }
+
     static areNullOrEmpty(...strings) {
-        let valid = false;
         for (let i = 0; i < strings.length; i++) {
-            if (strings[i] === null || strings[i] === "") return true;
+            if (strings[i] === null || strings[i] === "" || strings[i] === undefined) {
+                return true;
+            }
         }
         return false;
     }

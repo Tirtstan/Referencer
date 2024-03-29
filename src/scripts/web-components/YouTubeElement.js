@@ -7,14 +7,14 @@ class YouTubeElement extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
           <div class="inner-panel info-panel">
-                        <label for="Reference Info"><u>Referencer Info YouTube:</u></label>
+                        <label for="Reference Info"><u>Referencer Info:</u></label>
                         <label for="Link"><u>Link:</u></label>
                         <div class="container-a">
                             <input
                                 type="url"
                                 name="link"
                                 id="txtLink"
-                                class="input-device input-box-1"
+                                class="input-device input-box-1 input-space"
                                 placeholder="YouTube URL" />
                             <button id="btnAutoFill" class="input-device button-1">Auto Fill</button>
                         </div>
@@ -51,7 +51,7 @@ class YouTubeElement extends HTMLElement {
                             </div>
                         </div>
                         <div class="container-b">
-                            <div class="container-b-input">
+                            <div class="input-space">
                                 <label for="year uploaded"><u>Year Uploaded:</u></label>
                                 <input
                                     type="number"
