@@ -55,7 +55,7 @@ body {
     color: white;
     margin: 0;
     margin-top: 2%;
-    padding: 0;
+    padding: 0px 50px;
 }
 
 .center {
@@ -97,13 +97,13 @@ main {
     justify-content: space-evenly;
     flex-wrap: wrap;
     height: auto;
-    width: 50%;
+    width: fit-content;
     max-width: 1000px;
     border-radius: 20px;
     border-color: var(--pri-border-color);
     border-style: solid;
     box-shadow: 4px 4px 4px var(--box-shadow);
-    overflow: hidden;
+    overflow: auto;
 }
 
 header {
@@ -149,11 +149,12 @@ header a:hover {
 }
 
 .right-panel {
+    min-width: 400px;
     flex: 1 2 100px;
     padding: 12px 12px 12px 6px;
 }
 
-@media screen and (max-width: 1550px) {
+@media screen and (max-width: 1000px) {
     .left-panel {
         padding: 12px 12px 6px 12px;
     }
