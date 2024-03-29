@@ -7,14 +7,14 @@ class YouTubeElement extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
           <div class="inner-panel info-panel">
-                        <label for="Reference Info"><u>Referencer Info YouTube:</u></label>
+                        <label for="Reference Info"><u>Referencer Info:</u></label>
                         <label for="Link"><u>Link:</u></label>
                         <div class="container-a">
                             <input
                                 type="url"
                                 name="link"
                                 id="txtLink"
-                                class="input-device input-box-1"
+                                class="input-device input-box-1 input-space"
                                 placeholder="YouTube URL" />
                             <button id="btnAutoFill" class="input-device button-1">Auto Fill</button>
                         </div>
@@ -51,7 +51,7 @@ class YouTubeElement extends HTMLElement {
                             </div>
                         </div>
                         <div class="container-b">
-                            <div class="container-b-input">
+                            <div class="input-space">
                                 <label for="year uploaded"><u>Year Uploaded:</u></label>
                                 <input
                                     type="number"
@@ -76,6 +76,9 @@ class YouTubeElement extends HTMLElement {
         const dtAccessedWhen = document.getElementById("dtAccessedWhen");
         const txtYear = document.getElementById("txtYear");
 
+        const txtOtherInfo = document.getElementById("txtOtherInfo");
+        const txtOutput = document.getElementById("txtOutput");
+
         const date = new Date();
         dtAccessedWhen.valueAsDate = date;
         txtYear.value = date.getFullYear();
@@ -99,6 +102,8 @@ class YouTubeElement extends HTMLElement {
 
                         const dateString = snippet.publishedAt.split("T")[0];
                         txtYear.value = new Date(dateString).getFullYear();
+
+                        FillInfo();
                     },
                     function (err) {
                         console.error("Execute error", err);
@@ -106,7 +111,9 @@ class YouTubeElement extends HTMLElement {
                 );
         });
 
-        btnFormat.addEventListener("click", () => {
+        btnFormat.addEventListener("click", FillInfo);
+
+        function FillInfo() {
             if (Utilities.areNullOrEmpty(txtTitle.value, txtChannel.value, txtLink.value)) {
                 return;
             }
@@ -122,7 +129,7 @@ class YouTubeElement extends HTMLElement {
             txtOtherInfo.innerHTML = `<u><strong>In-Text Paraphrase:</strong></u><br><br>${youtube.getParaphrased()}
             <br><br><u><strong>In-Text Quote:</strong></u><br><br>${youtube.getQuote()}`;
             txtOutput.innerHTML = youtube.toString();
-        });
+        }
     }
 }
 

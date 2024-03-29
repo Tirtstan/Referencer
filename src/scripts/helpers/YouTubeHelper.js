@@ -1,7 +1,7 @@
 export default class YouTubeHelper {
     // https://stackoverflow.com/a/9102270/19860255
     static getYouTubeId(link) {
-        let regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+        let regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
         let match = link.match(regExp);
         if (match && match[2].length == 11) {
             return match[2];

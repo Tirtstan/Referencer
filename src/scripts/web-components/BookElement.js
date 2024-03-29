@@ -8,13 +8,13 @@ class BookElement extends HTMLElement {
                 <label for="Reference Info"><u>Referencer Info:</u></label>
                 <label for="Authors"><u>Authors:</u></label>
                 <div class="container-a">
-                    <input type="text" name="authors" id="txtAuthors" class="input-device input-box-1" placeholder="Name And Surname"/>
+                    <input type="text" name="authors" id="txtAuthors" class="input-device input-box-1 input-space" placeholder="Name And/Or Surname"/>
                     <button id="btnAdd" class="input-device button-1 add-button">Add</button>
                     <button id="btnClear" class="input-device button-1">Clear</button>
                 </div>
                 <textarea id="txtAuthorsOutput" name="authors-display" class="input-device" readonly></textarea>
                 <div class="container-b">
-                    <div class="container-b-input">
+                    <div class="input-space">
                         <label for="year"><u>Year:</u></label>
                         <input type="number" name="year" id="txtYear" class="input-device input-box-1" placeholder="Year"/>
                     </div>
@@ -29,7 +29,7 @@ class BookElement extends HTMLElement {
                     </div>
                 </div>
                 <div class="container-b">
-                    <div class="container-b-input">
+                    <div class="input-space">
                         <label for="book name"><u>Book Name:</u></label>
                         <input type="text" name="book name" id="txtBookName" class="input-device input-box-1" placeholder="Book Name" />
                     </div>
@@ -43,7 +43,7 @@ class BookElement extends HTMLElement {
                     </div>
                 </div>
                 <div class="container-b">
-                    <div class="container-b-input">
+                    <div class="input-space">
                         <label for="edition number"><u>Edition Number:</u></label>
                         <input type="number" name="edition" id="txtEditionNum" class="input-device input-box-1" placeholder="Edition Number" />
                     </div>
@@ -95,10 +95,6 @@ class BookElement extends HTMLElement {
         });
 
         btnFormat.addEventListener("click", () => {
-            if (Utilities.areNullOrEmpty(txtBookName.value, txtPubPlace.value, txtPubName.value)) {
-                return;
-            }
-
             const book = new Book(
                 txtYear.value,
                 txtBookName.value,
