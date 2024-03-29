@@ -6,7 +6,7 @@ import { gapi } from "gapi-script";
 class YouTubeElement extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
-          <div class="inner-panel info-panel">
+            <div class="inner-panel info-panel">
                         <label for="Reference Info"><u>Referencer Info:</u></label>
                         <label for="Link"><u>Link:</u></label>
                         <div class="container-a">
@@ -18,37 +18,31 @@ class YouTubeElement extends HTMLElement {
                                 placeholder="YouTube URL" />
                             <button id="btnAutoFill" class="input-device button-1">Auto Fill</button>
                         </div>
-                        <div class="container-b">
-                            <div>
-                                <label for="video title"><u>Video Title:</u></label>
-                                <input
-                                    type="text"
-                                    name="video title"
-                                    id="txtTitle"
-                                    class="input-device input-box-1"
-                                    placeholder="Title" />
-                            </div>
+                        <div class="stretch-grow">
+                            <label for="video title"><u>Video Title:</u></label>
+                            <input
+                                type="text"
+                                name="video title"
+                                id="txtTitle"
+                                class="input-device input-box-1"
+                                placeholder="Title" />
                         </div>
-                        <div class="container-b">
-                            <div>
-                                <label for="channel"><u>Channel:</u></label>
-                                <input
-                                    type="text"
-                                    name="channel"
-                                    id="txtChannel"
-                                    class="input-device input-box-1"
-                                    placeholder="Channel" />
-                            </div>
+                        <div class="stretch-grow">
+                            <label for="channel"><u>Channel:</u></label>
+                            <input
+                                type="text"
+                                name="channel"
+                                id="txtChannel"
+                                class="input-device input-box-1"
+                                placeholder="Channel" />
                         </div>
-                        <div class="container-b">
-                            <div>
-                                <label for="date accessed"><u>Date Accessed:</u></label>
-                                <input
-                                    type="date"
-                                    name="date accessed"
-                                    id="dtAccessedWhen"
-                                    class="input-device input-box-1" />
-                            </div>
+                        <div class="stretch-grow">
+                            <label for="date accessed"><u>Date Accessed:</u></label>
+                            <input
+                                type="date"
+                                name="date accessed"
+                                id="dtAccessedWhen"
+                                class="input-device input-box-1" />
                         </div>
                         <div class="container-b">
                             <div class="input-space">

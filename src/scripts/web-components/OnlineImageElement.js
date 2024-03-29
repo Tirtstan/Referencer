@@ -3,7 +3,8 @@ import OnlineImage from "../media/OnlineImage";
 
 class OnlineImageElement extends HTMLElement {
     connectedCallback() {
-        this.innerHTML = ` <div class="inner-panel info-panel">
+        this.innerHTML = `
+        <div class="inner-panel info-panel">
                         <label for="Reference Info"><u>Referencer Info:</u></label>
                         <label for="Authors"><u>Authors:</u></label>
                         <div class="container-a">
@@ -17,16 +18,14 @@ class OnlineImageElement extends HTMLElement {
                             <button id="btnClear" class="input-device button-1">Clear</button>
                         </div>
                         <textarea id="txtAuthorsOutput" name="authors-display" class="input-device" readonly></textarea>
-                        <div class="container-b">
-                            <div>
-                                <label for="image title"><u>Image Title:</u></label>
-                                <input
-                                    type="text"
-                                    name="image title"
-                                    id="txtImgTitle"
-                                    class="input-device input-box-1"
-                                    placeholder="Title" />
-                            </div>
+                        <div class="stretch-grow">
+                            <label for="image title"><u>Image Title:</u></label>
+                            <input
+                                type="text"
+                                name="image title"
+                                id="txtImgTitle"
+                                class="input-device input-box-1"
+                                placeholder="Title" />
                         </div>
                         <div class="container-b">
                             <div class="input-space">

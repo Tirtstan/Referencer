@@ -26,6 +26,7 @@
     --sec-border-color: #72a0a1;
     --bg-border-color: #464a4e;
     --acc-border-color: #e7e7e7;
+    --bg-text: #595f66;
     --box-shadow: rgba(45, 35, 66, 0.4);
     --github: url(../images/github-mark-white.svg);
 }
@@ -42,6 +43,7 @@
         --sec-border-color: #6eb3b6;
         --bg-border-color: #cecfcf;
         --acc-border-color: #4e4e55;
+        --bg-text: #868788;
         --github: url(../images/github-mark.svg);
     }
 }
@@ -55,7 +57,11 @@ body {
     color: white;
     margin: 0;
     margin-top: 2%;
-    padding: 0;
+    padding: 0px 50px;
+}
+
+label {
+    font-size: 18px;
 }
 
 .center {
@@ -78,7 +84,32 @@ h1 {
     -moz-text-fill-color: transparent;
 }
 
+footer {
+    margin-top: 20px;
+    max-width: 400px;
+    text-align: center;
+}
+
+h6 {
+    margin: 0 0 8px 0;
+    padding: 0;
+    color: var(--bg-text);
+    padding: 0;
+}
+
+h6 a {
+    color: var(--secondary);
+    text-decoration: none;
+    text-decoration-color: var(--text);
+}
+
+h6 a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
 .creator-name {
+    color: var(--text);
     background-image: linear-gradient(60deg, var(--primary), var(--secondary));
     background-size: 100%;
     background-clip: text;
@@ -86,24 +117,6 @@ h1 {
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
-    cursor: pointer;
-}
-
-main {
-    color: var(--text);
-    background-color: var(--secondary);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    height: auto;
-    width: 50%;
-    max-width: 1000px;
-    border-radius: 20px;
-    border-color: var(--pri-border-color);
-    border-style: solid;
-    box-shadow: 4px 4px 4px var(--box-shadow);
-    overflow: hidden;
 }
 
 header {
@@ -136,6 +149,25 @@ header a:hover {
     text-decoration-color: var(--secondary);
 }
 
+main {
+    color: var(--text);
+    background-color: var(--secondary);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    height: auto;
+    width: fit-content;
+    max-width: 1000px;
+    border-radius: 20px;
+    border-color: var(--pri-border-color);
+    border-style: solid;
+    box-shadow: 4px 4px 4px var(--box-shadow);
+    overflow: auto;
+    padding: 8px;
+    gap: 8px;
+}
+
 .panel {
     float: left;
     display: flex;
@@ -144,22 +176,12 @@ header a:hover {
 }
 
 .left-panel {
-    flex: 1 1 100px;
-    padding: 12px 6px 12px 12px;
+    flex-grow: 1;
 }
 
 .right-panel {
-    flex: 1 2 100px;
-    padding: 12px 12px 12px 6px;
-}
-
-@media screen and (max-width: 1550px) {
-    .left-panel {
-        padding: 12px 12px 6px 12px;
-    }
-    .right-panel {
-        padding: 6px 12px 12px 12px;
-    }
+    min-width: 380px;
+    flex-grow: 1;
 }
 
 .inner-panel {
@@ -196,11 +218,11 @@ header a:hover {
     flex-direction: row;
     align-items: center;
     margin: 0;
+    text-wrap: nowrap;
 }
 
 .media-panel select {
-    width: 40%;
-    margin: 0;
+    width: 50%;
 }
 
 .container-a {
@@ -220,9 +242,9 @@ header a:hover {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    flex-grow: 1;
 }
 
+.stretch-grow,
 .container-b div {
     display: flex;
     flex-direction: column;
@@ -233,12 +255,12 @@ header a:hover {
     margin: 0;
     margin-bottom: 8px;
     min-height: 200px;
-    max-height: 280px;
+    max-height: 50%;
 }
 
 .bottom-panel {
     min-height: 200px;
-    max-height: 280px;
+    max-height: 50%;
 }
 
 .copy-panel {
