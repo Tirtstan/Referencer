@@ -168,20 +168,18 @@ main {
     gap: 8px;
 }
 
-.panel {
-    float: left;
+section {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    flex-basis: 100px;
 }
 
 .left-panel {
-    flex-grow: 1;
 }
 
 .right-panel {
     min-width: 380px;
-    flex-grow: 1;
 }
 
 .inner-panel {
