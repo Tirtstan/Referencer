@@ -73,8 +73,8 @@ class BookElement extends HTMLElement {
         const txtPubName = document.getElementById("txtPubName");
         const txtEditionNum = document.getElementById("txtEditionNum");
 
-        const txtOtherInfo = document.getElementById("txtParaQuote");
-        const txtOutput = document.getElementById("txtReferenceList");
+        const txtParaQuote = document.getElementById("txtParaQuote");
+        const txtReferenceList = document.getElementById("txtReferenceList");
 
         let authors = [];
         txtYear.value = new Date().getFullYear();
@@ -110,9 +110,9 @@ class BookElement extends HTMLElement {
                 authors
             );
 
-            txtOtherInfo.innerHTML = `<u><strong>In-Text Paraphrase:</strong></u><br><br>${book.getParaphrased()}
+            txtParaQuote.innerHTML = `<u><strong>In-Text Paraphrase:</strong></u><br><br>${book.getParaphrased()}
             <br><br><u><strong>In-Text Quote:</strong></u><br><br>${book.getQuote()}`;
-            txtOutput.innerHTML = book.toString();
+            txtReferenceList.innerHTML = book.toString();
         });
     }
 }
