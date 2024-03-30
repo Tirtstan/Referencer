@@ -53,15 +53,8 @@ body {
     flex-direction: column;
     background: var(--background);
     font-family: var(--font-family);
-    font-size: 20px;
-    color: white;
-    margin: 0;
-    margin-top: 2%;
-    padding: 0px 50px;
-}
-
-label {
-    font-size: 18px;
+    margin: 0 auto;
+    padding: 0 2%;
 }
 
 .center {
@@ -74,7 +67,7 @@ h1 {
     color: var(--text);
     margin: 0;
     padding: 0;
-    font-size: 70px;
+    font-size: clamp(3rem, 8vh, 4rem);
     background-image: linear-gradient(300deg, var(--primary), var(--secondary));
     background-size: 100%;
     background-clip: text;
@@ -82,30 +75,6 @@ h1 {
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
-}
-
-footer {
-    margin-top: 20px;
-    max-width: 400px;
-    text-align: center;
-}
-
-h6 {
-    margin: 0 0 8px 0;
-    padding: 0;
-    color: var(--bg-text);
-    padding: 0;
-}
-
-h6 a {
-    color: var(--secondary);
-    text-decoration: none;
-    text-decoration-color: var(--text);
-}
-
-h6 a:hover {
-    color: var(--primary);
-    text-decoration: underline;
 }
 
 .creator-name {
@@ -121,11 +90,12 @@ h6 a:hover {
 
 header {
     color: var(--text);
+    font-size: clamp(0.8rem, 2vh, 1rem);
     height: 30px;
     margin-bottom: 16px;
 }
 
-header div {
+.gh-logo {
     background-image: var(--github);
     background-size: contain;
     background-repeat: no-repeat;
@@ -133,10 +103,9 @@ header div {
     width: 30px;
     height: 30px;
     transition: transform 0.15s;
-    will-change: transform;
 }
 
-header div:hover {
+.gh-logo:hover {
     transform: translateY(-2px);
 }
 
@@ -150,124 +119,75 @@ header a:hover {
 }
 
 main {
-    color: var(--text);
     background-color: var(--secondary);
+    border-style: solid;
+    border-color: var(--pri-border-color);
+    border-radius: 20px;
+    border-width: 3px;
+    box-sizing: border-box;
+    min-width: fit-content;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    padding: 8px;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
     flex-wrap: wrap;
-    height: auto;
-    width: fit-content;
-    max-width: 1000px;
-    border-radius: 20px;
-    border-color: var(--pri-border-color);
-    border-style: solid;
     box-shadow: 4px 4px 4px var(--box-shadow);
-    overflow: auto;
-    padding: 8px;
     gap: 8px;
 }
 
 section {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-    flex-basis: 100px;
-}
-
-.left-panel {
-}
-
-.right-panel {
-    min-width: 380px;
-}
-
-.inner-panel {
-    background-color: var(--light-background);
-    padding: 8px;
-    border-radius: 10px;
-    border-color: var(--bg-border-color);
-    box-shadow: 4px 5px 5px var(--box-shadow);
-    border-style: solid;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.info-panel {
-    color: var(--text);
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    min-width: 200px;
-    flex-grow: 1;
-}
-
-.inner-panel label {
-    margin-bottom: 12px;
+    flex: 1 1 100px;
+    gap: 8px;
+    min-width: 320px;
 }
 
 .media-panel {
-    margin-bottom: 8px;
-}
-
-.media-panel label {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    margin: 0;
     text-wrap: nowrap;
+    justify-content: space-between;
+    min-height: fit-content;
+    gap: 8px;
 }
 
-.media-panel select {
-    width: 50%;
-}
-
-.container-a {
-    display: flex;
-    flex-direction: row;
-}
-
-.container-a button {
-    width: 110px;
-}
-
-.add-button {
-    margin-right: 12px;
-}
-
-.container-b {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
-.stretch-grow,
-.container-b div {
+.info-panel {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    flex: 1;
+    gap: 8px;
 }
 
-.top-panel {
-    margin: 0;
-    margin-bottom: 8px;
-    min-height: 200px;
-    max-height: 50%;
-}
-
-.bottom-panel {
-    min-height: 200px;
-    max-height: 50%;
-}
-
-.copy-panel {
+.next-to {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    gap: 8px;
 }
 
-.copy-panel button {
-    width: 40%;
+footer {
+    margin: 20px 0 0 0;
+    max-width: 400px;
+    text-align: center;
+}
+
+h6 {
+    color: var(--bg-text);
+    font-size: clamp(0.75rem, 0.5vw, 1rem);
+    margin: 0 0 8px 0;
+    padding: 0;
+    padding: 0;
+}
+
+h6 a {
+    color: var(--secondary);
+    text-decoration: none;
+    text-decoration-color: var(--text);
+}
+
+h6 a:hover {
+    color: var(--primary);
+    text-decoration: underline;
 }

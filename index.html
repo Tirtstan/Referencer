@@ -18,40 +18,48 @@
         <header class="center">
             <h4>Created By&nbsp;</h4>
             <a href="https://github.com/Tirtstan" target="_blank"> <h4 class="creator-name">Tirt</h4></a>
-            <a href="https://github.com/Tirtstan/Referencer" target="_blank"> <div></div></a>
+            <a href="https://github.com/Tirtstan/Referencer" target="_blank"> <div class="gh-logo"></div></a>
         </header>
         <main>
-            <section class="left-panel">
-                <div class="inner-panel media-panel">
-                    <label for="media-types">Choose a Media Type</label>
-                    <select id="slctMedia" class="input-device select-1" name="media-types">
+            <section class="left-section">
+                <div class="media-panel inner-panel">
+                    <label for="media-types">Media Type</label
+                    ><select name="media-types" id="slctMedia" class="input-device select-1">
                         <option value="Book">Book</option>
                         <option value="YouTube">YouTube</option>
                         <option value="OnlineImage">Online Image</option>
                     </select>
                 </div>
-                <div id="pnlMedia">
-                    <book-element></book-element>
+                <div id="pnlMedia" class="info-panel inner-panel">
+                    <label for="authors"><u>Authors:</u></label>
+                    <div class="next-to">
+                        <input
+                            type="text"
+                            name="authors"
+                            id="txtAuthors"
+                            class="input-device input-box-1"
+                            placeholder="Name And/Or Surname" />
+                        <button id="btnAdd" class="input-device button-1 add-button">Add</button>
+                        <button id="btnClear" class="input-device button-1">Clear</button>
+                    </div>
                 </div>
             </section>
-            <section class="right-panel">
-                <div class="inner-panel info-panel top-panel">
-                    <label for="other info"><u>Other Info:</u></label>
-                    <p id="txtOtherInfo" class="input-device text-area"></p>
+            <section class="right-section">
+                <div class="info-panel inner-panel">
+                    <label for="paraphrase and quote"><u>Paraphrase & Quote:</u></label>
+                    <p id="txtParaQuote" class="input-device output-area"></p>
                 </div>
-                <div class="inner-panel info-panel bottom-panel">
-                    <div class="copy-panel">
-                        <label for="output"><u>Output:</u></label>
-                        <button class="input-device button-1" id="btnCopy">Copy</button>
-                    </div>
-                    <p id="txtOutput" class="input-device text-area"></p>
+                <div class="info-panel inner-panel">
+                    <label for="reference list"><u>Reference List:</u></label>
+                    <p id="txtReferenceList" class="input-device output-area"></p>
+                    <button id="btnCopy" class="input-device button-1">Copy</button>
                 </div>
             </section>
         </main>
         <footer>
             <h6>The IIE. 2024. IIE Referencing Guide [Guide]. The Independent Institute of Education: Unpublished.</h6>
             <h6>
-                Can be found
+                Find it
                 <a
                     href="https://irp.cdn-website.com/271d35b6/files/uploaded/The%20IIE%20Harvard%20Style%20Reference%20Guide%20-%20Adapted%20for%20The%20IIE%202024-f52fbd5a.pdf"
                     target="_blank"

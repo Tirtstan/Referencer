@@ -3,8 +3,8 @@ import { gapi } from "gapi-script";
 const slctMedia = document.getElementById("slctMedia");
 const pnlMedia = document.getElementById("pnlMedia");
 const btnCopy = document.getElementById("btnCopy");
-const txtOtherInfo = document.getElementById("txtOtherInfo");
-const txtOutput = document.getElementById("txtOutput");
+const txtParaQuote = document.getElementById("txtParaQuote");
+const txtReferenceList = document.getElementById("txtReferenceList");
 
 slctMedia.addEventListener("change", (event) => {
     switch (event.target.value) {
@@ -20,16 +20,16 @@ slctMedia.addEventListener("change", (event) => {
             break;
     }
 
-    txtOtherInfo.innerHTML = "";
-    txtOutput.innerHTML = "";
+    txtParaQuote.innerHTML = "";
+    txtReferenceList.innerHTML = "";
 });
 
 btnCopy.addEventListener("click", () => {
-    if (txtOutput.value === null || txtOutput.value === "") {
+    if (txtReferenceList.value === null || txtReferenceList.value === "") {
         return;
     }
 
-    copyToClipboard(txtOutput.innerHTML, txtOutput.textContent);
+    copyToClipboard(txtReferenceList.innerHTML, txtReferenceList.textContent);
 });
 
 // https://stackoverflow.com/questions/23934656/how-can-i-copy-rich-text-contents-to-the-clipboard-with-javascript/77305170#77305170
