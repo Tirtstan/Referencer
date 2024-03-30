@@ -3,83 +3,65 @@ import OnlineImage from "../media/OnlineImage";
 
 class OnlineImageElement extends HTMLElement {
     connectedCallback() {
-        this.innerHTML = `
-        <div class="inner-panel info-panel">
-                        <label for="Reference Info"><u>Referencer Info:</u></label>
-                        <label for="Authors"><u>Authors:</u></label>
-                        <div class="container-a">
+        this.innerHTML = `<div class="info-panel inner-panel">
+                        <label for="authors"><u>Authors:</u></label>
+                        <div class="next-to">
                             <input
                                 type="text"
                                 name="authors"
                                 id="txtAuthors"
-                                class="input-device input-box-1 input-space"
+                                class="input-device input-box-1"
                                 placeholder="Name And/Or Surname" />
                             <button id="btnAdd" class="input-device button-1 add-button">Add</button>
                             <button id="btnClear" class="input-device button-1">Clear</button>
                         </div>
-                        <textarea id="txtAuthorsOutput" name="authors-display" class="input-device" readonly></textarea>
-                        <div class="stretch-grow">
-                            <label for="image title"><u>Image Title:</u></label>
+                        <textarea name="authors output" id="txtAuthorsOutput" class="input-device" readonly></textarea>
+                        <label for="image title"><u>Image Title:</u></label>
+                        <input
+                            type="text"
+                            name="image title"
+                            id="txtImgTitle"
+                            class="input-device input-box-1"
+                            placeholder="Image Title" />
+                        <label for="article title"><u>Article Title:</u></label>
+                        <input
+                            type="text"
+                            name="article title"
+                            id="txtArticleTitle"
+                            class="input-device input-box-1"
+                            placeholder="Article Title" />
+                        <label for="link"><u>Link:</u></label>
+                        <input
+                            type="url"
+                            name="link"
+                            id="txtLink"
+                            class="input-device input-box-1"
+                            placeholder="Link" />
+                        <div class="grid-input">
+                            <label for="year"><u>Year:</u></label>
+                            <input
+                                type="number"
+                                name="year"
+                                id="txtYear"
+                                class="input-device input-box-1"
+                                placeholder="Year" />
+                            <label for="date accessed"><u>Date Accessed:</u></label>
+                            <input
+                                type="date"
+                                name="date accessed"
+                                id="dtAccessedWhen"
+                                class="input-device input-box-1" />
+                        </div>
+                        <div class="grid-input">
+                            <label for="publication name"><u>Publication Name:</u></label>
                             <input
                                 type="text"
-                                name="image title"
-                                id="txtImgTitle"
+                                name="publication name"
+                                id="txtPubName"
                                 class="input-device input-box-1"
-                                placeholder="Title" />
-                        </div>
-                        <div class="container-b">
-                            <div class="input-space">
-                                <label for="year"><u>Year:</u></label>
-                                <input
-                                    type="number"
-                                    name="year"
-                                    id="txtYear"
-                                    class="input-device input-box-1"
-                                    placeholder="Year" />
-                            </div>
-                            <div>
-                                <label for="publication name"><u>Publication Name:</u></label>
-                                <input
-                                    type="text"
-                                    name="publication name"
-                                    id="txtPubName"
-                                    class="input-device input-box-1"
-                                    placeholder="Publication Name" />
-                            </div>
-                        </div>
-                        <div class="container-b">
-                            <div class="input-space">
-                                <label for="link"><u>Link:</u></label>
-                                <input
-                                    type="url"
-                                    name="link"
-                                    id="txtLink"
-                                    class="input-device input-box-1"
-                                    placeholder="Link" />
-                            </div>
-                            <div>
-                                <label for="date accessed"><u>Date Accessed:</u></label>
-                                <input
-                                    type="date"
-                                    name="date accessed"
-                                    id="dtAccessedWhen"
-                                    class="input-device input-box-1" />
-                            </div>
-                        </div>
-                        <div class="container-b">
-                            <div class="input-space">
-                                <label for="article title"><u>Article Title:</u></label>
-                                <input
-                                    type="text"
-                                    name="article title"
-                                    id="txtArticleTitle"
-                                    class="input-device input-box-1"
-                                    placeholder="Title" />
-                            </div>
-                            <div>
-                                <label for="format"><u>Format:</u></label
-                                ><button class="input-device button-1" id="btnFormat">Format</button>
-                            </div>
+                                placeholder="Publication Name" />
+                            <label for="format"><u>Format:</u></label>
+                            <button id="btnFormat" class="input-device button-1">Format</button>
                         </div>
                     </div>`;
 
@@ -98,8 +80,8 @@ class OnlineImageElement extends HTMLElement {
 
         const txtArticleTitle = document.getElementById("txtArticleTitle");
 
-        const txtOtherInfo = document.getElementById("txtOtherInfo");
-        const txtOutput = document.getElementById("txtOutput");
+        const txtParaQuote = document.getElementById("txtParaQuote");
+        const txtReferenceList = document.getElementById("txtReferenceList");
 
         let authors = [];
         const date = new Date();
@@ -107,7 +89,7 @@ class OnlineImageElement extends HTMLElement {
         txtYear.value = date.getFullYear();
 
         btnAdd.addEventListener("click", () => {
-            if (txtAuthors.value === null || txtAuthors.value === "") {
+            if (Utilities.isNullOrEmpty(txtAuthors.value)) {
                 return;
             }
 
@@ -137,9 +119,9 @@ class OnlineImageElement extends HTMLElement {
                 txtLink.value
             );
 
-            txtOtherInfo.innerHTML = `<u><strong>In-Text Paraphrase:</strong></u><br><br>${onlineImage.getParaphrased()}
+            txtParaQuote.innerHTML = `<u><strong>In-Text Paraphrase:</strong></u><br><br>${onlineImage.getParaphrased()}
             <br><br><u><strong>In-Text Quote:</strong></u><br><br>${onlineImage.getQuote()}`;
-            txtOutput.innerHTML = onlineImage.toString();
+            txtReferenceList.innerHTML = onlineImage.toString();
         });
     }
 }

@@ -3,6 +3,8 @@
     --shadow: 45, 35, 66;
     --shadow-inset: #d6d6e7;
     --placeholder: rgb(128, 128, 128);
+
+    --font-size: clamp(0.85rem, 3.5vw, 1rem);
 }
 
 @media (prefers-color-scheme: light) {
@@ -13,8 +15,23 @@
     }
 }
 
+.inner-panel {
+    background-color: var(--light-background);
+    border-style: solid;
+    border-color: var(--bg-border-color);
+    border-radius: 10px;
+    border-width: 3px;
+    padding: 8px;
+    box-shadow: 4px 4px 4px var(--box-shadow);
+}
+
+label {
+    font-size: var(--font-size);
+    color: var(--text);
+}
+
 .input-device {
-    font-size: 16px;
+    font-size: var(--font-size);
     font-family: var(--font-family);
     background-color: var(--accent);
     color: var(--input-text);
@@ -26,7 +43,8 @@
     -webkit-user-select: none;
     touch-action: manipulation;
     white-space: nowrap;
-    margin-bottom: 12px;
+
+    min-width: 20%;
 }
 
 .button-1 {
@@ -42,8 +60,6 @@
     overflow: hidden;
     text-align: center;
     transition: transform 0.15s;
-    will-change: transform;
-    min-width: 120px;
 }
 
 .button-1:hover {
@@ -67,9 +83,6 @@
     padding-left: 4px;
     text-align: left;
     transition: transform 0.15s;
-    will-change: transform;
-
-    margin: 0 0 0 8px;
 }
 
 .select-1:hover {
@@ -86,8 +99,10 @@
     list-style: none;
     overflow: hidden;
     transition: transform 0.15s;
-    will-change: transform;
     padding-left: 8px;
+    min-width: 0;
+
+    flex: 1;
 }
 
 .input-box-1:hover {
@@ -103,27 +118,23 @@
     color: var(--placeholder);
 }
 
-.input-space {
-    flex-grow: 1;
-    margin-right: 12px;
-}
-
 textarea {
     appearance: none;
     text-decoration: none;
     resize: none;
-    flex-grow: 1;
     padding: 8px;
 }
 
-.text-area {
+.output-area {
     padding: 8px;
     margin: 0;
-    flex-grow: 1;
     word-break: break-word;
     white-space: normal;
     user-select: text;
     -moz-user-select: text;
     -webkit-user-select: text;
     overflow: auto;
+
+    /* flex-basis (100px) carrying here (makes p actually overflow, not the panel) */
+    flex: 1 1 100px;
 }

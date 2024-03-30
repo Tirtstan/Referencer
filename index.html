@@ -14,17 +14,20 @@
     </head>
 
     <body class="center">
-        <h1>Referencer</h1>
+        <div class="title">
+            <h1>Referencer</h1>
+            <h6>v2.0.0</h6>
+        </div>
         <header class="center">
             <h4>Created By&nbsp;</h4>
             <a href="https://github.com/Tirtstan" target="_blank"> <h4 class="creator-name">Tirt</h4></a>
-            <a href="https://github.com/Tirtstan/Referencer" target="_blank"> <div></div></a>
+            <a href="https://github.com/Tirtstan/Referencer" target="_blank"> <div class="gh-logo"></div></a>
         </header>
         <main>
-            <section class="left-panel">
-                <div class="inner-panel media-panel">
-                    <label for="media-types">Choose a Media Type</label>
-                    <select id="slctMedia" class="input-device select-1" name="media-types">
+            <section class="left-section">
+                <div class="media-panel inner-panel">
+                    <label for="media-types">Media Type</label
+                    ><select name="media-types" id="slctMedia" class="input-device select-1">
                         <option value="Book">Book</option>
                         <option value="YouTube">YouTube</option>
                         <option value="OnlineImage">Online Image</option>
@@ -34,24 +37,24 @@
                     <book-element></book-element>
                 </div>
             </section>
-            <section class="right-panel">
-                <div class="inner-panel info-panel top-panel">
-                    <label for="other info"><u>Other Info:</u></label>
-                    <p id="txtOtherInfo" class="input-device text-area"></p>
+            <section class="right-section">
+                <div class="info-panel inner-panel">
+                    <label for="paraphrase and quote"><u>Paraphrase & Quote:</u></label>
+                    <p id="txtParaQuote" class="input-device output-area"></p>
                 </div>
-                <div class="inner-panel info-panel bottom-panel">
-                    <div class="copy-panel">
-                        <label for="output"><u>Output:</u></label>
-                        <button class="input-device button-1" id="btnCopy">Copy</button>
+                <div class="info-panel inner-panel">
+                    <div class="space-between">
+                        <label for="reference list"><u>Reference List:</u></label>
+                        <button id="btnCopy" class="input-device button-1">Copy</button>
                     </div>
-                    <p id="txtOutput" class="input-device text-area"></p>
+                    <p id="txtReferenceList" class="input-device output-area"></p>
                 </div>
             </section>
         </main>
         <footer>
             <h6>The IIE. 2024. IIE Referencing Guide [Guide]. The Independent Institute of Education: Unpublished.</h6>
             <h6>
-                Can be found
+                Find it
                 <a
                     href="https://irp.cdn-website.com/271d35b6/files/uploaded/The%20IIE%20Harvard%20Style%20Reference%20Guide%20-%20Adapted%20for%20The%20IIE%202024-f52fbd5a.pdf"
                     target="_blank"
