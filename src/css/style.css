@@ -95,6 +95,21 @@ header {
     margin-bottom: 16px;
 }
 
+.title {
+    display: flex;
+    flex-direction: column;
+}
+
+.title h6 {
+    font-size: clamp(0.75rem, 0.5vw, 1rem);
+    color: var(--bg-text);
+    text-align: center;
+    position: relative;
+    bottom: 4px;
+    margin: 0;
+    padding: 0;
+}
+
 .gh-logo {
     background-image: var(--github);
     background-size: contain;
@@ -193,7 +208,7 @@ footer {
     text-align: center;
 }
 
-h6 {
+footer h6 {
     color: var(--bg-text);
     font-size: clamp(0.75rem, 0.5vw, 1rem);
     margin: 0 0 8px 0;
@@ -201,13 +216,13 @@ h6 {
     padding: 0;
 }
 
-h6 a {
+footer h6 a {
     color: var(--secondary);
     text-decoration: none;
     text-decoration-color: var(--text);
 }
 
-h6 a:hover {
+footer h6 a:hover {
     color: var(--primary);
     text-decoration: underline;
 }
