@@ -4,7 +4,7 @@
     --shadow-inset: #d6d6e7;
     --placeholder: rgb(128, 128, 128);
 
-    --font-size: clamp(0.6rem, 4vw, 1, 1rem);
+    --font-size: clamp(0.85rem, 3.5vw, 1rem);
 }
 
 @media (prefers-color-scheme: light) {
@@ -100,6 +100,7 @@ label {
     overflow: hidden;
     transition: transform 0.15s;
     padding-left: 8px;
+    min-width: 0;
 
     flex: 1;
 }
@@ -135,5 +136,5 @@ textarea {
     overflow: auto;
 
     /* flex-basis (100px) carrying here (makes p actually overflow, not the panel) */
-    flex: 1 1 150px;
+    flex: 1 1 100px;
 }

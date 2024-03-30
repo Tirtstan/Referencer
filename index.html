@@ -30,18 +30,8 @@
                         <option value="OnlineImage">Online Image</option>
                     </select>
                 </div>
-                <div id="pnlMedia" class="info-panel inner-panel">
-                    <label for="authors"><u>Authors:</u></label>
-                    <div class="next-to">
-                        <input
-                            type="text"
-                            name="authors"
-                            id="txtAuthors"
-                            class="input-device input-box-1"
-                            placeholder="Name And/Or Surname" />
-                        <button id="btnAdd" class="input-device button-1 add-button">Add</button>
-                        <button id="btnClear" class="input-device button-1">Clear</button>
-                    </div>
+                <div id="pnlMedia">
+                    <book-element></book-element>
                 </div>
             </section>
             <section class="right-section">
@@ -50,9 +40,11 @@
                     <p id="txtParaQuote" class="input-device output-area"></p>
                 </div>
                 <div class="info-panel inner-panel">
-                    <label for="reference list"><u>Reference List:</u></label>
+                    <div class="space-between">
+                        <label for="reference list"><u>Reference List:</u></label>
+                        <button class="input-device button-1">Copy</button>
+                    </div>
                     <p id="txtReferenceList" class="input-device output-area"></p>
-                    <button id="btnCopy" class="input-device button-1">Copy</button>
                 </div>
             </section>
         </main>
