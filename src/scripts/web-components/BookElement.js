@@ -3,7 +3,7 @@ import Book from "../media/Book.js";
 
 class BookElement extends HTMLElement {
     connectedCallback() {
-        this.innerHTML = `<div class="info-panel inner-panel">
+        this.innerHTML = `  <div class="info-panel inner-panel">
                         <label for="authors"><u>Authors:</u></label>
                         <div class="next-to">
                             <input
@@ -12,7 +12,7 @@ class BookElement extends HTMLElement {
                                 id="txtAuthors"
                                 class="input-device input-box-1"
                                 placeholder="Name And/Or Surname" />
-                            <button id="btnAdd" class="input-device button-1 add-button">Add</button>
+                            <button id="btnAdd" class="input-device button-1">Add</button>
                             <button id="btnClear" class="input-device button-1">Clear</button>
                         </div>
                         <textarea name="authors output" id="txtAuthorsOutput" class="input-device" readonly></textarea>
@@ -58,7 +58,8 @@ class BookElement extends HTMLElement {
                                 placeholder="Publication Place" />
                             <label for="format"><u>Format:</u></label>
                             <button id="btnFormat" class="input-device button-1">Format</button>
-                        </div>`;
+                        </div>
+                    </div>`;
 
         const btnAdd = document.getElementById("btnAdd");
         const btnClear = document.getElementById("btnClear");
@@ -81,7 +82,7 @@ class BookElement extends HTMLElement {
         txtEditionNum.value = 1;
 
         btnAdd.addEventListener("click", () => {
-            if (txtAuthors.value === null || txtAuthors.value === "") {
+            if (Utilities.isNullOrEmpty(txtAuthors.value)) {
                 return;
             }
 

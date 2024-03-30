@@ -89,7 +89,7 @@ class OnlineImageElement extends HTMLElement {
         txtYear.value = date.getFullYear();
 
         btnAdd.addEventListener("click", () => {
-            if (txtAuthors.value === null || txtAuthors.value === "") {
+            if (Utilities.isNullOrEmpty(txtAuthors.value)) {
                 return;
             }
 
