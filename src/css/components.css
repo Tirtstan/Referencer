@@ -42,7 +42,6 @@
     overflow: hidden;
     text-align: center;
     transition: transform 0.15s;
-    will-change: transform;
     min-width: 120px;
 }
 
@@ -67,7 +66,6 @@
     padding-left: 4px;
     text-align: left;
     transition: transform 0.15s;
-    will-change: transform;
 
     margin: 0 0 0 8px;
 }
@@ -86,7 +84,6 @@
     list-style: none;
     overflow: hidden;
     transition: transform 0.15s;
-    will-change: transform;
     padding-left: 8px;
 }
 
