@@ -1,3 +1,6 @@
 /** @type {import('vite').UserConfig} */
+import { defineConfig } from "vite";
 
-export default { base: "/Referencer/" };
+export default defineConfig({
+    base: "/Referencer/",
+});
