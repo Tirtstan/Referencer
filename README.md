@@ -17,6 +17,7 @@ I am also creating this as a means to learn some web dev! It's been _interesting
 -   Books (with one or multiple authors)
 -   YouTube Videos
 -   Online Images
+-   Websites
 
 ### 2. Add/Clear Your Author(s)
 
