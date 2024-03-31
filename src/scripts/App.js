@@ -1,4 +1,5 @@
 import { gapi } from "gapi-script";
+import Utilities from "./helpers/Utilities.js";
 
 const slctMedia = document.getElementById("slctMedia");
 const pnlMedia = document.getElementById("pnlMedia");
@@ -25,7 +26,7 @@ slctMedia.addEventListener("change", (event) => {
 });
 
 btnCopy.addEventListener("click", () => {
-    if (txtReferenceList.value === null || txtReferenceList.value === "") {
+    if (Utilities.isNullOrEmpty(txtReferenceList.value)) {
         return;
     }
 
@@ -54,7 +55,7 @@ async function copyToClipboard(rich, plain) {
 
 function start() {
     const apiKey = import.meta.env.VITE_YOUTUBE_API_KEY;
-    if (apiKey === null || apiKey === undefined || apiKey === "") {
+    if (Utilities.isNullOrEmpty(apiKey)) {
         console.warn("YouTube API key not found");
         return;
     }

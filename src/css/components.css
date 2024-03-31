@@ -123,6 +123,7 @@ textarea {
     text-decoration: none;
     resize: none;
     padding: 8px;
+    overflow: auto;
 }
 
 .output-area {

@@ -42,7 +42,7 @@ export default class OnlineImage {
         const referenceList = `${this.pubName}. ${strYear}. <em>${this.articleTitle}</em>. [Online]. Available at: ${this.link} [Accessed ${formattedDate}]`;
         const figureList = `Figure 1: ${formattedAuthors} ${strYear}. <em>${this.title}</em>.`;
 
-        return `<u>In The Reference List:</u><br><br>${referenceList}<br><br><u>In The List of Figures:</u><br><br>${figureList}`;
+        return `<u><strong>In The Reference List:</strong></u><br><br>${referenceList}<br><br><u><strong>In The List of Figures:</strong></u><br><br>${figureList}`;
     }
 
     getParaphrased() {
