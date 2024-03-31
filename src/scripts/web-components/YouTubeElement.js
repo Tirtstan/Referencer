@@ -61,8 +61,14 @@ class YouTubeElement extends HTMLElement {
         dtAccessedWhen.valueAsDate = date;
         txtYear.value = date.getFullYear();
 
+        let previousLink = "";
+
         btnAutoFill.addEventListener("click", () => {
             if (Utilities.isNullOrEmpty(txtLink.value) || !YouTubeHelper.isYouTubeLink(txtLink.value)) {
+                return;
+            }
+
+            if (previousLink === txtLink.value) {
                 return;
             }
 
@@ -87,6 +93,8 @@ class YouTubeElement extends HTMLElement {
                         console.error("Execute error", err);
                     }
                 );
+
+            previousLink = txtLink.value;
         });
 
         btnFormat.addEventListener("click", FillInfo);

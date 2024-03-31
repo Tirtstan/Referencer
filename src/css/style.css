@@ -28,7 +28,9 @@
     --acc-border-color: #e7e7e7;
     --bg-text: #595f66;
     --box-shadow: rgba(45, 35, 66, 0.4);
+
     --github: url(../images/github-mark-white.svg);
+    --twitter: url(../images/twitter-logo-white.svg);
 }
 
 @media (prefers-color-scheme: light) {
@@ -44,7 +46,9 @@
         --bg-border-color: #cecfcf;
         --acc-border-color: #4e4e55;
         --bg-text: #868788;
+
         --github: url(../images/github-mark.svg);
+        --twitter: url(../images/twitter-logo.svg);
     }
 }
 
@@ -98,6 +102,7 @@ header {
 .title {
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
 }
 
 .title h6 {
@@ -110,18 +115,25 @@ header {
     padding: 0;
 }
 
-.gh-logo {
-    background-image: var(--github);
+.logo {
     background-size: contain;
     background-repeat: no-repeat;
-    margin: 8px;
-    width: 30px;
-    height: 30px;
+    margin: 0 0 0 8px;
+    width: 32px;
+    height: 32px;
     transition: transform 0.15s;
 }
 
-.gh-logo:hover {
+.logo:hover {
     transform: translateY(-2px);
+}
+
+.gh-logo {
+    background-image: var(--github);
+}
+
+.twitter-logo {
+    background-image: var(--twitter);
 }
 
 header a {
