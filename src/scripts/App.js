@@ -22,6 +22,9 @@ slctMedia.addEventListener("change", (event) => {
         case "Website":
             pnlMedia.innerHTML = "<website-element></website-element>";
             break;
+        case "VideoGame":
+            pnlMedia.innerHTML = "<video-game-element></video-game-element>";
+            break;
     }
 
     txtParaQuote.innerHTML = "";
