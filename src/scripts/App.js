@@ -35,7 +35,7 @@ slctMedia.addEventListener("change", (event) => {
 });
 
 btnCopy.addEventListener("click", () => {
-    if (Utilities.isNullOrEmpty(txtReferenceList.value)) {
+    if (Utilities.isNullOrEmpty(txtReferenceList.textContent)) {
         return;
     }
 

@@ -4,16 +4,13 @@ import Pinterest from "../media/Pinterest.js";
 class PinterestElement extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `<div class="info-panel inner-panel">
-                        <label for="link"><u>Link:</u></label>
-                        <div class="next-to">
-                            <input
-                                type="url"
-                                name="link"
-                                id="txtLink"
-                                class="input-device input-box-1"
-                                placeholder="Link" />
-                            <button id="btnAutoFill" class="input-device button-1">Auto Fill</button>
-                        </div>
+                        <label for="pinterest link"><u>Pinterest Link:</u></label>
+                        <input
+                            type="url"
+                            name="pinterest link"
+                            id="txtLink"
+                            class="input-device input-box-1"
+                            placeholder="Pinterest Link" />
                         <label for="original link"><u>Original Link:</u></label>
                         <input
                             type="url"
@@ -50,7 +47,6 @@ class PinterestElement extends HTMLElement {
                         </div>
                     </div>`;
 
-        const btnAutoFill = document.getElementById("btnAutoFill");
         const btnFormat = document.getElementById("btnFormat");
 
         const txtLink = document.getElementById("txtLink");
@@ -66,10 +62,6 @@ class PinterestElement extends HTMLElement {
         const date = new Date();
         dtAccessedWhen.valueAsDate = date;
         txtYear.value = date.getFullYear();
-
-        btnAutoFill.addEventListener("click", () => {
-            console.log("soon...");
-        });
 
         btnFormat.addEventListener("click", () => {
             if (Utilities.areNullOrEmpty(txtLink.value, txtAuthor.value, txtPicTitle.value)) {

@@ -16,14 +16,53 @@ export default class Pinterest {
         const formattedDate = date.format("DD MMMM YYYY");
         const currentLink = Utilities.isNullOrEmpty(this.originalLink) ? this.link : this.originalLink;
 
-        return `${this.author}. ${this.year}. <em>${this.picTitle}</em>. [Online]. Available at: ${currentLink} [Accessed ${formattedDate}]`;
+        if (Utilities.isNullOrEmpty(this.author)) {
+            this.author = "Anon";
+        }
+
+        this.author = Utilities.formatFullName(this.author);
+
+        let strYear = "";
+        if (this.year <= 0) {
+            strYear = "s.a";
+        } else {
+            strYear = this.year.toString();
+        }
+
+        return `${this.author}. ${strYear}. <em>${this.picTitle}</em>. [Online]. Available at: ${currentLink} [Accessed ${formattedDate}]`;
     }
 
     getParaphrased() {
-        return `In Figure 1, ${this.author}'s (${this.year}) image demonstrates...`;
+        if (Utilities.isNullOrEmpty(this.author)) {
+            this.author = "Anon";
+        }
+
+        this.author = Utilities.formatFullName(this.author);
+
+        let strYear = "";
+        if (this.year <= 0) {
+            strYear = "s.a";
+        } else {
+            strYear = this.year.toString();
+        }
+
+        return `In Figure 1, ${this.author}'s (${strYear}) image demonstrates...`;
     }
 
     getQuote() {
-        return `Figure 1: ${this.author}. ${this.year}. <em>${this.picTitle}</em> (${this.author}, ${this.year})`;
+        if (Utilities.isNullOrEmpty(this.author)) {
+            this.author = "Anon";
+        }
+
+        this.author = Utilities.formatFullName(this.author);
+
+        let strYear = "";
+        if (this.year <= 0) {
+            strYear = "s.a";
+        } else {
+            strYear = this.year.toString();
+        }
+
+        return `Figure 1: ${this.author}. ${strYear}. <em>${this.picTitle}</em> (${this.author}, ${strYear})`;
     }
 }
