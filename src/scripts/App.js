@@ -25,6 +25,9 @@ slctMedia.addEventListener("change", (event) => {
         case "VideoGame":
             pnlMedia.innerHTML = "<video-game-element></video-game-element>";
             break;
+        case "Pinterest":
+            pnlMedia.innerHTML = "<pinterest-element></pinterest-element>";
+            break;
     }
 
     txtParaQuote.innerHTML = "";
