@@ -21,12 +21,27 @@ export default class VideoGame {
 
         this.author = Utilities.formatFullName(this.author);
 
-        return `${this.author}. ${this.year}. <em>${this.gameTitle}</em> [Online Digital Game], ${this.platform}. ${this.pubPlace}: ${this.pubName}.`;
+        let strYear = "";
+        if (this.year <= 0) {
+            strYear = "s.a";
+        } else {
+            strYear = this.year.toString();
+        }
+
+        return `${this.author}. ${strYear}. <em>${this.gameTitle}</em> [Online Digital Game], ${this.platform}. ${this.pubPlace}: ${this.pubName}.`;
     }
 
     getParaphrased() {
         const surname = Utilities.getSurname(this.author);
-        return `... (${surname}, ${this.year})`;
+
+        let strYear = "";
+        if (this.year <= 0) {
+            strYear = "s.a";
+        } else {
+            strYear = this.year.toString();
+        }
+
+        return `... (${surname}, ${strYear})`;
     }
 
     getQuote() {

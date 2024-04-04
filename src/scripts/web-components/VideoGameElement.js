@@ -67,6 +67,8 @@ class VideoGameElement extends HTMLElement {
         const txtParaQuote = document.getElementById("txtParaQuote");
         const txtReferenceList = document.getElementById("txtReferenceList");
 
+        txtYear.value = new Date().getFullYear();
+
         btnFormat.addEventListener("click", () => {
             if (Utilities.areNullOrEmpty(txtGameTitle.value, txtPlatform.value, txtPubPlace.value)) {
                 return;

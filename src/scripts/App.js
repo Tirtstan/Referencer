@@ -25,6 +25,9 @@ slctMedia.addEventListener("change", (event) => {
         case "VideoGame":
             pnlMedia.innerHTML = "<video-game-element></video-game-element>";
             break;
+        case "Pinterest":
+            pnlMedia.innerHTML = "<pinterest-element></pinterest-element>";
+            break;
     }
 
     txtParaQuote.innerHTML = "";
@@ -32,7 +35,7 @@ slctMedia.addEventListener("change", (event) => {
 });
 
 btnCopy.addEventListener("click", () => {
-    if (Utilities.isNullOrEmpty(txtReferenceList.value)) {
+    if (Utilities.isNullOrEmpty(txtReferenceList.textContent)) {
         return;
     }
 
