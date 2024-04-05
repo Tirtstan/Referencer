@@ -8,26 +8,13 @@ export default class Book {
         this.pubPlace = pubPlace;
         this.pubName = pubName;
         this.authors = authors;
-    }
 
-    toString() {
-        let formattedAuthors = "";
         if (Utilities.isNullOrEmpty(this.authors[0])) {
-            formattedAuthors = "Anon.";
-        } else {
-            const formattedNames = new Array(this.authors.length);
-            for (let i = 0; i < formattedNames.length; i++) {
-                formattedNames[i] = Utilities.formatFullName(this.authors[i]);
-            }
-
-            formattedAuthors = Utilities.listNamesWithPeriods(formattedNames, "and");
+            this.authors = ["Anon"];
         }
 
-        let strYear = "";
         if (this.year <= 0) {
-            strYear = "[s.a.]";
-        } else {
-            strYear = this.year.toString();
+            this.year = "s.a";
         }
 
         if (Utilities.isNullOrEmpty(this.pubPlace)) {
@@ -37,10 +24,17 @@ export default class Book {
         if (Utilities.isNullOrEmpty(this.pubName)) {
             this.pubName = "s.n";
         }
+    }
+
+    toString() {
+        const formattedNames = new Array(this.authors.length);
+        for (let i = 0; i < formattedNames.length; i++) {
+            formattedNames[i] = Utilities.formatFullName(this.authors[i]);
+        }
 
         const edition = this.editionNum > 1 ? ` ${Utilities.addOrdinal(this.editionNum)} ed. ` : "";
 
-        return `${formattedAuthors} ${strYear}. <em>${this.bookName}</em>.
+        return `${Utilities.listNamesWithPeriods(formattedNames, "and")} ${this.year}. <em>${this.bookName}</em>.
         ${edition} ${this.pubPlace}: ${this.pubName}.`;
     }
 
@@ -51,23 +45,16 @@ export default class Book {
             surnames[i] = Utilities.getSurname(this.authors[i]);
         }
 
-        let strYear = "";
-        if (this.year <= 0) {
-            strYear = "s.a.";
-        } else {
-            strYear = this.year.toString();
-        }
-
         if (this.authors.length === 1) {
-            output = `${surnames[0]} (${strYear}) argues...<br><strong>OR</strong><br>... (${surnames[0]}, ${strYear})`;
+            output = `${surnames[0]} (${this.year}) argues...<br><strong>OR</strong><br>... (${surnames[0]}, ${this.year})`;
         } else if (this.authors.length >= 2) {
             output = "<u>For first use...</u><br>";
-            output += `${Utilities.listNames(surnames, "and")} (${strYear}) assert...<br><strong>OR</strong><br>`;
-            output += `...(${Utilities.listNames(surnames, "&")}, ${strYear})`;
+            output += `${Utilities.listNames(surnames, "and")} (${this.year}) assert...<br><strong>OR</strong><br>`;
+            output += `...(${Utilities.listNames(surnames, "&")}, ${this.year})`;
 
             output += "<br><br><u>For after first use...</u><br>";
-            output += `${surnames[0]} et al. (${strYear}) argues...<br><strong>OR</strong><br>`;
-            output += `(${surnames[0]} et al., ${strYear})`;
+            output += `${surnames[0]} et al. (${this.year}) argues...<br><strong>OR</strong><br>`;
+            output += `(${surnames[0]} et al., ${this.year})`;
         }
 
         return output;
@@ -80,23 +67,16 @@ export default class Book {
             surnames[i] = Utilities.getSurname(this.authors[i]);
         }
 
-        let strYear = "";
-        if (this.year <= 0) {
-            strYear = "s.a.";
-        } else {
-            strYear = this.year.toString();
-        }
-
         if (this.authors.length === 1) {
-            output = `According to ${surnames[0]} (${strYear}: page num)<br><strong>OR</strong><br>...(${surnames[0]}, ${strYear}: page num)`;
+            output = `According to ${surnames[0]} (${this.year}: page num)<br><strong>OR</strong><br>...(${surnames[0]}, ${this.year}: page num)`;
         } else if (this.authors.length >= 2) {
             output = "<u>For first use...</u><br>";
-            output += `${Utilities.listNames(surnames, "and")} (${strYear}: page num)<br><strong>OR</strong><br>`;
-            output += `...(${Utilities.listNames(surnames, "&")}, ${strYear}: page num)`;
+            output += `${Utilities.listNames(surnames, "and")} (${this.year}: page num)<br><strong>OR</strong><br>`;
+            output += `...(${Utilities.listNames(surnames, "&")}, ${this.year}: page num)`;
 
             output += "<br><br><u>For after first use...</u><br>";
-            output += `${surnames[0]} et al. (${strYear}: page num) argues...<br><strong>OR</strong><br>`;
-            output += `(${surnames[0]} et al., ${strYear}: page num)`;
+            output += `${surnames[0]} et al. (${this.year}: page num) argues...<br><strong>OR</strong><br>`;
+            output += `(${surnames[0]} et al., ${this.year}: page num)`;
         }
 
         return output;

@@ -9,6 +9,14 @@ export default class Pinterest {
         this.link = link;
         this.originalLink = originalLink;
         this.accessedWhen = accessedWhen;
+
+        if (Utilities.isNullOrEmpty(this.author)) {
+            this.author = "Anon";
+        }
+
+        if (this.year <= 0) {
+            this.year = "s.a";
+        }
     }
 
     toString() {
@@ -16,53 +24,18 @@ export default class Pinterest {
         const formattedDate = date.format("DD MMMM YYYY");
         const currentLink = Utilities.isNullOrEmpty(this.originalLink) ? this.link : this.originalLink;
 
-        if (Utilities.isNullOrEmpty(this.author)) {
-            this.author = "Anon";
-        }
-
-        let formattedAuthor = Utilities.formatFullName(this.author);
-
-        let strYear = "";
-        if (this.year <= 0) {
-            strYear = "s.a";
-        } else {
-            strYear = this.year.toString();
-        }
-
-        return `${formattedAuthor}. ${strYear}. <em>${this.picTitle}</em>. [Online]. Available at: ${currentLink} [Accessed ${formattedDate}]`;
+        return `${Utilities.formatFullName(this.author)}. ${this.year}. <em>${
+            this.picTitle
+        }</em>. [Online]. Available at: ${currentLink} [Accessed ${formattedDate}]`;
     }
 
     getParaphrased() {
-        if (Utilities.isNullOrEmpty(this.author)) {
-            this.author = "Anon";
-        }
-
-        let formattedAuthor = Utilities.formatFullName(this.author);
-
-        let strYear = "";
-        if (this.year <= 0) {
-            strYear = "s.a";
-        } else {
-            strYear = this.year.toString();
-        }
-
-        return `In Figure 1, ${formattedAuthor}'s (${strYear}) image demonstrates...`;
+        return `In Figure 1, ${Utilities.formatFullName(this.author)}'s (${this.year}) image demonstrates...`;
     }
 
     getQuote() {
-        if (Utilities.isNullOrEmpty(this.author)) {
-            this.author = "Anon";
-        }
-
-        let formattedAuthor = Utilities.formatFullName(this.author);
-
-        let strYear = "";
-        if (this.year <= 0) {
-            strYear = "s.a";
-        } else {
-            strYear = this.year.toString();
-        }
-
-        return `Figure 1: ${formattedAuthor}. ${strYear}. <em>${this.picTitle}</em> (${this.author}, ${strYear})`;
+        return `Figure 1: ${Utilities.formatFullName(this.author)}. ${this.year}. <em>${this.picTitle}</em> (${
+            this.author
+        }, ${this.year})`;
     }
 }

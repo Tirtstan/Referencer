@@ -8,40 +8,38 @@ export default class VideoGame {
         this.platform = platform;
         this.pubPlace = pubPlace;
         this.pubName = pubName;
-    }
 
-    toString() {
         if (Utilities.isNullOrEmpty(this.author)) {
-            this.author = Utilities.isNullOrEmpty(this.author) ? "Anon" : this.author;
+            if (Utilities.isNullOrEmpty(this.pubName)) {
+                this.author = "Anon";
+            } else {
+                this.author = this.pubName;
+            }
+        }
+
+        if (this.year <= 0) {
+            this.year = "s.a";
+        }
+
+        if (Utilities.isNullOrEmpty(this.pubPlace)) {
+            this.pubPlace = "s.l";
         }
 
         if (Utilities.isNullOrEmpty(this.pubName)) {
             this.pubName = "s.n";
         }
+    }
 
-        this.author = Utilities.formatFullName(this.author);
+    toString() {
+        const formattedName = this.author === this.pubName ? this.author : Utilities.formatFullName(this.author);
 
-        let strYear = "";
-        if (this.year <= 0) {
-            strYear = "s.a";
-        } else {
-            strYear = this.year.toString();
-        }
-
-        return `${this.author}. ${strYear}. <em>${this.gameTitle}</em> [Online Digital Game], ${this.platform}. ${this.pubPlace}: ${this.pubName}.`;
+        return `${formattedName}. ${this.year}. <em>${this.gameTitle}</em> [Online Digital Game], ${this.platform}. ${this.pubPlace}: ${this.pubName}.`;
     }
 
     getParaphrased() {
-        const surname = Utilities.getSurname(this.author);
+        const formattedName = this.author === this.pubName ? this.author : Utilities.getSurname(this.author);
 
-        let strYear = "";
-        if (this.year <= 0) {
-            strYear = "s.a";
-        } else {
-            strYear = this.year.toString();
-        }
-
-        return `... (${surname}, ${strYear})`;
+        return `... (${formattedName}, ${this.year})`;
     }
 
     getQuote() {
