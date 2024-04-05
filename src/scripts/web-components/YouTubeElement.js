@@ -22,7 +22,7 @@ class YouTubeElement extends HTMLElement {
                             name="video title"
                             id="txtVideoTitle"
                             class="input-device input-box-1"
-                            placeholder="Video Title" />
+                            placeholder="Title" />
                         <label for="channel"><u>Channel:</u></label>
                         <input
                             type="text"

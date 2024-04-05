@@ -22,14 +22,14 @@ class OnlineImageElement extends HTMLElement {
                             name="image title"
                             id="txtImgTitle"
                             class="input-device input-box-1"
-                            placeholder="Image Title" />
+                            placeholder="Title" />
                         <label for="article title"><u>Article Title:</u></label>
                         <input
                             type="text"
                             name="article title"
                             id="txtArticleTitle"
                             class="input-device input-box-1"
-                            placeholder="Article Title" />
+                            placeholder="Title" />
                         <label for="link"><u>Link:</u></label>
                         <input
                             type="url"
@@ -59,7 +59,7 @@ class OnlineImageElement extends HTMLElement {
                                 name="publication name"
                                 id="txtPubName"
                                 class="input-device input-box-1"
-                                placeholder="Publication Name" />
+                                placeholder="Name" />
                             <label for="format"><u>Format:</u></label>
                             <button id="btnFormat" class="input-device button-1">Format</button>
                         </div>

@@ -10,92 +10,56 @@ export default class OnlineImage {
         this.pubName = pubName;
         this.accessedWhen = accessedWhen;
         this.link = link;
+
+        if (Utilities.isNullOrEmpty(this.authors[0])) {
+            this.authors = ["Anon"];
+        }
+
+        if (this.year <= 0) {
+            this.year = "s.a";
+        }
+
+        if (Utilities.isNullOrEmpty(this.pubName)) {
+            this.pubName = "s.n";
+        }
     }
 
     toString() {
         const date = moment(this.accessedWhen);
         const formattedDate = date.format("DD MMMM YYYY");
 
-        let formattedAuthors = "";
-        if (Utilities.isNullOrEmpty(this.authors[0])) {
-            formattedAuthors = "Anon.";
-        } else {
-            const formattedNames = new Array(this.authors.length);
-            for (let i = 0; i < formattedNames.length; i++) {
-                formattedNames[i] = Utilities.formatFullName(this.authors[i]);
-            }
-
-            formattedAuthors = Utilities.listNamesWithPeriods(formattedNames, "and");
+        const formattedNames = new Array(this.authors.length);
+        for (let i = 0; i < formattedNames.length; i++) {
+            formattedNames[i] = Utilities.formatFullName(this.authors[i]);
         }
 
-        let strYear = "";
-        if (this.year <= 0) {
-            strYear = "[s.a.]";
-        } else {
-            strYear = this.year.toString();
-        }
-
-        if (Utilities.isNullOrEmpty(this.pubName)) {
-            this.pubName = "s.n";
-        }
-
-        const referenceList = `${this.pubName}. ${strYear}. <em>${this.articleTitle}</em>. [Online]. Available at: ${this.link} [Accessed ${formattedDate}]`;
-        const figureList = `Figure 1: ${formattedAuthors} ${strYear}. <em>${this.title}</em>.`;
+        const referenceList = `${this.pubName}. ${this.year}. <em>${this.articleTitle}</em>. [Online]. Available at: ${this.link} [Accessed ${formattedDate}]`;
+        const figureList = `Figure 1: ${Utilities.listNamesWithPeriods(formattedNames, "and")} ${this.year}. <em>${
+            this.title
+        }</em>.`;
 
         return `<u><strong>In The Reference List:</strong></u><br><br>${referenceList}<br><br><u><strong>In The List of Figures:</strong></u><br><br>${figureList}`;
     }
 
     getParaphrased() {
-        let formattedAuthors = "";
-        if (Utilities.isNullOrEmpty(this.authors[0])) {
-            formattedAuthors = "Anon";
-        } else {
-            const surnames = new Array(this.authors.length);
-            for (let i = 0; i < surnames.length; i++) {
-                surnames[i] = Utilities.getSurname(this.authors[i]);
-            }
-
-            formattedAuthors = Utilities.listNames(surnames, "and");
+        const surnames = new Array(this.authors.length);
+        for (let i = 0; i < surnames.length; i++) {
+            surnames[i] = Utilities.getSurname(this.authors[i]);
         }
 
-        let strYear = "";
-        if (this.year <= 0) {
-            strYear = "s.a.";
-        } else {
-            strYear = this.year.toString();
-        }
-
-        if (Utilities.isNullOrEmpty(this.pubName)) {
-            this.pubName = "s.n.";
-        }
-
-        return `In ${formattedAuthors}'s (${strYear}) image, <em>${this.title}</em>, it is evident that...`;
+        return `In ${Utilities.listNames(surnames, "and")}'s (${this.year}) image, <em>${
+            this.title
+        }</em>, it is evident that...`;
     }
 
     getQuote() {
-        let formattedAuthors = "";
-        if (Utilities.isNullOrEmpty(this.authors[0])) {
-            formattedAuthors = "Anon.";
-        } else {
-            const formattedNames = new Array(this.authors.length);
-            for (let i = 0; i < formattedNames.length; i++) {
-                formattedNames[i] = Utilities.formatFullName(this.authors[i]);
-            }
-
-            formattedAuthors = Utilities.listNamesWithPeriods(formattedNames, "and");
+        const formattedNames = new Array(this.authors.length);
+        for (let i = 0; i < formattedNames.length; i++) {
+            formattedNames[i] = Utilities.formatFullName(this.authors[i]);
         }
 
-        let strYear = "";
-        if (this.year <= 0) {
-            strYear = "[s.a.]";
-        } else {
-            strYear = this.year.toString();
-        }
-
-        if (Utilities.isNullOrEmpty(this.pubName)) {
-            this.pubName = "s.n.";
-        }
-
-        return `Figure 1: ${formattedAuthors} ${strYear}, <em>${this.articleTitle}</em>. (${this.pubName}, ${strYear})`;
+        return `Figure 1: ${Utilities.listNamesWithPeriods(formattedNames, "and")} ${this.year}, <em>${
+            this.articleTitle
+        }</em>. (${this.pubName}, ${this.year})`;
     }
 }

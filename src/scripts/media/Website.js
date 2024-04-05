@@ -8,21 +8,23 @@ export default class Website {
         this.datePublished = datePublished;
         this.link = link;
         this.accessedWhen = accessedWhen;
+
+        if (Utilities.isNullOrEmpty(this.author)) {
+            this.author = "Anon";
+        }
+
+        if (Utilities.isNullOrEmpty(this.datePublished)) {
+            this.datePublished = "n.d";
+            this.year = "s.a";
+        } else {
+            const published = moment(this.datePublished);
+
+            this.datePublished = published.format("DD MMMM YYYY");
+            this.year = new Date(this.datePublished).getFullYear();
+        }
     }
 
     toString() {
-        let formattedDatePublished = "";
-        let strYear = "";
-        if (Utilities.isNullOrEmpty(this.datePublished)) {
-            formattedDatePublished = "n.d";
-            strYear = "s.a";
-        } else {
-            const published = moment(this.datePublished);
-            formattedDatePublished = published.format("DD MMMM YYYY");
-
-            strYear = new Date(this.datePublished).getFullYear();
-        }
-
         const accessed = moment(this.accessedWhen);
         const formattedAccessedWhen = accessed.format("DD MMMM YYYY");
 
@@ -30,30 +32,14 @@ export default class Website {
             this.author = "Anon";
         }
 
-        return `${this.author}. ${strYear}. ${this.articleTitle}, ${formattedDatePublished}. [Online]. Available at: ${this.link} [Accessed ${formattedAccessedWhen}]`;
+        return `${this.author}. ${this.year}. ${this.articleTitle}, ${this.datePublished}. [Online]. Available at: ${this.link} [Accessed ${formattedAccessedWhen}]`;
     }
 
     getParaphrased() {
-        if (Utilities.isNullOrEmpty(this.author)) {
-            this.author = "Anon";
-        }
-
-        const strYear = Utilities.isNullOrEmpty(this.datePublished)
-            ? "s.a"
-            : new Date(this.datePublished).getFullYear();
-
-        return `... (${this.author}, ${strYear})`;
+        return `... (${this.author}, ${this.year})`;
     }
 
     getQuote() {
-        if (Utilities.isNullOrEmpty(this.author)) {
-            this.author = "Anon";
-        }
-
-        const strYear = Utilities.isNullOrEmpty(this.datePublished)
-            ? "s.a"
-            : new Date(this.datePublished).getFullYear();
-
-        return `According to ${this.author} (${strYear}) ...`;
+        return `According to ${this.author} (${this.year}) ...`;
     }
 }
