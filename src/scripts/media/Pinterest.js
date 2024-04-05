@@ -20,7 +20,7 @@ export default class Pinterest {
             this.author = "Anon";
         }
 
-        this.author = Utilities.formatFullName(this.author);
+        let formattedAuthor = Utilities.formatFullName(this.author);
 
         let strYear = "";
         if (this.year <= 0) {
@@ -29,7 +29,7 @@ export default class Pinterest {
             strYear = this.year.toString();
         }
 
-        return `${this.author}. ${strYear}. <em>${this.picTitle}</em>. [Online]. Available at: ${currentLink} [Accessed ${formattedDate}]`;
+        return `${formattedAuthor}. ${strYear}. <em>${this.picTitle}</em>. [Online]. Available at: ${currentLink} [Accessed ${formattedDate}]`;
     }
 
     getParaphrased() {
@@ -37,7 +37,7 @@ export default class Pinterest {
             this.author = "Anon";
         }
 
-        this.author = Utilities.formatFullName(this.author);
+        let formattedAuthor = Utilities.formatFullName(this.author);
 
         let strYear = "";
         if (this.year <= 0) {
@@ -46,7 +46,7 @@ export default class Pinterest {
             strYear = this.year.toString();
         }
 
-        return `In Figure 1, ${this.author}'s (${strYear}) image demonstrates...`;
+        return `In Figure 1, ${formattedAuthor}'s (${strYear}) image demonstrates...`;
     }
 
     getQuote() {
@@ -54,7 +54,7 @@ export default class Pinterest {
             this.author = "Anon";
         }
 
-        this.author = Utilities.formatFullName(this.author);
+        let formattedAuthor = Utilities.formatFullName(this.author);
 
         let strYear = "";
         if (this.year <= 0) {
@@ -63,6 +63,6 @@ export default class Pinterest {
             strYear = this.year.toString();
         }
 
-        return `Figure 1: ${this.author}. ${strYear}. <em>${this.picTitle}</em> (${this.author}, ${strYear})`;
+        return `Figure 1: ${formattedAuthor}. ${strYear}. <em>${this.picTitle}</em> (${this.author}, ${strYear})`;
     }
 }
