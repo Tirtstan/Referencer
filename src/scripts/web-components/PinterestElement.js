@@ -10,14 +10,14 @@ class PinterestElement extends HTMLElement {
                             name="pinterest link"
                             id="txtLink"
                             class="input-device input-box-1"
-                            placeholder="Pinterest Link" />
+                            placeholder="Link" />
                         <label for="original link"><u>Original Link:</u></label>
                         <input
                             type="url"
                             name="original link"
                             id="txtOriginalLink"
                             class="input-device input-box-1"
-                            placeholder="Original Link" />
+                            placeholder="Link" />
                         <label for="author"><u>Author:</u></label>
                         <input
                             type="text"
@@ -31,7 +31,7 @@ class PinterestElement extends HTMLElement {
                             name="picture title"
                             id="txtPicTitle"
                             class="input-device input-box-1"
-                            placeholder="Picture Title" />
+                            placeholder="Title" />
                         <label for="date accessed"><u>Date Accessed:</u></label>
                         <input type="date" name="date accessed" id="dtAccessedWhen" class="input-device input-box-1" />
                         <div class="grid-input">

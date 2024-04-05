@@ -39,14 +39,14 @@ class BookElement extends HTMLElement {
                                 name="book name"
                                 id="txtBookName"
                                 class="input-device input-box-1"
-                                placeholder="Book Name" />
+                                placeholder="Name" />
                             <label for="publication name"><u>Publication Name:</u></label>
                             <input
                                 type="text"
                                 name="publication name"
                                 id="txtPubName"
                                 class="input-device input-box-1"
-                                placeholder="Publication Name" />
+                                placeholder="Name" />
                         </div>
                         <div class="grid-input">
                             <label for="publication place"><u>Publication Place:</u></label>
@@ -55,7 +55,7 @@ class BookElement extends HTMLElement {
                                 name="publication place"
                                 id="txtPubPlace"
                                 class="input-device input-box-1"
-                                placeholder="Publication Place" />
+                                placeholder="Place" />
                             <label for="format"><u>Format:</u></label>
                             <button id="btnFormat" class="input-device button-1">Format</button>
                         </div>

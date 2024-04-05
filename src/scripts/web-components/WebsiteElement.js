@@ -17,7 +17,7 @@ class WebsiteElement extends HTMLElement {
                             name="article title"
                             id="txtArticleTitle"
                             class="input-device input-box-1"
-                            placeholder="Article Title" />
+                            placeholder="Title" />
                         <label for="author"><u>Author:</u></label>
                         <input
                             type="text"
