@@ -81,6 +81,12 @@ class BookElement extends HTMLElement {
         txtYear.value = new Date().getFullYear();
         txtEditionNum.value = 1;
 
+        document.onkeydown = (e) => {
+            if (e.key === "Enter") {
+                btnAdd.click();
+            }
+        };
+
         btnAdd.addEventListener("click", () => {
             if (Utilities.isNullOrEmpty(txtAuthors.value)) {
                 return;
@@ -103,7 +109,6 @@ class BookElement extends HTMLElement {
 
         function displayAllAuthors() {
             pnlAuthors.innerHTML = "";
-
             for (let i = 0; i < authors.length; i++) {
                 pnlAuthors.innerHTML += `<chip-element index="${i}">${authors[i]}</chip-element>\n`;
             }
@@ -116,6 +121,10 @@ class BookElement extends HTMLElement {
         });
 
         btnFormat.addEventListener("click", () => {
+            if (Utilities.isNullOrEmpty(txtBookName.value)) {
+                return;
+            }
+
             const book = new Book(
                 txtYear.value,
                 txtBookName.value,

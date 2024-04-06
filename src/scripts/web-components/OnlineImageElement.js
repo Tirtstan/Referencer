@@ -15,7 +15,7 @@ class OnlineImageElement extends HTMLElement {
                             <button id="btnAdd" class="input-device button-1 add-button">Add</button>
                             <button id="btnClear" class="input-device button-1">Clear</button>
                         </div>
-                        <textarea name="authors output" id="txtAuthorsOutput" class="input-device" readonly></textarea>
+                        <div id="pnlAuthors" class="input-device chip-input"></div>
                         <label for="image title"><u>Image Title:</u></label>
                         <input
                             type="text"
@@ -70,7 +70,7 @@ class OnlineImageElement extends HTMLElement {
         const btnFormat = document.getElementById("btnFormat");
 
         const txtAuthors = document.getElementById("txtAuthors");
-        const txtAuthorsOutput = document.getElementById("txtAuthorsOutput");
+        const pnlAuthors = document.getElementById("pnlAuthors");
 
         const txtImgTitle = document.getElementById("txtImgTitle");
         const txtYear = document.getElementById("txtYear");
@@ -88,6 +88,12 @@ class OnlineImageElement extends HTMLElement {
         dtAccessedWhen.valueAsDate = date;
         txtYear.value = date.getFullYear();
 
+        document.onkeydown = (e) => {
+            if (e.key === "Enter") {
+                btnAdd.click();
+            }
+        };
+
         btnAdd.addEventListener("click", () => {
             if (Utilities.isNullOrEmpty(txtAuthors.value)) {
                 return;
@@ -95,17 +101,30 @@ class OnlineImageElement extends HTMLElement {
 
             authors.push(txtAuthors.value);
             txtAuthors.value = "";
-            txtAuthorsOutput.value = "";
+            displayAllAuthors();
 
-            for (let i = 0; i < authors.length; i++) {
-                txtAuthorsOutput.value = Utilities.listNames(authors, "and");
+            const removeButtons = document.querySelectorAll("button[id^='btnRemove']");
+            for (let i = 0; i < removeButtons.length; i++) {
+                removeButtons[i].addEventListener("click", () => {
+                    const index = removeButtons[i].parentElement.parentElement.getAttribute("index");
+                    authors.splice(index, 1);
+
+                    displayAllAuthors();
+                });
             }
         });
+
+        function displayAllAuthors() {
+            pnlAuthors.innerHTML = "";
+            for (let i = 0; i < authors.length; i++) {
+                pnlAuthors.innerHTML += `<chip-element index="${i}">${authors[i]}</chip-element>\n`;
+            }
+        }
 
         btnClear.addEventListener("click", () => {
             authors = [];
             txtAuthors.value = "";
-            txtAuthorsOutput.value = "";
+            pnlAuthors.innerHTML = "";
         });
 
         btnFormat.addEventListener("click", () => {
