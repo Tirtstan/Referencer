@@ -3,7 +3,7 @@ import Book from "../media/Book.js";
 
 class BookElement extends HTMLElement {
     connectedCallback() {
-        this.innerHTML = `<div class="info-panel inner-panel">
+        this.innerHTML = `  <div class="info-panel inner-panel">
                         <label for="authors"><u>Authors:</u></label>
                         <div class="next-to">
                             <input
@@ -15,7 +15,7 @@ class BookElement extends HTMLElement {
                             <button id="btnAdd" class="input-device button-1">Add</button>
                             <button id="btnClear" class="input-device button-1">Clear</button>
                         </div>
-                        <textarea name="authors output" id="txtAuthorsOutput" class="input-device" readonly></textarea>
+                        <div id="pnlAuthors" class="input-device chip-input"></div>
                         <div class="grid-input">
                             <label for="year"><u>Year:</u></label>
                             <input
@@ -66,7 +66,7 @@ class BookElement extends HTMLElement {
         const btnFormat = document.getElementById("btnFormat");
 
         const txtAuthors = document.getElementById("txtAuthors");
-        const txtAuthorsOutput = document.getElementById("txtAuthorsOutput");
+        const pnlAuthors = document.getElementById("pnlAuthors");
 
         const txtYear = document.getElementById("txtYear");
         const txtPubPlace = document.getElementById("txtPubPlace");
@@ -88,17 +88,31 @@ class BookElement extends HTMLElement {
 
             authors.push(txtAuthors.value);
             txtAuthors.value = "";
-            txtAuthorsOutput.value = "";
+            displayAllAuthors();
 
-            for (let i = 0; i < authors.length; i++) {
-                txtAuthorsOutput.value = Utilities.listNames(authors, "and");
+            const removeButtons = document.querySelectorAll("button[id^='btnRemove']");
+            for (let i = 0; i < removeButtons.length; i++) {
+                removeButtons[i].addEventListener("click", () => {
+                    const index = removeButtons[i].parentElement.parentElement.getAttribute("index");
+                    authors.splice(index, 1);
+
+                    displayAllAuthors();
+                });
             }
         });
+
+        function displayAllAuthors() {
+            pnlAuthors.innerHTML = "";
+
+            for (let i = 0; i < authors.length; i++) {
+                pnlAuthors.innerHTML += `<chip-element index="${i}">${authors[i]}</chip-element>\n`;
+            }
+        }
 
         btnClear.addEventListener("click", () => {
             authors = [];
             txtAuthors.value = "";
-            txtAuthorsOutput.value = "";
+            pnlAuthors.innerHTML = "";
         });
 
         btnFormat.addEventListener("click", () => {
