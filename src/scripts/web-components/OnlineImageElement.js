@@ -102,7 +102,18 @@ class OnlineImageElement extends HTMLElement {
             authors.push(txtAuthors.value);
             txtAuthors.value = "";
             displayAllAuthors();
+        });
 
+        function displayAllAuthors() {
+            pnlAuthors.innerHTML = "";
+            for (let i = 0; i < authors.length; i++) {
+                pnlAuthors.innerHTML += `<chip-element index="${i}">${authors[i]}</chip-element>\n`;
+            }
+
+            displayChips();
+        }
+
+        function displayChips() {
             const removeButtons = document.querySelectorAll("button[id^='btnRemove']");
             for (let i = 0; i < removeButtons.length; i++) {
                 removeButtons[i].addEventListener("click", () => {
@@ -111,13 +122,6 @@ class OnlineImageElement extends HTMLElement {
 
                     displayAllAuthors();
                 });
-            }
-        });
-
-        function displayAllAuthors() {
-            pnlAuthors.innerHTML = "";
-            for (let i = 0; i < authors.length; i++) {
-                pnlAuthors.innerHTML += `<chip-element index="${i}">${authors[i]}</chip-element>\n`;
             }
         }
 
