@@ -22,8 +22,8 @@
     --primary: #97dfe3;
     --secondary: cadetblue;
     --accent: #fcfcfd;
-    --pri-border-color: #8fdbdf;
-    --sec-border-color: #72a0a1;
+    --pri-border-color: #aaf8fc;
+    --sec-border-color: #73bcbe;
     --bg-border-color: #464a4e;
     --acc-border-color: #e7e7e7;
     --bg-text: #595f66;
@@ -214,9 +214,18 @@ section {
     gap: 0px 8px;
 }
 
+.chip-input {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 8px;
+    min-height: 40px;
+    height: fit-content;
+}
+
 footer {
     margin: 20px 0 0 0;
-    max-width: 400px;
+    max-width: 500px;
     text-align: center;
 }
 

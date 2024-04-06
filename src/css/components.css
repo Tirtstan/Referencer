@@ -139,3 +139,36 @@ textarea {
     /* flex-basis (100px) carrying here (makes p actually overflow, not the panel) */
     flex: 1 1 100px;
 }
+
+.chip-1 {
+    color: var(--text);
+    display: flex;
+    gap: 8px;
+    background-color: var(--bg-border-color);
+    text-wrap: nowrap;
+    text-align: center;
+    width: fit-content;
+    padding: 8px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: var(--bg-text);
+}
+
+.chip-1 button {
+    color: var(--text);
+    font-family: var(--font-family);
+    font-weight: bold;
+    background: var(--bg-text);
+    border: solid;
+    border-width: 2px;
+    border-color: var(--bg-border-color);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-size: 10px;
+    cursor: pointer;
+    padding: 2px;
+    margin: 0;
+}
