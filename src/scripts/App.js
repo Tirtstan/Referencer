@@ -7,6 +7,8 @@ const btnCopy = document.getElementById("btnCopy");
 const txtParaQuote = document.getElementById("txtParaQuote");
 const txtReferenceList = document.getElementById("txtReferenceList");
 
+const toggle = document.getElementById("theme-toggle");
+
 slctMedia.addEventListener("change", (event) => {
     switch (event.target.value) {
         default:
@@ -35,12 +37,29 @@ slctMedia.addEventListener("change", (event) => {
 });
 
 btnCopy.addEventListener("click", () => {
-    if (Utilities.isNullOrEmpty(txtReferenceList.textContent)) {
+    if (Utilities.isNullOrEmpty(txtReferenceList.innerHTML)) {
         return;
     }
 
     copyToClipboard(txtReferenceList.innerHTML, txtReferenceList.textContent);
 });
+
+// https://lukelowrey.com/css-variable-theme-switcher/
+const storedTheme =
+    localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+if (storedTheme) document.documentElement.setAttribute("data-theme", storedTheme);
+
+toggle.onclick = function () {
+    const currentTheme = document.documentElement.getAttribute("data-theme");
+    let targetTheme = "light";
+
+    if (currentTheme === "light") {
+        targetTheme = "dark";
+    }
+
+    document.documentElement.setAttribute("data-theme", targetTheme);
+    localStorage.setItem("theme", targetTheme);
+};
 
 // https://stackoverflow.com/questions/23934656/how-can-i-copy-rich-text-contents-to-the-clipboard-with-javascript/77305170#77305170
 async function copyToClipboard(rich, plain) {
