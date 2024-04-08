@@ -1,20 +1,3 @@
-:root {
-    --input-text: #36395a;
-    --shadow: 45, 35, 66;
-    --shadow-inset: #d6d6e7;
-    --placeholder: rgb(128, 128, 128);
-
-    --font-size: clamp(0.85rem, 3.5vw, 1rem);
-}
-
-@media (prefers-color-scheme: light) {
-    :root {
-        --input-text: #f2f3ff;
-        --shadow-inset: #54595f;
-        --placeholder: #b4b5be;
-    }
-}
-
 .inner-panel {
     background-color: var(--light-background);
     border-style: solid;

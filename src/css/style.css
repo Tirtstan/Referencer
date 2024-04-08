@@ -1,5 +1,4 @@
 /* cSpell:disable */
-
 @font-face {
     font-family: "JetBrains Mono";
     src: url("../fonts/jetbrainsmono-regular-webfont.eot");
@@ -11,7 +10,6 @@
     font-weight: normal;
     font-style: normal;
 }
-
 /* cSpell:enable */
 
 :root {
@@ -29,27 +27,67 @@
     --bg-text: #595f66;
     --box-shadow: rgba(45, 35, 66, 0.4);
 
+    --input-text: #36395a;
+    --shadow: 45, 35, 66;
+    --shadow-inset: #d6d6e7;
+    --placeholder: rgb(128, 128, 128);
+
+    --font-size: clamp(0.85rem, 3.5vw, 1rem);
+
     --github: url(../images/github-mark-white.svg);
     --twitter: url(../images/twitter-logo-white.svg);
+    --theme: url(../images/sun.svg);
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
-        --text: #061719;
-        --background: #e1e3e5;
-        --light-background: #f4f4f5;
-        --primary: #1c6569;
-        --secondary: #609d9f;
-        --accent: #35353a;
-        --pri-border-color: #237e83;
-        --sec-border-color: #6eb3b6;
-        --bg-border-color: #cecfcf;
-        --acc-border-color: #4e4e55;
-        --bg-text: #868788;
+:root[data-theme="dark"] {
+    --font-family: JetBrains Mono, SF Mono, Consolas, monospace;
+    --box-shadow: rgba(45, 35, 66, 0.4);
+    --shadow: 45, 35, 66;
+    --font-size: clamp(0.85rem, 3.5vw, 1rem);
 
-        --github: url(../images/github-mark.svg);
-        --twitter: url(../images/twitter-logo.svg);
-    }
+    --text: #e5f7f9;
+    --background: #1b1d1f;
+    --light-background: #323333;
+    --primary: #97dfe3;
+    --secondary: cadetblue;
+    --accent: #fcfcfd;
+    --pri-border-color: #aaf8fc;
+    --sec-border-color: #73bcbe;
+    --bg-border-color: #464a4e;
+    --acc-border-color: #e7e7e7;
+    --bg-text: #595f66;
+    --input-text: #36395a;
+    --shadow-inset: #d6d6e7;
+    --placeholder: rgb(128, 128, 128);
+
+    --github: url(../images/github-mark-white.svg);
+    --twitter: url(../images/twitter-logo-white.svg);
+    --theme: url(../images/sun.svg);
+}
+
+:root[data-theme="light"] {
+    --text: #061719;
+    --background: #e9e9e9;
+    --light-background: #f4f4f5;
+    --primary: #1c6569;
+    --secondary: #609d9f;
+    --accent: #35353a;
+    --pri-border-color: #237e83;
+    --sec-border-color: #6eb3b6;
+    --bg-border-color: #cecfcf;
+    --acc-border-color: #4e4e55;
+    --bg-text: #868788;
+    --input-text: #f2f3ff;
+    --shadow-inset: #54595f;
+    --placeholder: #b4b5be;
+
+    --github: url(../images/github-mark.svg);
+    --twitter: url(../images/twitter-logo.svg);
+    --theme: url(../images/moon.svg);
+}
+
+* {
+    transition: color 0.1s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.3s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 body {
@@ -90,22 +128,21 @@ h1 {
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
+    margin-right: 4px;
 }
 
 header {
     color: var(--text);
     font-size: clamp(0.8rem, 4vw, 1rem);
     height: 30px;
-    margin-bottom: 16px;
-}
-
-.title {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+    height: fit-content;
+    margin: 0 0 12px 0;
+    padding: 0;
 }
 
-.title h6 {
+header h6 {
     font-size: clamp(0.75rem, 0.5vw, 1rem);
     color: var(--bg-text);
     text-align: center;
@@ -115,13 +152,18 @@ header {
     padding: 0;
 }
 
+header div {
+    gap: 4px;
+    height: 40px;
+}
+
 .logo {
     background-size: contain;
     background-repeat: no-repeat;
-    margin: 0 0 0 8px;
     width: 32px;
     height: 32px;
     transition: transform 0.15s;
+    cursor: pointer;
 }
 
 .logo:hover {
@@ -134,6 +176,10 @@ header {
 
 .twitter-logo {
     background-image: var(--twitter);
+}
+
+.theme-logo {
+    background-image: var(--theme);
 }
 
 header a {
