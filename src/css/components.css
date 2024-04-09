@@ -1,7 +1,7 @@
 .inner-panel {
-    background-color: var(--light-background);
+    background-color: var(--background-800);
     border-style: solid;
-    border-color: var(--bg-border-color);
+    border-color: var(--background-700);
     border-radius: 10px;
     border-width: 3px;
     padding: 8px;
@@ -16,7 +16,7 @@ label {
 .input-device {
     font-size: var(--font-size);
     font-family: var(--font-family);
-    background-color: var(--accent);
+    background-color: var(--accent-50);
     color: var(--input-text);
     border-radius: 4px;
     box-shadow: rgba(var(--shadow), 0.4) 0 2px 4px, rgba(var(--shadow), 0.3) 0 7px 13px -3px,
@@ -110,6 +110,7 @@ textarea {
 }
 
 .output-area {
+    font-size: 0.8rem;
     padding: 8px;
     margin: 0;
     word-break: break-word;
@@ -127,7 +128,7 @@ textarea {
     color: var(--text);
     display: flex;
     gap: 8px;
-    background-color: var(--bg-border-color);
+    background-color: var(--background-700);
     text-wrap: nowrap;
     text-align: center;
     width: fit-content;
@@ -135,17 +136,17 @@ textarea {
     border-radius: 10px;
     border-style: solid;
     border-width: 3px;
-    border-color: var(--bg-text);
+    border-color: var(--background-600);
 }
 
 .chip-1 button {
     color: var(--text);
     font-family: var(--font-family);
     font-weight: bold;
-    background: var(--bg-text);
+    background: var(--background-600);
     border: solid;
     border-width: 2px;
-    border-color: var(--bg-border-color);
+    border-color: var(--background-700);
     border-radius: 50%;
     width: 20px;
     height: 20px;
