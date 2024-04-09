@@ -36,6 +36,9 @@ slctMedia.addEventListener("change", (event) => {
         case "Code":
             pnlMedia.innerHTML = "<code-element></code-element>";
             break;
+        case "App":
+            pnlMedia.innerHTML = "<application-element></application-element>";
+            break;
     }
 
     txtParaQuote.innerHTML = "";

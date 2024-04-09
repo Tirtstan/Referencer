@@ -93,6 +93,7 @@ label {
 }
 
 .input-box-1::placeholder {
+    font-size: 0.95rem;
     color: var(--placeholder);
     opacity: 1;
 }
