@@ -14,25 +14,30 @@
 
 :root {
     --font-family: JetBrains Mono, SF Mono, Consolas, monospace;
-    --text: #e5f7f9;
-    --background: #1b1d1f;
-    --light-background: #323333;
-    --primary: #97dfe3;
-    --secondary: cadetblue;
-    --accent: #fcfcfd;
-    --pri-border-color: #aaf8fc;
-    --sec-border-color: #73bcbe;
-    --bg-border-color: #464a4e;
-    --acc-border-color: #e7e7e7;
-    --bg-text: #595f66;
-    --box-shadow: rgba(45, 35, 66, 0.4);
+    --font-size: clamp(0.85rem, 3.5vw, 1rem);
 
+    --text: #e5f7f9;
     --input-text: #36395a;
+    --placeholder: rgb(128, 128, 128);
+    --text-selection: #97dfe383;
+
+    --background-900: #1b1d1f;
+    --background-800: #323333;
+    --background-700: #464a4e;
+    --background-600: #595f66;
+
+    --primary-900: #97dfe3;
+    --primary-800: #aaf8fc;
+
+    --secondary-900: #5f9ea0;
+    --secondary-800: #73bcbe;
+
+    --accent-50: #fcfcfd;
+    --accent-100: #e7e7e7;
+
+    --box-shadow: rgba(45, 35, 66, 0.4);
     --shadow: 45, 35, 66;
     --shadow-inset: #d6d6e7;
-    --placeholder: rgb(128, 128, 128);
-
-    --font-size: clamp(0.85rem, 3.5vw, 1rem);
 
     --github: url(../images/github-mark-white.svg);
     --twitter: url(../images/twitter-logo-white.svg);
@@ -40,25 +45,25 @@
 }
 
 :root[data-theme="dark"] {
-    --font-family: JetBrains Mono, SF Mono, Consolas, monospace;
-    --box-shadow: rgba(45, 35, 66, 0.4);
-    --shadow: 45, 35, 66;
-    --font-size: clamp(0.85rem, 3.5vw, 1rem);
-
     --text: #e5f7f9;
-    --background: #1b1d1f;
-    --light-background: #323333;
-    --primary: #97dfe3;
-    --secondary: cadetblue;
-    --accent: #fcfcfd;
-    --pri-border-color: #aaf8fc;
-    --sec-border-color: #73bcbe;
-    --bg-border-color: #464a4e;
-    --acc-border-color: #e7e7e7;
-    --bg-text: #595f66;
-    --input-text: #36395a;
-    --shadow-inset: #d6d6e7;
     --placeholder: rgb(128, 128, 128);
+    --input-text: #36395a;
+
+    --background-900: #1b1d1f;
+    --background-800: #323333;
+    --background-700: #464a4e;
+    --background-600: #595f66;
+
+    --primary-900: #97dfe3;
+    --primary-800: #aaf8fc;
+
+    --secondary-900: #5f9ea0;
+    --secondary-800: #73bcbe;
+
+    --accent-50: #fcfcfd;
+    --accent-100: #e7e7e7;
+
+    --shadow-inset: #d6d6e7;
 
     --github: url(../images/github-mark-white.svg);
     --twitter: url(../images/twitter-logo-white.svg);
@@ -67,22 +72,27 @@
 
 :root[data-theme="light"] {
     --text: #061719;
-    --background: #e9e9e9;
-    --light-background: #f4f4f5;
-    --primary: #1c6569;
-    --secondary: #609d9f;
-    --accent: #35353a;
-    --pri-border-color: #237e83;
-    --sec-border-color: #6eb3b6;
-    --bg-border-color: #cecfcf;
-    --acc-border-color: #4e4e55;
-    --bg-text: #868788;
-    --input-text: #f2f3ff;
-    --shadow-inset: #54595f;
     --placeholder: #b4b5be;
+    --input-text: #f2f3ff;
+
+    --background-900: #e9e9e9;
+    --background-800: #f4f4f5;
+    --background-700: #cecfcf;
+    --background-600: #868788;
+
+    --primary-900: #1c6569;
+    --primary-800: #237e83;
+
+    --secondary-900: #609d9f;
+    --secondary-800: #6eb3b6;
+
+    --accent-50: #35353a;
+    --accent-100: #4e4e55;
+
+    --shadow-inset: #54595f;
 
     --github: url(../images/github-mark.svg);
-    --twitter: url(../images/twitter-logo.svg);
+    --twitter: url(../images/twitter-logo-black.svg);
     --theme: url(../images/moon.svg);
 }
 
@@ -90,10 +100,14 @@
     transition: color 0.1s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.3s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
+::selection {
+    background: var(--text-selection);
+}
+
 body {
     display: flex;
     flex-direction: column;
-    background: var(--background);
+    background: var(--background-900);
     font-family: var(--font-family);
     margin: 0 auto;
     padding: 0 2%;
@@ -110,7 +124,7 @@ h1 {
     margin: 0;
     padding: 0;
     font-size: clamp(3.5rem, 8vw, 4rem);
-    background-image: linear-gradient(300deg, var(--primary), var(--secondary));
+    background-image: linear-gradient(300deg, var(--primary-900), var(--secondary-900));
     background-size: 100%;
     background-clip: text;
     -webkit-background-clip: text;
@@ -121,14 +135,13 @@ h1 {
 
 .creator-name {
     color: var(--text);
-    background-image: linear-gradient(60deg, var(--primary), var(--secondary));
+    background-image: linear-gradient(60deg, var(--primary-900), var(--secondary-900));
     background-size: 100%;
     background-clip: text;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
-    margin-right: 4px;
 }
 
 header {
@@ -144,7 +157,7 @@ header {
 
 header h6 {
     font-size: clamp(0.75rem, 0.5vw, 1rem);
-    color: var(--bg-text);
+    color: var(--background-600);
     text-align: center;
     position: relative;
     bottom: 4px;
@@ -153,7 +166,7 @@ header h6 {
 }
 
 header div {
-    gap: 4px;
+    gap: 8px;
     height: 40px;
 }
 
@@ -188,13 +201,13 @@ header a {
 
 header a:hover {
     text-decoration: underline;
-    text-decoration-color: var(--secondary);
+    text-decoration-color: var(--secondary-900);
 }
 
 main {
-    background-color: var(--secondary);
+    background-color: var(--secondary-900);
     border-style: solid;
-    border-color: var(--pri-border-color);
+    border-color: var(--primary-800);
     border-radius: 20px;
     border-width: 3px;
     box-sizing: border-box;
@@ -276,7 +289,7 @@ footer {
 }
 
 footer h6 {
-    color: var(--bg-text);
+    color: var(--background-600);
     font-size: clamp(0.75rem, 0.5vw, 1rem);
     margin: 0 0 8px 0;
     padding: 0;
@@ -284,12 +297,12 @@ footer h6 {
 }
 
 footer h6 a {
-    color: var(--secondary);
+    color: var(--secondary-900);
     text-decoration: none;
     text-decoration-color: var(--text);
 }
 
 footer h6 a:hover {
-    color: var(--primary);
+    color: var(--primary-900);
     text-decoration: underline;
 }
