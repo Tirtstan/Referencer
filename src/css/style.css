@@ -48,6 +48,7 @@
     --text: #e5f7f9;
     --placeholder: rgb(128, 128, 128);
     --input-text: #36395a;
+    --text-selection: #97dfe3e0;
 
     --background-900: #1b1d1f;
     --background-800: #323333;
@@ -74,6 +75,7 @@
     --text: #061719;
     --placeholder: #b4b5be;
     --input-text: #f2f3ff;
+    --text-selection: #97dfe383;
 
     --background-900: #e9e9e9;
     --background-800: #f4f4f5;
