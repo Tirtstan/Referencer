@@ -30,6 +30,12 @@ slctMedia.addEventListener("change", (event) => {
         case "Pinterest":
             pnlMedia.innerHTML = "<pinterest-element></pinterest-element>";
             break;
+        case "Blog":
+            pnlMedia.innerHTML = "<blog-element></blog-element>";
+            break;
+        case "Code":
+            pnlMedia.innerHTML = "<code-element></code-element>";
+            break;
     }
 
     txtParaQuote.innerHTML = "";
