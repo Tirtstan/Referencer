@@ -18,6 +18,11 @@ I am also creating this as a means to learn some web dev! It's been _interesting
 -   YouTube Videos
 -   Online Images
 -   Websites
+-   Video Game
+-   Pinterest
+-   Blog
+-   Code
+-   Article
 
 ### 2. Add/Clear Your Author(s)
 
