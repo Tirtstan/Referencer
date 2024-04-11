@@ -22,7 +22,7 @@ I am also creating this as a means to learn some web dev! It's been _interesting
 -   Pinterest
 -   Blog
 -   Code
--   Article
+-   App
 
 ### 2. Add/Clear Your Author(s)
 
