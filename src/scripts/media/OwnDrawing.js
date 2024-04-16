@@ -7,12 +7,12 @@ export default class OwnDrawing {
         this.description = description;
         this.place = place;
 
-        if (Utilities.isNullOrEmpty(this.author)) {
-            this.author = "Anon";
-        }
-
         if (this.year <= 0) {
             this.year = "s.a";
+        }
+
+        if (Utilities.isNullOrEmpty(this.place)) {
+            this.place = "s.l";
         }
     }
 

@@ -22,6 +22,6 @@ export default class OwnDrawing {
     }
 
     getQuote() {
-        return `Figure 1: an image depicting... (${Utilities.getSurname(this.author)}, ${this.year})`;
+        return `Figure 1: an image depicting... (${Utilities.getSurname(this.studentName)}, ${this.year})`;
     }
 }
