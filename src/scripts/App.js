@@ -39,6 +39,15 @@ slctMedia.addEventListener("change", (event) => {
         case "App":
             pnlMedia.innerHTML = "<application-element></application-element>";
             break;
+        case "Sound":
+            pnlMedia.innerHTML = "<sound-element></sound-element>";
+            break;
+        case "OwnDrawing":
+            pnlMedia.innerHTML = "<own-drawing-element></own-drawing-element>";
+            break;
+        case "OwnPhoto":
+            pnlMedia.innerHTML = "<own-photo-element></own-photo-element>";
+            break;
     }
 
     txtParaQuote.innerHTML = "";
