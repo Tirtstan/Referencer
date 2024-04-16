@@ -185,6 +185,10 @@ header div {
     transform: translateY(-2px);
 }
 
+.logo:active {
+    transform: translateY(0px);
+}
+
 .gh-logo {
     background-image: var(--github);
 }
