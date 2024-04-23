@@ -23,6 +23,9 @@ I am also creating this as a means to learn some web dev! It's been _interesting
 -   Blog
 -   Code
 -   App
+-   Sound/Music
+-   Own Drawing
+-   Own Photograph
 
 ### 2. Add/Clear Your Author(s)
 

@@ -18,7 +18,7 @@
 
     --text: #e5f7f9;
     --input-text: #36395a;
-    --placeholder: rgb(128, 128, 128);
+    --placeholder: #a7a7a7;
     --text-selection: #97dfe383;
 
     --background-900: #1b1d1f;
@@ -46,7 +46,7 @@
 
 :root[data-theme="dark"] {
     --text: #e5f7f9;
-    --placeholder: rgb(128, 128, 128);
+    --placeholder: #a7a7a7;
     --input-text: #36395a;
     --text-selection: #97dfe3b6;
 
@@ -60,6 +60,7 @@
 
     --secondary-900: #5f9ea0;
     --secondary-800: #73bcbe;
+    --secondary-500: #89dcdf;
 
     --accent-50: #fcfcfd;
     --accent-100: #e7e7e7;
@@ -73,7 +74,7 @@
 
 :root[data-theme="light"] {
     --text: #061719;
-    --placeholder: #b4b5be;
+    --placeholder: #adadad;
     --input-text: #f2f3ff;
     --text-selection: #97dfe383;
 
@@ -87,6 +88,7 @@
 
     --secondary-900: #609d9f;
     --secondary-800: #6eb3b6;
+    --secondary-500: #7dcace;
 
     --accent-50: #35353a;
     --accent-100: #4e4e55;
@@ -175,10 +177,10 @@ header div {
 .logo {
     background-size: contain;
     background-repeat: no-repeat;
-    width: 32px;
-    height: 32px;
-    transition: transform 0.15s;
     cursor: pointer;
+    width: 24px;
+    height: 24px;
+    transition: transform 0.15s;
 }
 
 .logo:hover {
@@ -212,9 +214,9 @@ header a:hover {
 
 main {
     background-color: var(--secondary-900);
+    border-color: var(--secondary-500);
     border-style: solid;
-    border-color: var(--primary-800);
-    border-radius: 20px;
+    border-radius: 12px;
     border-width: 3px;
     box-sizing: border-box;
     min-width: fit-content;
@@ -225,7 +227,6 @@ main {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    box-shadow: 4px 4px 4px var(--box-shadow);
     gap: 8px;
 }
 
@@ -236,7 +237,7 @@ section {
     gap: 8px;
     min-width: 320px;
 
-    /* \/ why this fixes more paragraph issues, idk man */
+    /* why this fixes more paragraph issues, idk man */
     max-width: 100%;
     width: min-content;
 }
