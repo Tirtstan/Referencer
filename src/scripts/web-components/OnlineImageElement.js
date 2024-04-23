@@ -4,7 +4,7 @@ import OnlineImage from "../media/OnlineImage";
 class OnlineImageElement extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `<div class="info-panel inner-panel">
-                        <label for="authors"><u>Authors:</u></label>
+                        <label for="txtAuthors"><u>Authors:</u></label>
                         <div class="next-to">
                             <input
                                 type="text"
@@ -16,21 +16,21 @@ class OnlineImageElement extends HTMLElement {
                             <button id="btnClear" class="input-device button-1">Clear</button>
                         </div>
                         <div id="pnlAuthors" class="input-device chip-input"></div>
-                        <label for="image title"><u>Image Title:</u></label>
+                        <label for="txtImgTitle"><u>Image Title:</u></label>
                         <input
                             type="text"
                             name="image title"
                             id="txtImgTitle"
                             class="input-device input-box-1"
                             placeholder="Title" />
-                        <label for="article title"><u>Article Title:</u></label>
+                        <label for="txtArticleTitle"><u>Article Title:</u></label>
                         <input
                             type="text"
                             name="article title"
                             id="txtArticleTitle"
                             class="input-device input-box-1"
                             placeholder="Title" />
-                        <label for="link"><u>Link:</u></label>
+                        <label for="txtLink"><u>Link:</u></label>
                         <input
                             type="url"
                             name="link"
@@ -38,14 +38,14 @@ class OnlineImageElement extends HTMLElement {
                             class="input-device input-box-1"
                             placeholder="Link" />
                         <div class="grid-input">
-                            <label for="year"><u>Year:</u></label>
+                            <label for="txtYear"><u>Year:</u></label>
                             <input
                                 type="number"
                                 name="year"
                                 id="txtYear"
                                 class="input-device input-box-1"
                                 placeholder="Year" />
-                            <label for="date accessed"><u>Date Accessed:</u></label>
+                            <label for="dtAccessedWhen"><u>Date Accessed:</u></label>
                             <input
                                 type="date"
                                 name="date accessed"
@@ -53,14 +53,14 @@ class OnlineImageElement extends HTMLElement {
                                 class="input-device input-box-1" />
                         </div>
                         <div class="grid-input">
-                            <label for="publication name"><u>Publication Name:</u></label>
+                            <label for="txtPubName"><u>Publication Name:</u></label>
                             <input
                                 type="text"
                                 name="publication name"
                                 id="txtPubName"
                                 class="input-device input-box-1"
                                 placeholder="Name" />
-                            <label for="format"><u>Format:</u></label>
+                            <label for="btnFormat"><u>Format:</u></label>
                             <button id="btnFormat" class="input-device button-1">Format</button>
                         </div>
                     </div>`;

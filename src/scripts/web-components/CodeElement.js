@@ -4,7 +4,7 @@ import CodeSnippet from "../media/CodeSnippet";
 class CodeElement extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `<div class="info-panel inner-panel">
-                        <label for="authors"><u>Authors:</u></label>
+                        <label for="txtAuthors"><u>Authors:</u></label>
                         <div class="next-to">
                             <input
                                 type="text"
@@ -16,7 +16,7 @@ class CodeElement extends HTMLElement {
                             <button id="btnClear" class="input-device button-1">Clear</button>
                         </div>
                         <div id="pnlAuthors" class="input-device chip-input"></div>
-                        <label for="title"><u>Title:</u></label>
+                        <label for="txtTitle"><u>Title:</u></label>
                         <input
                             type="text"
                             name="title"
@@ -24,28 +24,28 @@ class CodeElement extends HTMLElement {
                             class="input-device input-box-1"
                             placeholder="Title" />
                         <div class="grid-input">
-                            <label for="code version"><u>Code Version:</u></label>
+                            <label for="txtCodeVersion"><u>Code Version:</u></label>
                             <input
                                 type="text"
                                 name="code version"
                                 id="txtCodeVersion"
                                 class="input-device input-box-1"
                                 placeholder="Version" />
-                            <label for="date published"><u>Date Published:</u></label>
+                            <label for="dtPublished"><u>Date Published:</u></label>
                             <input
                                 type="date"
                                 name="date published"
                                 id="dtPublished"
                                 class="input-device input-box-1" />
                         </div>
-                        <label for="link"><u>Link:</u></label>
+                        <label for="txtLink"><u>Link:</u></label>
                         <input
                             type="url"
                             name="link"
                             id="txtLink"
                             class="input-device input-box-1"
                             placeholder="Link" />
-                        <label for="type"><u>Type:</u></label>
+                        <label for="txtType"><u>Type:</u></label>
                         <input
                             type="text"
                             name="type"
@@ -53,13 +53,13 @@ class CodeElement extends HTMLElement {
                             class="input-device input-box-1"
                             placeholder="eg. Source Code, Program" />
                         <div class="grid-input">
-                            <label for="date accessed"><u>Date Accessed:</u></label>
+                            <label for="dtAccessedWhen"><u>Date Accessed:</u></label>
                             <input
                                 type="date"
                                 name="date accessed"
                                 id="dtAccessedWhen"
                                 class="input-device input-box-1" />
-                            <label for="format"><u>Format:</u></label>
+                            <label for="btnFormat"><u>Format:</u></label>
                             <button id="btnFormat" class="input-device button-1">Format</button>
                         </div>
                     </div>`;

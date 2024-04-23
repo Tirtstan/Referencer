@@ -4,28 +4,28 @@ import Sound from "../media/Sound";
 class SoundElement extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `<div class="info-panel inner-panel">
-                        <label for="link"><u>Link:</u></label>
+                        <label for="txtLink"><u>Link:</u></label>
                         <input
                             type="url"
                             name="link"
                             id="txtLink"
                             class="input-device input-box-1"
                             placeholder="Link" />
-                        <label for="title"><u>Title:</u></label>
+                        <label for="txtTitle"><u>Title:</u></label>
                         <input
                             type="text"
                             name="title"
                             id="txtTitle"
                             class="input-device input-box-1"
                             placeholder="Title" />
-                        <label for="composer"><u>Composer:</u></label>
+                        <label for="txtComposer"><u>Composer:</u></label>
                         <input
                             type="text"
                             name="composer"
                             id="txtComposer"
                             class="input-device input-box-1"
                             placeholder="Composer" />
-                        <label for="year"><u>Year:</u></label>
+                        <label for="txtYear"><u>Year:</u></label>
                         <input
                             type="number"
                             name="year"
@@ -33,13 +33,13 @@ class SoundElement extends HTMLElement {
                             class="input-device input-box-1"
                             placeholder="Year" />
                         <div class="grid-input">
-                            <label for="date accessed"><u>Date Accessed:</u></label>
+                            <label for="dtAccessedWhen"><u>Date Accessed:</u></label>
                             <input
                                 type="date"
                                 name="date accessed"
                                 id="dtAccessedWhen"
                                 class="input-device input-box-1" />
-                            <label for="format"><u>Format:</u></label>
+                            <label for="btnFormat"><u>Format:</u></label>
                             <button id="btnFormat" class="input-device button-1">Format</button>
                         </div>
                     </div>`;

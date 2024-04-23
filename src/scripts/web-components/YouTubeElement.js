@@ -6,7 +6,7 @@ import { gapi } from "gapi-script";
 class YouTubeElement extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `<div class="info-panel inner-panel">
-                        <label for="link"><u>Link:</u></label>
+                        <label for="txtLink"><u>Link:</u></label>
                         <div class="next-to">
                             <input
                                 type="url"
@@ -16,31 +16,31 @@ class YouTubeElement extends HTMLElement {
                                 placeholder="Link" />
                             <button id="btnAutoFill" class="input-device button-1">Auto Fill</button>
                         </div>
-                        <label for="video title"><u>Video Title:</u></label>
+                        <label for="txtVideoTitle"><u>Video Title:</u></label>
                         <input
                             type="text"
                             name="video title"
                             id="txtVideoTitle"
                             class="input-device input-box-1"
                             placeholder="Title" />
-                        <label for="channel"><u>Channel:</u></label>
+                        <label for="txtChannel"><u>Channel:</u></label>
                         <input
                             type="text"
                             name="channel"
                             id="txtChannel"
                             class="input-device input-box-1"
                             placeholder="Channel" />
-                        <label for="date accessed"><u>Date Accessed:</u></label>
+                        <label for="dtAccessedWhen"><u>Date Accessed:</u></label>
                         <input type="date" name="date accessed" id="dtAccessedWhen" class="input-device input-box-1" />
                         <div class="grid-input">
-                            <label for="year"><u>Year:</u></label>
+                            <label for="txtYear"><u>Year:</u></label>
                             <input
                                 type="number"
                                 name="year"
                                 id="txtYear"
                                 class="input-device input-box-1"
                                 placeholder="Year" />
-                            <label for="format"><u>Format:</u></label>
+                            <label for="btnFormat"><u>Format:</u></label>
                             <button id="btnFormat" class="input-device button-1">Format</button>
                         </div>
                     </div>`;

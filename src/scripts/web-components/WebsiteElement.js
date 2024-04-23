@@ -4,37 +4,37 @@ import Website from "../media/Website";
 class WebsiteElement extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `<div class="info-panel inner-panel">
-                        <label for="link"><u>Link:</u></label>
+                        <label for="txtLink"><u>Link:</u></label>
                         <input
                             type="url"
                             name="link"
                             id="txtLink"
                             class="input-device input-box-1"
                             placeholder="Link" />
-                        <label for="article title"><u>Article Title:</u></label>
+                        <label for="txtArticleTitle"><u>Article Title:</u></label>
                         <input
                             type="text"
                             name="article title"
                             id="txtArticleTitle"
                             class="input-device input-box-1"
                             placeholder="Title" />
-                        <label for="author"><u>Author:</u></label>
+                        <label for="txtAuthor"><u>Author:</u></label>
                         <input
                             type="text"
                             name="author"
                             id="txtAuthor"
                             class="input-device input-box-1"
                             placeholder="Author" />
-                        <label for="date published"><u>Date Published:</u></label>
+                        <label for="dtPublished"><u>Date Published:</u></label>
                         <input type="date" name="date published" id="dtPublished" class="input-device input-box-1" />
                         <div class="grid-input">
-                            <label for="date accessed"><u>Date Accessed:</u></label>
+                            <label for="dtAccessedWhen"><u>Date Accessed:</u></label>
                             <input
                                 type="date"
                                 name="date accessed"
                                 id="dtAccessedWhen"
                                 class="input-device input-box-1" />
-                            <label for="format"><u>Format:</u></label>
+                            <label for="btnFormat"><u>Format:</u></label>
                             <button id="btnFormat" class="input-device button-1">Format</button>
                         </div>
                     </div>`;

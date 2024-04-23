@@ -3,6 +3,9 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Your solution for organizing and styling citations based on The IIE's Referencing Guide. Perfect for students, researchers, and professionals seeking accuracy and ease in their referencing tasks." />
         <title>Referencer</title>
         <link rel="icon" href="src/images/icon.svg" />
         <link rel="stylesheet" href="src/css/style.css" />
@@ -26,21 +29,31 @@
     <body class="center">
         <header>
             <h1>Referencer</h1>
-            <h6>v2.7.1</h6>
+            <h2>v2.7.2</h2>
             <div class="center">
                 <h4>
                     Created By
                     <span class="creator-name"><a href="https://github.com/Tirtstan" target="_blank">Tirt</a></span>
                 </h4>
-                <a href="https://github.com/Tirtstan/Referencer" target="_blank"> <div class="logo gh-logo"></div></a>
-                <a href="https://twitter.com/Tirtstan" target="_blank"> <div class="logo twitter-logo"></div></a>
+                <a
+                    href="https://github.com/Tirtstan/Referencer"
+                    target="_blank"
+                    aria-label="Links to this website's github repository">
+                    <div class="logo gh-logo"></div
+                ></a>
+                <a
+                    href="https://twitter.com/Tirtstan"
+                    target="_blank"
+                    aria-label="Links to the creator's github profile">
+                    <div class="logo twitter-logo"></div
+                ></a>
                 <a id="theme-toggle"> <div class="logo theme-logo"></div></a>
             </div>
         </header>
         <main>
             <section class="left-section">
                 <div class="media-panel inner-panel">
-                    <label for="media-types">Media Type</label
+                    <label for="slctMedia">Media Type</label
                     ><select name="media-types" id="slctMedia" class="input-device select-1">
                         <option value="Book">Book</option>
                         <option value="YouTube">YouTube</option>
@@ -62,12 +75,12 @@
             </section>
             <section class="right-section">
                 <div class="info-panel inner-panel">
-                    <label for="paraphrase and quote"><u>Paraphrase & Quote:</u></label>
+                    <label for="txtParaQuote"><u>Paraphrase & Quote:</u></label>
                     <p id="txtParaQuote" class="input-device output-area"></p>
                 </div>
                 <div class="info-panel inner-panel">
                     <div class="space-between">
-                        <label for="reference list"><u>Reference List:</u></label>
+                        <label for="txtReferenceList"><u>Reference List:</u></label>
                         <button id="btnCopy" class="input-device button-1">Copy</button>
                     </div>
                     <p id="txtReferenceList" class="input-device output-area"></p>
@@ -75,9 +88,7 @@
             </section>
         </main>
         <footer>
-            <h6>
-                Please use this as a template as I cannot cover every edge case. Still do refer to the official guide.
-            </h6>
+            <h6>Please use this as a template as I cannot cover every edge case. Still refer to the official guide.</h6>
             <h6>The IIE. 2024. IIE Referencing Guide [Guide]. The Independent Institute of Education: Unpublished.</h6>
             <h6>
                 The
