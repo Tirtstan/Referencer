@@ -4,21 +4,21 @@ import VideoGame from "../media/VideoGame";
 class VideoGameElement extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `<div class="info-panel inner-panel">
-                        <label for="game title"><u>Game Title:</u></label>
+                        <label for="txtGameTitle"><u>Game Title:</u></label>
                         <input
                             type="text"
                             name="game title"
                             id="txtGameTitle"
                             class="input-device input-box-1"
                             placeholder="Title" />
-                        <label for="author"><u>Author:</u></label>
+                        <label for="txtAuthor"><u>Author:</u></label>
                         <input
                             type="text"
                             name="author"
                             id="txtAuthor"
                             class="input-device input-box-1"
                             placeholder="Name And/Or Surname" />
-                        <label for="platform"><u>Platform:</u></label>
+                        <label for="txtPlatform"><u>Platform:</u></label>
                         <input
                             type="text"
                             name="platform"
@@ -26,14 +26,14 @@ class VideoGameElement extends HTMLElement {
                             class="input-device input-box-1"
                             placeholder="Platform" />
                         <div class="grid-input">
-                            <label for="publication name"><u>Publication Name:</u></label>
+                            <label for="txtPubName"><u>Publication Name:</u></label>
                             <input
                                 type="text"
                                 name="publication name"
                                 id="txtPubName"
                                 class="input-device input-box-1"
                                 placeholder="Name" />
-                            <label for="publication place"><u>Publication Place:</u></label>
+                            <label for="txtPubPlace"><u>Publication Place:</u></label>
                             <input
                                 type="text"
                                 name="publication place"
@@ -42,14 +42,14 @@ class VideoGameElement extends HTMLElement {
                                 placeholder="Place" />
                         </div>
                         <div class="grid-input">
-                            <label for="year"><u>Year:</u></label>
+                            <label for="txtYear"><u>Year:</u></label>
                             <input
                                 type="number"
                                 name="year"
                                 id="txtYear"
                                 class="input-device input-box-1"
                                 placeholder="Year" />
-                            <label for="format"><u>Format:</u></label>
+                            <label for="btnFormat"><u>Format:</u></label>
                             <button id="btnFormat" class="input-device button-1">Format</button>
                         </div>
                     </div>`;

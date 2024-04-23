@@ -4,45 +4,45 @@ import Pinterest from "../media/Pinterest.js";
 class PinterestElement extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `<div class="info-panel inner-panel">
-                        <label for="pinterest link"><u>Pinterest Link:</u></label>
+                        <label for="txtLink"><u>Pinterest Link:</u></label>
                         <input
                             type="url"
                             name="pinterest link"
                             id="txtLink"
                             class="input-device input-box-1"
                             placeholder="Link" />
-                        <label for="original link"><u>Original Link:</u></label>
+                        <label for="txtOriginalLink"><u>Original Link:</u></label>
                         <input
                             type="url"
                             name="original link"
                             id="txtOriginalLink"
                             class="input-device input-box-1"
                             placeholder="Link" />
-                        <label for="author"><u>Author:</u></label>
+                        <label for="txtAuthor"><u>Author:</u></label>
                         <input
                             type="text"
                             name="author"
                             id="txtAuthor"
                             class="input-device input-box-1"
                             placeholder="Author" />
-                        <label for="picture title"><u>Picture Title:</u></label>
+                        <label for="txtPicTitle"><u>Picture Title:</u></label>
                         <input
                             type="text"
                             name="picture title"
                             id="txtPicTitle"
                             class="input-device input-box-1"
                             placeholder="Title" />
-                        <label for="date accessed"><u>Date Accessed:</u></label>
+                        <label for="dtAccessedWhen"><u>Date Accessed:</u></label>
                         <input type="date" name="date accessed" id="dtAccessedWhen" class="input-device input-box-1" />
                         <div class="grid-input">
-                            <label for="year"><u>Year:</u></label>
+                            <label for="txtYear"><u>Year:</u></label>
                             <input
                                 type="number"
                                 name="year"
                                 id="txtYear"
                                 class="input-device input-box-1"
                                 placeholder="Year" />
-                            <label for="format"><u>Format:</u></label>
+                            <label for="btnFormat"><u>Format:</u></label>
                             <button id="btnFormat" class="input-device button-1">Format</button>
                         </div>
                     </div>`;

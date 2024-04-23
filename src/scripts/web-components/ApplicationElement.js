@@ -4,7 +4,7 @@ import Application from "../media/Application";
 class ApplicationElement extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `<div class="info-panel inner-panel">
-                        <label for="authors"><u>Authors:</u></label>
+                        <label for="txtAuthors"><u>Authors:</u></label>
                         <div class="next-to">
                             <input
                                 type="text"
@@ -16,14 +16,14 @@ class ApplicationElement extends HTMLElement {
                             <button id="btnClear" class="input-device button-1">Clear</button>
                         </div>
                         <div id="pnlAuthors" class="input-device chip-input"></div>
-                        <label for="app title"><u>App Title:</u></label>
+                        <label for="txtAppTitle"><u>App Title:</u></label>
                         <input
                             type="text"
                             name="app title"
                             id="txtAppTitle"
                             class="input-device input-box-1"
                             placeholder="Title" />
-                        <label for="available at"><u>Available At:</u></label>
+                        <label for="txtAvailable"><u>Available At:</u></label>
                         <input
                             type="text"
                             name="available at"
@@ -31,14 +31,14 @@ class ApplicationElement extends HTMLElement {
                             class="input-device input-box-1"
                             placeholder="eg. Link, Google Play, Apple App Store" />
                         <div class="grid-input">
-                            <label for="version"><u>Version:</u></label>
+                            <label for="txtVersion"><u>Version:</u></label>
                             <input
                                 type="text"
                                 name="version"
                                 id="txtVersion"
                                 class="input-device input-box-1"
                                 placeholder="Version" />
-                            <label for="date published"><u>Date Published:</u></label>
+                            <label for="dtPublished"><u>Date Published:</u></label>
                             <input
                                 type="date"
                                 name="date published"
@@ -46,13 +46,13 @@ class ApplicationElement extends HTMLElement {
                                 class="input-device input-box-1" />
                         </div>
                         <div class="grid-input">
-                            <label for="date accessed"><u>Date Accessed:</u></label>
+                            <label for="dtAccessedWhen"><u>Date Accessed:</u></label>
                             <input
                                 type="date"
                                 name="date accessed"
                                 id="dtAccessedWhen"
                                 class="input-device input-box-1" />
-                            <label for="format"><u>Format:</u></label>
+                            <label for="btnFormat"><u>Format:</u></label>
                             <button id="btnFormat" class="input-device button-1">Format</button>
                         </div>
                     </div>`;

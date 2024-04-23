@@ -4,7 +4,7 @@ import Book from "../media/Book.js";
 class BookElement extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `  <div class="info-panel inner-panel">
-                        <label for="authors"><u>Authors:</u></label>
+                        <label for="txtAuthors"><u>Authors:</u></label>
                         <div class="next-to">
                             <input
                                 type="text"
@@ -17,14 +17,14 @@ class BookElement extends HTMLElement {
                         </div>
                         <div id="pnlAuthors" class="input-device chip-input"></div>
                         <div class="grid-input">
-                            <label for="year"><u>Year:</u></label>
+                            <label for="txtYear"><u>Year:</u></label>
                             <input
                                 type="number"
                                 name="year"
                                 id="txtYear"
                                 class="input-device input-box-1"
                                 placeholder="Year" />
-                            <label for="edition number"><u>Edition Number:</u></label>
+                            <label for="txtEditionNum"><u>Edition Number:</u></label>
                             <input
                                 type="number"
                                 name="edition number"
@@ -33,14 +33,14 @@ class BookElement extends HTMLElement {
                                 placeholder="Edition" />
                         </div>
                         <div class="grid-input">
-                            <label for="book name"><u>Book Name:</u></label>
+                            <label for="txtBookName"><u>Book Name:</u></label>
                             <input
                                 type="text"
                                 name="book name"
                                 id="txtBookName"
                                 class="input-device input-box-1"
                                 placeholder="Name" />
-                            <label for="publication name"><u>Publication Name:</u></label>
+                            <label for="txtPubName"><u>Publication Name:</u></label>
                             <input
                                 type="text"
                                 name="publication name"
@@ -49,14 +49,14 @@ class BookElement extends HTMLElement {
                                 placeholder="Name" />
                         </div>
                         <div class="grid-input">
-                            <label for="publication place"><u>Publication Place:</u></label>
+                            <label for="txtPubPlace"><u>Publication Place:</u></label>
                             <input
                                 type="text"
                                 name="publication place"
                                 id="txtPubPlace"
                                 class="input-device input-box-1"
                                 placeholder="Place" />
-                            <label for="format"><u>Format:</u></label>
+                            <label for="btnFormat"><u>Format:</u></label>
                             <button id="btnFormat" class="input-device button-1">Format</button>
                         </div>
                     </div>`;

@@ -4,21 +4,21 @@ import OwnDrawing from "../media/OwnDrawing";
 class OwnDrawingElement extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `<div class="info-panel inner-panel">
-                        <label for="author"><u>Author:</u></label>
+                        <label for="txtAuthor"><u>Author:</u></label>
                         <input
                             type="text"
                             name="author"
                             id="txtAuthor"
                             class="input-device input-box-1"
                             placeholder="Name And/Or Surname" />
-                        <label for="description"><u>Description:</u></label>
+                        <label for="txtDescription"><u>Description:</u></label>
                         <input
                             type="text"
                             name="description"
                             id="txtDescription"
                             class="input-device input-box-1"
                             placeholder="Description" />
-                        <label for="place"><u>Place:</u></label>
+                        <label for="txtPlace"><u>Place:</u></label>
                         <input
                             type="text"
                             name="place"
@@ -26,14 +26,14 @@ class OwnDrawingElement extends HTMLElement {
                             class="input-device input-box-1"
                             placeholder="Place" />
                         <div class="grid-input">
-                            <label for="year"><u>Year:</u></label>
+                            <label for="txtYear"><u>Year:</u></label>
                             <input
                                 type="number"
                                 name="year"
                                 id="txtYear"
                                 class="input-device input-box-1"
                                 placeholder="Year" />
-                            <label for="format"><u>Format:</u></label>
+                            <label for="btnFormat"><u>Format:</u></label>
                             <button id="btnFormat" class="input-device button-1">Format</button>
                         </div>
                     </div>`;
