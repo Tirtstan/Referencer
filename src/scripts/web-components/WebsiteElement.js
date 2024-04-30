@@ -4,14 +4,14 @@ import Website from "../media/Website";
 class WebsiteElement extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `<div class="info-panel inner-panel">
-                        <label for="txtLink"><u>Link:</u></label>
+                        <label for="txtLink"><u>Link:</u><span class="required"> *</span></label>
                         <input
                             type="url"
                             name="link"
                             id="txtLink"
                             class="input-device input-box-1"
                             placeholder="Link" />
-                        <label for="txtArticleTitle"><u>Article Title:</u></label>
+                        <label for="txtArticleTitle"><u>Article Title:</u><span class="required"> *</span></label>
                         <input
                             type="text"
                             name="article title"

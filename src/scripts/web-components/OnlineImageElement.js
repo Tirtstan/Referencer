@@ -16,21 +16,21 @@ class OnlineImageElement extends HTMLElement {
                             <button id="btnClear" class="input-device button-1">Clear</button>
                         </div>
                         <div id="pnlAuthors" class="input-device chip-input"></div>
-                        <label for="txtImgTitle"><u>Image Title:</u></label>
+                        <label for="txtImgTitle"><u>Image Title:</u><span class="required"> *</span></label>
                         <input
                             type="text"
                             name="image title"
                             id="txtImgTitle"
                             class="input-device input-box-1"
                             placeholder="Title" />
-                        <label for="txtArticleTitle"><u>Article Title:</u></label>
+                        <label for="txtArticleTitle"><u>Article Title:</u><span class="required"> *</span></label>
                         <input
                             type="text"
                             name="article title"
                             id="txtArticleTitle"
                             class="input-device input-box-1"
                             placeholder="Title" />
-                        <label for="txtLink"><u>Link:</u></label>
+                        <label for="txtLink"><u>Link:</u><span class="required"> *</span></label>
                         <input
                             type="url"
                             name="link"
@@ -132,6 +132,10 @@ class OnlineImageElement extends HTMLElement {
         });
 
         btnFormat.addEventListener("click", () => {
+            if (Utilities.areNullOrEmpty(txtImgTitle.value, txtArticleTitle.value, txtLink.value)) {
+                return;
+            }
+
             const onlineImage = new OnlineImage(
                 authors,
                 txtYear.value,

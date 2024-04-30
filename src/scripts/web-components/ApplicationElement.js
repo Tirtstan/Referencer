@@ -16,14 +16,14 @@ class ApplicationElement extends HTMLElement {
                             <button id="btnClear" class="input-device button-1">Clear</button>
                         </div>
                         <div id="pnlAuthors" class="input-device chip-input"></div>
-                        <label for="txtAppTitle"><u>App Title:</u></label>
+                        <label for="txtAppTitle"><u>App Title:</u><span class="required"> *</span></label>
                         <input
                             type="text"
                             name="app title"
                             id="txtAppTitle"
                             class="input-device input-box-1"
                             placeholder="Title" />
-                        <label for="txtAvailable"><u>Available At:</u></label>
+                        <label for="txtAvailable"><u>Available At:</u><span class="required"> *</span></label>
                         <input
                             type="text"
                             name="available at"

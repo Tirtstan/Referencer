@@ -4,14 +4,14 @@ import Sound from "../media/Sound";
 class SoundElement extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `<div class="info-panel inner-panel">
-                        <label for="txtLink"><u>Link:</u></label>
+                        <label for="txtLink"><u>Link:</u><span class="required"> *</span></label>
                         <input
                             type="url"
                             name="link"
                             id="txtLink"
                             class="input-device input-box-1"
                             placeholder="Link" />
-                        <label for="txtTitle"><u>Title:</u></label>
+                        <label for="txtTitle"><u>Title:</u><span class="required"> *</span></label>
                         <input
                             type="text"
                             name="title"

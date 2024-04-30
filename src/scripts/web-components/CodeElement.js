@@ -16,7 +16,7 @@ class CodeElement extends HTMLElement {
                             <button id="btnClear" class="input-device button-1">Clear</button>
                         </div>
                         <div id="pnlAuthors" class="input-device chip-input"></div>
-                        <label for="txtTitle"><u>Title:</u></label>
+                        <label for="txtTitle"><u>Title:</u><span class="required"> *</span></label>
                         <input
                             type="text"
                             name="title"
@@ -38,14 +38,14 @@ class CodeElement extends HTMLElement {
                                 id="dtPublished"
                                 class="input-device input-box-1" />
                         </div>
-                        <label for="txtLink"><u>Link:</u></label>
+                        <label for="txtLink"><u>Link:</u><span class="required"> *</span></label>
                         <input
                             type="url"
                             name="link"
                             id="txtLink"
                             class="input-device input-box-1"
                             placeholder="Link" />
-                        <label for="txtType"><u>Type:</u></label>
+                        <label for="txtType"><u>Type:</u><span class="required"> *</span></label>
                         <input
                             type="text"
                             name="type"
@@ -129,7 +129,7 @@ class CodeElement extends HTMLElement {
         });
 
         btnFormat.addEventListener("click", () => {
-            if (Utilities.areNullOrEmpty(txtTitle.value, txtCodeVersion.value, txtType.value, txtLink.value)) {
+            if (Utilities.areNullOrEmpty(txtTitle.value, txtType.value, txtLink.value)) {
                 return;
             }
 
