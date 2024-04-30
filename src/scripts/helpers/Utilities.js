@@ -1,19 +1,32 @@
 export default class Utilities {
     static formatFullName(name) {
         const names = name.split(" ");
-        if (this.isNullOrEmpty(names[1])) {
-            return names[0];
+
+        const firstName = names[0];
+        let surnames = "";
+        for (let i = 1; i < names.length; i++) {
+            surnames += " " + names[i];
         }
-        return `${names[1]}, ${names[0].substring(0, 1)}`;
+
+        if (this.isNullOrEmpty(surnames)) {
+            return firstName;
+        }
+        return `${surnames}, ${firstName.substring(0, 1)}`;
     }
 
     static getSurname(name) {
         const names = name.split(" ");
-        if (this.isNullOrEmpty(names[1])) {
-            return names[0];
+
+        const firstName = names[0];
+        let surnames = "";
+        for (let i = 1; i < names.length; i++) {
+            surnames += " " + names[i];
         }
 
-        return names[1];
+        if (this.isNullOrEmpty(surnames)) {
+            return firstName;
+        }
+        return surnames;
     }
 
     static listNames(names, endingWith) {
