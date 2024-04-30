@@ -4,7 +4,7 @@ import Pinterest from "../media/Pinterest.js";
 class PinterestElement extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `<div class="info-panel inner-panel">
-                        <label for="txtLink"><u>Pinterest Link:</u></label>
+                        <label for="txtLink"><u>Pinterest Link:</u><span class="required"> *</span></label>
                         <input
                             type="url"
                             name="pinterest link"
@@ -18,14 +18,14 @@ class PinterestElement extends HTMLElement {
                             id="txtOriginalLink"
                             class="input-device input-box-1"
                             placeholder="Link" />
-                        <label for="txtAuthor"><u>Author:</u></label>
+                        <label for="txtAuthor"><u>Author:</u><span class="required"> *</span></label>
                         <input
                             type="text"
                             name="author"
                             id="txtAuthor"
                             class="input-device input-box-1"
                             placeholder="Author" />
-                        <label for="txtPicTitle"><u>Picture Title:</u></label>
+                        <label for="txtPicTitle"><u>Picture Title:</u><span class="required"> *</span></label>
                         <input
                             type="text"
                             name="picture title"

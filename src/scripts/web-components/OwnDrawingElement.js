@@ -4,14 +4,14 @@ import OwnDrawing from "../media/OwnDrawing";
 class OwnDrawingElement extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `<div class="info-panel inner-panel">
-                        <label for="txtAuthor"><u>Author:</u></label>
+                        <label for="txtAuthor"><u>Author:</u><span class="required"> *</span></label>
                         <input
                             type="text"
                             name="author"
                             id="txtAuthor"
                             class="input-device input-box-1"
                             placeholder="Name And/Or Surname" />
-                        <label for="txtDescription"><u>Description:</u></label>
+                        <label for="txtDescription"><u>Description:</u><span class="required"> *</span></label>
                         <input
                             type="text"
                             name="description"

@@ -2,11 +2,11 @@ import moment from "moment";
 import Utilities from "../helpers/Utilities.js";
 
 export default class CodeSnippet {
-    constructor(authors, datePublished, title, codeVersion, type, link, accessedWhen) {
+    constructor(authors, datePublished, title, version, type, link, accessedWhen) {
         this.authors = authors;
         this.datePublished = datePublished;
         this.title = title;
-        this.codeVersion = codeVersion;
+        this.version = version;
         this.type = type;
         this.link = link;
         this.accessedWhen = accessedWhen;
@@ -34,9 +34,10 @@ export default class CodeSnippet {
             formattedNames[i] = Utilities.formatFullName(this.authors[i]);
         }
 
+        const version = Utilities.isNullOrEmpty(this.version) ? "" : `(Version ${this.version}). `;
         return `${Utilities.listNamesWithPeriods(formattedNames, "and")} (${this.year}). <em>${
             this.title
-        }</em> (Version ${this.codeVersion}) [${this.type}]. ${this.link} (Accessed ${this.accessedWhen}).`;
+        }</em> ${version} [${this.type}]. ${this.link} (Accessed ${this.accessedWhen}).`;
     }
 
     getParaphrased() {

@@ -6,7 +6,7 @@ import { gapi } from "gapi-script";
 class YouTubeElement extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `<div class="info-panel inner-panel">
-                        <label for="txtLink"><u>Link:</u></label>
+                        <label for="txtLink"><u>Link:</u><span class="required"> *</span></label>
                         <div class="next-to">
                             <input
                                 type="url"
@@ -16,14 +16,14 @@ class YouTubeElement extends HTMLElement {
                                 placeholder="Link" />
                             <button id="btnAutoFill" class="input-device button-1">Auto Fill</button>
                         </div>
-                        <label for="txtVideoTitle"><u>Video Title:</u></label>
+                        <label for="txtVideoTitle"><u>Video Title:</u><span class="required"> *</span></label>
                         <input
                             type="text"
                             name="video title"
                             id="txtVideoTitle"
                             class="input-device input-box-1"
                             placeholder="Title" />
-                        <label for="txtChannel"><u>Channel:</u></label>
+                        <label for="txtChannel"><u>Channel:</u><span class="required"> *</span></label>
                         <input
                             type="text"
                             name="channel"
@@ -44,6 +44,30 @@ class YouTubeElement extends HTMLElement {
                             <button id="btnFormat" class="input-device button-1">Format</button>
                         </div>
                     </div>`;
+
+        function start() {
+            const apiKey = import.meta.env.VITE_YOUTUBE_API_KEY;
+            if (Utilities.isNullOrEmpty(apiKey)) {
+                console.warn("YouTube API key not found!");
+                return;
+            }
+
+            gapi.client
+                .init({
+                    apiKey: apiKey,
+                    discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest"],
+                })
+                .then(
+                    function () {
+                        console.log("GAPI client loaded for API");
+                    },
+                    function (err) {
+                        console.error("Error loading GAPI client for API", err);
+                    }
+                );
+        }
+
+        gapi.load("client", start);
 
         const btnAutoFill = document.getElementById("btnAutoFill");
         const btnFormat = document.getElementById("btnFormat");

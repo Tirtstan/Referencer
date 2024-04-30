@@ -144,3 +144,7 @@ label {
     padding: 2px;
     margin: 0;
 }
+
+.required {
+    color: var(--required);
+}

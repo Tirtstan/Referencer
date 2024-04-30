@@ -1,4 +1,3 @@
-import { gapi } from "gapi-script";
 import Utilities from "./helpers/Utilities.js";
 
 const slctMedia = document.getElementById("slctMedia");
@@ -98,27 +97,3 @@ async function copyToClipboard(rich, plain) {
         document.removeEventListener("copy", cb);
     }
 }
-
-function start() {
-    const apiKey = import.meta.env.VITE_YOUTUBE_API_KEY;
-    if (Utilities.isNullOrEmpty(apiKey)) {
-        console.warn("YouTube API key not found");
-        return;
-    }
-
-    gapi.client
-        .init({
-            apiKey: apiKey,
-            discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest"],
-        })
-        .then(
-            function () {
-                console.log("GAPI client loaded for API");
-            },
-            function (err) {
-                console.error("Error loading GAPI client for API", err);
-            }
-        );
-}
-
-gapi.load("client", start);

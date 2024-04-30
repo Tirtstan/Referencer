@@ -4,7 +4,7 @@ import VideoGame from "../media/VideoGame";
 class VideoGameElement extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `<div class="info-panel inner-panel">
-                        <label for="txtGameTitle"><u>Game Title:</u></label>
+                        <label for="txtGameTitle"><u>Game Title:</u><span class="required"> *</span></label>
                         <input
                             type="text"
                             name="game title"
@@ -18,7 +18,7 @@ class VideoGameElement extends HTMLElement {
                             id="txtAuthor"
                             class="input-device input-box-1"
                             placeholder="Name And/Or Surname" />
-                        <label for="txtPlatform"><u>Platform:</u></label>
+                        <label for="txtPlatform"><u>Platform:</u><span class="required"> *</span></label>
                         <input
                             type="text"
                             name="platform"
@@ -70,7 +70,7 @@ class VideoGameElement extends HTMLElement {
         txtYear.value = new Date().getFullYear();
 
         btnFormat.addEventListener("click", () => {
-            if (Utilities.areNullOrEmpty(txtGameTitle.value, txtPlatform.value, txtPubPlace.value)) {
+            if (Utilities.areNullOrEmpty(txtGameTitle.value, txtPlatform.value)) {
                 return;
             }
 

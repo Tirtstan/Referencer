@@ -3,7 +3,7 @@ import Book from "../media/Book.js";
 
 class BookElement extends HTMLElement {
     connectedCallback() {
-        this.innerHTML = `  <div class="info-panel inner-panel">
+        this.innerHTML = `<div class="info-panel inner-panel">
                         <label for="txtAuthors"><u>Authors:</u></label>
                         <div class="next-to">
                             <input
@@ -33,7 +33,7 @@ class BookElement extends HTMLElement {
                                 placeholder="Edition" />
                         </div>
                         <div class="grid-input">
-                            <label for="txtBookName"><u>Book Name:</u></label>
+                            <label for="txtBookName"><u>Book Name:</u><span class="required"> *</span></label>
                             <input
                                 type="text"
                                 name="book name"
