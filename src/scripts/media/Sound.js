@@ -24,14 +24,10 @@ export default class Sound {
 
         return `${Utilities.formatFullName(this.composer)}. ${this.year}. <em>${
             this.title
-        }</em>. [Sound recording]. Available at: ${this.link} (Accessed ${formattedDate})`;
+        }</em>. [Sound recording]. Available at: <a href="${this.link}">${this.link}</a> (Accessed ${formattedDate})`;
     }
 
     getParaphrased() {
         return `In the sound recording by ${Utilities.getSurname(this.composer)} (${this.year}), the composer...`;
-    }
-
-    getQuote() {
-        return "N/A";
     }
 }

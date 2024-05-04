@@ -143,8 +143,7 @@ class CodeElement extends HTMLElement {
                 dtAccessedWhen.value
             );
 
-            txtParaQuote.innerHTML = `<u><strong>In-Text Paraphrase:</strong></u><br><br>${codeSnippet.getParaphrased()}
-            <br><br><u><strong>In-Text Quote:</strong></u><br><br>${codeSnippet.getQuote()}`;
+            txtParaQuote.innerHTML = `<u><strong>In-Text Paraphrase:</strong></u><br><br>${codeSnippet.getParaphrased()}`;
             txtReferenceList.innerHTML = codeSnippet.toString();
         });
     }

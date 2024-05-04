@@ -26,7 +26,7 @@ export default class Pinterest {
 
         return `${Utilities.formatFullName(this.author)}. ${this.year}. <em>${
             this.picTitle
-        }</em>. [Online]. Available at: ${currentLink} [Accessed ${formattedDate}]`;
+        }</em>. [Online]. Available at: <a href="${currentLink}">${currentLink}</a> [Accessed ${formattedDate}]`;
     }
 
     getParaphrased() {

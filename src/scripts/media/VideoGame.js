@@ -41,8 +41,4 @@ export default class VideoGame {
 
         return `... (${formattedName}, ${this.year})`;
     }
-
-    getQuote() {
-        return "N/A";
-    }
 }

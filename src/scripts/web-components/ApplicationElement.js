@@ -134,8 +134,7 @@ class ApplicationElement extends HTMLElement {
                 dtAccessedWhen.value
             );
 
-            txtParaQuote.innerHTML = `<u><strong>In-Text Paraphrase:</strong></u><br><br>${app.getParaphrased()}
-            <br><br><u><strong>In-Text Quote:</strong></u><br><br>${app.getQuote()}`;
+            txtParaQuote.innerHTML = `<u><strong>In-Text Paraphrase:</strong></u><br><br>${app.getParaphrased()}`;
             txtReferenceList.innerHTML = app.toString();
         });
     }

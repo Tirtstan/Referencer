@@ -12,14 +12,10 @@ export default class YouTube {
     toString() {
         const date = moment(this.accessedWhen);
         const formattedDate = date.format("DD MMMM YYYY");
-        return `<em>${this.title}</em>. ${this.year}. YouTube video, added by ${this.channel}. [Online]. Available at: ${this.link} [Accessed ${formattedDate}]`;
+        return `<em>${this.title}</em>. ${this.year}. YouTube video, added by ${this.channel}. [Online]. Available at: <a href="${this.link}">${this.link}</a> [Accessed ${formattedDate}]`;
     }
 
     getParaphrased() {
         return `... (see ${this.title}, ${this.year})`;
-    }
-
-    getQuote() {
-        return "N/A";
     }
 }
