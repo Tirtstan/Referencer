@@ -37,7 +37,7 @@ export default class CodeSnippet {
         const version = Utilities.isNullOrEmpty(this.version) ? "" : `(Version ${this.version}). `;
         return `${Utilities.listNamesWithPeriods(formattedNames, "and")} (${this.year}). <em>${
             this.title
-        }</em> ${version} [${this.type}]. ${this.link} (Accessed ${this.accessedWhen}).`;
+        }</em> ${version} [${this.type}]. <a href="${this.link}">${this.link}</a> (Accessed ${this.accessedWhen}).`;
     }
 
     getParaphrased() {
@@ -47,9 +47,5 @@ export default class CodeSnippet {
         }
 
         return `${Utilities.listNames(surnames, "and")} (${this.year}) demonstrates how...`;
-    }
-
-    getQuote() {
-        return "N/A";
     }
 }

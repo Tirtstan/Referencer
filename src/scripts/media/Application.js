@@ -47,8 +47,4 @@ export default class Application {
 
         return `${Utilities.listNames(surnames, "and")} (${this.year}) includes functions...`;
     }
-
-    getQuote() {
-        return "N/A";
-    }
 }

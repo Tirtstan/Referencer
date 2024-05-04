@@ -32,7 +32,7 @@ export default class Website {
             this.author = "Anon";
         }
 
-        return `${this.author}. ${this.year}. ${this.articleTitle}, ${this.datePublished}. [Online]. Available at: ${this.link} [Accessed ${formattedAccessedWhen}]`;
+        return `${this.author}. ${this.year}. ${this.articleTitle}, ${this.datePublished}. [Online]. Available at: <a href="${this.link}">${this.link}</a> [Accessed ${formattedAccessedWhen}]`;
     }
 
     getParaphrased() {

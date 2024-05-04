@@ -7,6 +7,8 @@
         url("../fonts/jetbrainsmono-regular-webfont.woff") format("woff"),
         url("../fonts/jetbrainsmono-regular-webfont.ttf") format("truetype"),
         url("../fonts/jetbrainsmono-regular-webfont.svg#jetbrains_monoregular") format("svg");
+
+    font-display: swap;
     font-weight: normal;
     font-style: normal;
 }

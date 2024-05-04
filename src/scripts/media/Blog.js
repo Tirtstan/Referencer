@@ -35,7 +35,7 @@ export default class Blog {
     toString() {
         const formattedName = Utilities.formatFullName(this.author);
 
-        return `${formattedName}. ${this.year}. ${this.title}. <em>${this.pubName}</em>, ${this.datePublished}. [Blog] Available from: ${this.link} [Accessed ${this.accessedWhen}].`;
+        return `${formattedName}. ${this.year}. ${this.title}. <em>${this.pubName}</em>, ${this.datePublished}. [Blog] Available from: <a href="${this.link}">${this.link}</a> [Accessed ${this.accessedWhen}].`;
     }
 
     getParaphrased() {

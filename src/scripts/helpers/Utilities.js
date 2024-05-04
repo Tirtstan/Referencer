@@ -20,7 +20,7 @@ export default class Utilities {
         const firstName = names[0];
         let surnames = "";
         for (let i = 1; i < names.length; i++) {
-            surnames += " " + names[i];
+            surnames += i == 1 ? names[i] : " " + names[i];
         }
 
         if (this.isNullOrEmpty(surnames)) {

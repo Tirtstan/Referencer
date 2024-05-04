@@ -83,7 +83,7 @@ class VideoGameElement extends HTMLElement {
                 txtPubName.value
             );
 
-            txtParaQuote.innerHTML = `<u><strong>In-Text Paraphrase:</strong></u><br><br>${videoGame.getParaphrased()}<br><br><u><strong>In-Text Quote:</strong></u><br><br>${videoGame.getQuote()}`;
+            txtParaQuote.innerHTML = `<u><strong>In-Text Paraphrase:</strong></u><br><br>${videoGame.getParaphrased()}`;
             txtReferenceList.innerHTML = videoGame.toString();
         });
     }

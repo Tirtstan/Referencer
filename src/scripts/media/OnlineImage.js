@@ -33,7 +33,7 @@ export default class OnlineImage {
             formattedNames[i] = Utilities.formatFullName(this.authors[i]);
         }
 
-        const referenceList = `${this.pubName}. ${this.year}. <em>${this.articleTitle}</em>. [Online]. Available at: ${this.link} [Accessed ${formattedDate}]`;
+        const referenceList = `${this.pubName}. ${this.year}. <em>${this.articleTitle}</em>. [Online]. Available at: <a href="${this.link}">${this.link}</a> [Accessed ${formattedDate}]`;
         const figureList = `Figure 1: ${Utilities.listNamesWithPeriods(formattedNames, "and")} ${this.year}. <em>${
             this.title
         }</em>.`;

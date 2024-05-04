@@ -136,8 +136,7 @@ class YouTubeElement extends HTMLElement {
                 dtAccessedWhen.value
             );
 
-            txtParaQuote.innerHTML = `<u><strong>In-Text Paraphrase:</strong></u><br><br>${youtube.getParaphrased()}
-            <br><br><u><strong>In-Text Quote:</strong></u><br><br>${youtube.getQuote()}`;
+            txtParaQuote.innerHTML = `<u><strong>In-Text Paraphrase:</strong></u><br><br>${youtube.getParaphrased()}`;
             txtReferenceList.innerHTML = youtube.toString();
         }
     }

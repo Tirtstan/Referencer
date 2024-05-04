@@ -72,7 +72,7 @@ class SoundElement extends HTMLElement {
                 dtAccessedWhen.value
             );
 
-            txtParaQuote.innerHTML = `<u><strong>In-Text Paraphrase:</strong></u><br><br>${sound.getParaphrased()}<br><br><u><strong>In-Text Quote:</strong></u><br><br>${sound.getQuote()}`;
+            txtParaQuote.innerHTML = `<u><strong>In-Text Paraphrase:</strong></u><br><br>${sound.getParaphrased()}`;
             txtReferenceList.innerHTML = sound.toString();
         });
     }
