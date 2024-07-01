@@ -3,7 +3,8 @@ import OwnPhoto from "../media/OwnPhoto";
 
 class OwnPhotoElement extends HTMLElement {
     connectedCallback() {
-        this.innerHTML = `<div class="info-panel inner-panel">
+        this.innerHTML = `<form>
+        <div class="info-panel inner-panel">
                         <label for="txtAuthor"><u>Author:</u><span class="required"> *</span></label>
                         <input
                             type="text"
@@ -26,8 +27,11 @@ class OwnPhotoElement extends HTMLElement {
                             class="input-device input-box-1"
                             placeholder="Year" />
                         <label for="btnFormat"><u>Format:</u></label>
-                        <button id="btnFormat" class="input-device button-1">Format</button>
-                    </div>`;
+                        <button type="button" id="btnFormat" class="input-device button-1">Format</button>
+                    </div>
+                    </form>`;
+
+        const form = this.querySelector("form");
 
         const btnFormat = document.getElementById("btnFormat");
 
@@ -39,6 +43,12 @@ class OwnPhotoElement extends HTMLElement {
         const txtReferenceList = document.getElementById("txtReferenceList");
 
         txtYear.value = new Date().getFullYear();
+
+        form.onkeydown = (e) => {
+            if (e.key === "Enter") {
+                e.preventDefault();
+            }
+        };
 
         btnFormat.addEventListener("click", () => {
             if (Utilities.areNullOrEmpty(txtAuthor.value, txtDescription.value)) {

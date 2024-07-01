@@ -36,7 +36,9 @@ export default class Application {
         const version = Utilities.isNullOrEmpty(this.version) ? "" : `Version ${this.version}. `;
         return `${Utilities.listNamesWithPeriods(formattedNames, "and")} ${this.year}. <em>${
             this.appTitle
-        }</em>. ${version}[App] Available at: ${this.availableAt} (Accessed ${this.accessedWhen}).`;
+        }</em>. ${version}[App] Available at: <a href="${this.availableAt}">${this.availableAt}</a> (Accessed ${
+            this.accessedWhen
+        }).`;
     }
 
     getParaphrased() {

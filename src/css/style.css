@@ -44,6 +44,7 @@
 
     --github: url(../images/github-mark-white.svg);
     --twitter: url(../images/twitter-logo-white.svg);
+    --itch: url(../images/itchio-textless-white.svg);
     --theme: url(../images/sun.svg);
 }
 
@@ -74,6 +75,7 @@
 
     --github: url(../images/github-mark-white.svg);
     --twitter: url(../images/twitter-logo-white.svg);
+    --itch: url(../images/itchio-textless-white.svg);
     --theme: url(../images/sun.svg);
 }
 
@@ -104,6 +106,7 @@
 
     --github: url(../images/github-mark.svg);
     --twitter: url(../images/twitter-logo-black.svg);
+    --itch: url(../images/itchio-textless-black.svg);
     --theme: url(../images/moon.svg);
 }
 
@@ -206,6 +209,10 @@ header div {
     background-image: var(--twitter);
 }
 
+.itch-logo {
+    background-image: var(--itch);
+}
+
 .theme-logo {
     background-image: var(--theme);
 }
@@ -217,6 +224,10 @@ header a {
 header a:hover {
     text-decoration: underline;
     text-decoration-color: var(--secondary-900);
+}
+
+h3 {
+    font-size: 1rem;
 }
 
 main {
@@ -244,7 +255,7 @@ section {
     gap: 8px;
     min-width: 320px;
 
-    /* why this fixes more paragraph issues, idk man */
+    /* why this fixes the paragraph issues, idk man */
     max-width: 100%;
     width: min-content;
 }
@@ -302,7 +313,7 @@ footer {
     text-align: center;
 }
 
-footer h6 {
+footer h4 {
     color: var(--background-600);
     font-size: clamp(0.75rem, 0.5vw, 1rem);
     margin: 0 0 8px 0;
@@ -310,13 +321,13 @@ footer h6 {
     padding: 0;
 }
 
-footer h6 a {
+footer h4 a {
     color: var(--secondary-900);
     text-decoration: none;
     text-decoration-color: var(--text);
 }
 
-footer h6 a:hover {
+footer h4 a:hover {
     color: var(--primary-900);
     text-decoration: underline;
 }

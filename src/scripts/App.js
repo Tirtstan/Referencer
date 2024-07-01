@@ -8,6 +8,8 @@ const txtReferenceList = document.getElementById("txtReferenceList");
 
 const toggle = document.getElementById("theme-toggle");
 
+const btnClearInfo = document.getElementById("btnClearInfo");
+
 slctMedia.addEventListener("change", (event) => {
     switch (event.target.value) {
         default:
@@ -54,6 +56,11 @@ slctMedia.addEventListener("change", (event) => {
 
     txtParaQuote.innerHTML = "";
     txtReferenceList.innerHTML = "";
+});
+
+btnClearInfo.addEventListener("click", () => {
+    const form = pnlMedia.querySelector("form");
+    form.reset();
 });
 
 btnCopy.addEventListener("click", () => {

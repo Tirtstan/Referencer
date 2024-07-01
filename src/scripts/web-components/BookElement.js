@@ -3,7 +3,8 @@ import Book from "../media/Book.js";
 
 class BookElement extends HTMLElement {
     connectedCallback() {
-        this.innerHTML = `<div class="info-panel inner-panel">
+        this.innerHTML = `<form>
+        <div class="info-panel inner-panel">
                         <label for="txtAuthors"><u>Authors:</u></label>
                         <div class="next-to">
                             <input
@@ -12,8 +13,8 @@ class BookElement extends HTMLElement {
                                 id="txtAuthors"
                                 class="input-device input-box-1"
                                 placeholder="Name And/Or Surname" />
-                            <button id="btnAdd" class="input-device button-1">Add</button>
-                            <button id="btnClear" class="input-device button-1">Clear</button>
+                            <button type="button" id="btnAdd" class="input-device button-1">Add</button>
+                            <button type="button" id="btnClear" class="input-device button-1">Clear</button>
                         </div>
                         <div id="pnlAuthors" class="input-device chip-input"></div>
                         <div class="grid-input">
@@ -57,9 +58,12 @@ class BookElement extends HTMLElement {
                                 class="input-device input-box-1"
                                 placeholder="Place" />
                             <label for="btnFormat"><u>Format:</u></label>
-                            <button id="btnFormat" class="input-device button-1">Format</button>
+                            <button type="button" id="btnFormat" class="input-device button-1">Format</button>
                         </div>
-                    </div>`;
+                    </div>
+                    </form>`;
+
+        const form = this.querySelector("form");
 
         const btnAdd = document.getElementById("btnAdd");
         const btnClear = document.getElementById("btnClear");
@@ -82,21 +86,33 @@ class BookElement extends HTMLElement {
         txtEditionNum.value = 1;
 
         document.onkeydown = (e) => {
-            if (e.key === "Enter") {
-                btnAdd.click();
+            if (txtAuthors === document.activeElement && e.key === "Enter") {
+                addAuthor();
             }
         };
 
-        btnAdd.addEventListener("click", () => {
+        form.onkeydown = (e) => {
+            if (e.key === "Enter") {
+                e.preventDefault();
+            }
+        };
+
+        form.addEventListener("reset", () => {
+            authors = [];
+            pnlAuthors.innerHTML = "";
+        });
+
+        btnAdd.addEventListener("click", addAuthor);
+
+        function addAuthor() {
             if (Utilities.isNullOrEmpty(txtAuthors.value)) {
                 return;
             }
 
             authors.push(txtAuthors.value);
             txtAuthors.value = "";
-
             displayAllAuthors();
-        });
+        }
 
         function displayAllAuthors() {
             pnlAuthors.innerHTML = "";

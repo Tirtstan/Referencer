@@ -11,31 +11,18 @@
         <link rel="stylesheet" href="src/css/style.css" />
         <link rel="stylesheet" href="src/css/components.css" />
         <script type="module" src="src/scripts/App.js"></script>
-        <script defer type="module" src="src/scripts/web-components/ChipElement.js"></script>
-        <script defer type="module" src="src/scripts/web-components/BookElement.js"></script>
-        <script defer type="module" src="src/scripts/web-components/YouTubeElement.js"></script>
-        <script defer type="module" src="src/scripts/web-components/OnlineImageElement.js"></script>
-        <script defer type="module" src="src/scripts/web-components/WebsiteElement.js"></script>
-        <script defer type="module" src="src/scripts/web-components/VideoGameElement.js"></script>
-        <script defer type="module" src="src/scripts/web-components/PinterestElement.js"></script>
-        <script defer type="module" src="src/scripts/web-components/BlogElement.js"></script>
-        <script defer type="module" src="src/scripts/web-components/CodeElement.js"></script>
-        <script defer type="module" src="src/scripts/web-components/ApplicationElement.js"></script>
-        <script defer type="module" src="src/scripts/web-components/SoundElement.js"></script>
-        <script defer type="module" src="src/scripts/web-components/OwnDrawingElement.js"></script>
-        <script defer type="module" src="src/scripts/web-components/OwnPhotoElement.js"></script>
-        <script defer type="module" src="src/scripts/web-components/FilmElement.js"></script>
+        <script defer type="module" src="src/scripts/WebComponents.js"></script>
     </head>
 
     <body class="center">
         <header>
             <h1>Referencer</h1>
-            <h2>v2.8.0</h2>
+            <h2>v2.9.0</h2>
             <div class="center">
-                <h4>
+                <h3>
                     Created By
                     <span class="creator-name"><a href="https://github.com/Tirtstan" target="_blank">Tirt</a></span>
-                </h4>
+                </h3>
                 <a
                     href="https://github.com/Tirtstan/Referencer"
                     target="_blank"
@@ -48,28 +35,34 @@
                     aria-label="Links to the creator's github profile">
                     <div class="logo twitter-logo"></div
                 ></a>
+                <a href="https://tirttirt.itch.io/" target="_blank" aria-label="Links to the creator's itch.io profile"
+                    ><div class="logo itch-logo"></div
+                ></a>
                 <a id="theme-toggle"> <div class="logo theme-logo"></div></a>
             </div>
         </header>
         <main>
             <section class="left-section">
                 <div class="media-panel inner-panel">
-                    <label for="slctMedia">Media Type</label
-                    ><select name="media-types" id="slctMedia" class="input-device select-1">
-                        <option value="Book" selected>Book</option>
-                        <option value="YouTube">YouTube</option>
-                        <option value="OnlineImage">Online Image</option>
-                        <option value="Website">Website</option>
-                        <option value="VideoGame">Video Game</option>
-                        <option value="Pinterest">Pinterest</option>
-                        <option value="Blog">Blog</option>
-                        <option value="Code">Code</option>
-                        <option value="App">App</option>
-                        <option value="Sound">Sound/Music</option>
-                        <option value="OwnDrawing">Own Drawing</option>
-                        <option value="OwnPhoto">Own Photo</option>
-                        <option value="Film">Film/Video</option>
-                    </select>
+                    <label for="slctMedia">Media Type</label>
+                    <div>
+                        <select name="media-types" id="slctMedia" class="input-device select-1">
+                            <option value="Book" selected>Book</option>
+                            <option value="YouTube">YouTube</option>
+                            <option value="OnlineImage">Online Image</option>
+                            <option value="Website">Website</option>
+                            <option value="VideoGame">Video Game</option>
+                            <option value="Pinterest">Pinterest</option>
+                            <option value="Blog">Blog</option>
+                            <option value="Code">Code</option>
+                            <option value="App">App</option>
+                            <option value="Sound">Sound/Music</option>
+                            <option value="OwnDrawing">Own Drawing</option>
+                            <option value="OwnPhoto">Own Photo</option>
+                            <option value="Film">Film/Video</option>
+                        </select>
+                        <button id="btnClearInfo" class="input-device button-1">Clear</button>
+                    </div>
                 </div>
                 <div id="pnlMedia">
                     <book-element></book-element>
@@ -90,18 +83,18 @@
             </section>
         </main>
         <footer>
-            <h6>
+            <h4>
                 Please use this as a template as I cannot cover every edge case. Still refer to the official guide.
                 <span class="required"> *</span> means required.
-            </h6>
-            <h6>The IIE. 2024. IIE Referencing Guide [Guide]. The Independent Institute of Education: Unpublished.</h6>
-            <h6>
+            </h4>
+            <h4>The IIE. 2024. IIE Referencing Guide [Guide]. The Independent Institute of Education: Unpublished.</h4>
+            <h4>
                 <a
                     href="https://irp.cdn-website.com/271d35b6/files/uploaded/The%20IIE%20Harvard%20Style%20Reference%20Guide%20-%20Adapted%20for%20The%20IIE%202024-f52fbd5a.pdf"
                     target="_blank">
                     Access the guide</a
                 >.
-            </h6>
+            </h4>
         </footer>
     </body>
 </html>

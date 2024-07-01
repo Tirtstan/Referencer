@@ -3,7 +3,8 @@ import Pinterest from "../media/Pinterest.js";
 
 class PinterestElement extends HTMLElement {
     connectedCallback() {
-        this.innerHTML = `<div class="info-panel inner-panel">
+        this.innerHTML = `<form>
+        <div class="info-panel inner-panel">
                         <label for="txtLink"><u>Pinterest Link:</u><span class="required"> *</span></label>
                         <input
                             type="url"
@@ -43,9 +44,12 @@ class PinterestElement extends HTMLElement {
                                 class="input-device input-box-1"
                                 placeholder="Year" />
                             <label for="btnFormat"><u>Format:</u></label>
-                            <button id="btnFormat" class="input-device button-1">Format</button>
+                            <button type="button" id="btnFormat" class="input-device button-1">Format</button>
                         </div>
-                    </div>`;
+                    </div>
+                    </form>`;
+
+        const form = this.querySelector("form");
 
         const btnFormat = document.getElementById("btnFormat");
 
@@ -62,6 +66,12 @@ class PinterestElement extends HTMLElement {
         const date = new Date();
         dtAccessedWhen.valueAsDate = date;
         txtYear.value = date.getFullYear();
+
+        form.onkeydown = (e) => {
+            if (e.key === "Enter") {
+                e.preventDefault();
+            }
+        };
 
         btnFormat.addEventListener("click", () => {
             if (Utilities.areNullOrEmpty(txtLink.value, txtAuthor.value, txtPicTitle.value)) {
