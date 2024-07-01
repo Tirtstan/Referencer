@@ -5,7 +5,8 @@ import { gapi } from "gapi-script";
 
 class YouTubeElement extends HTMLElement {
     connectedCallback() {
-        this.innerHTML = `<div class="info-panel inner-panel">
+        this.innerHTML = `<form>
+        <div class="info-panel inner-panel">
                         <label for="txtLink"><u>Link:</u><span class="required"> *</span></label>
                         <div class="next-to">
                             <input
@@ -14,7 +15,7 @@ class YouTubeElement extends HTMLElement {
                                 id="txtLink"
                                 class="input-device input-box-1"
                                 placeholder="Link" />
-                            <button id="btnAutoFill" class="input-device button-1">Auto Fill</button>
+                            <button type="button" id="btnAutoFill" class="input-device button-1">Auto Fill</button>
                         </div>
                         <label for="txtVideoTitle"><u>Video Title:</u><span class="required"> *</span></label>
                         <input
@@ -41,9 +42,10 @@ class YouTubeElement extends HTMLElement {
                                 class="input-device input-box-1"
                                 placeholder="Year" />
                             <label for="btnFormat"><u>Format:</u></label>
-                            <button id="btnFormat" class="input-device button-1">Format</button>
+                            <button type="button" id="btnFormat" class="input-device button-1">Format</button>
                         </div>
-                    </div>`;
+                    </div>
+                    </form>`;
 
         function start() {
             const apiKey = import.meta.env.VITE_YOUTUBE_API_KEY;
@@ -69,6 +71,8 @@ class YouTubeElement extends HTMLElement {
 
         gapi.load("client", start);
 
+        const form = this.querySelector("form");
+
         const btnAutoFill = document.getElementById("btnAutoFill");
         const btnFormat = document.getElementById("btnFormat");
 
@@ -87,7 +91,21 @@ class YouTubeElement extends HTMLElement {
 
         let previousLink = "";
 
-        btnAutoFill.addEventListener("click", () => {
+        document.onkeydown = (e) => {
+            if (txtLink === document.activeElement && e.key === "Enter") {
+                autoFill();
+            }
+        };
+
+        form.onkeydown = (e) => {
+            if (e.key === "Enter") {
+                e.preventDefault();
+            }
+        };
+
+        btnAutoFill.addEventListener("click", autoFill);
+
+        function autoFill() {
             if (Utilities.isNullOrEmpty(txtLink.value) || !YouTubeHelper.isYouTubeLink(txtLink.value)) {
                 return;
             }
@@ -119,7 +137,7 @@ class YouTubeElement extends HTMLElement {
                 );
 
             previousLink = txtLink.value;
-        });
+        }
 
         btnFormat.addEventListener("click", FillInfo);
 

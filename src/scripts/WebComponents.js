@@ -1,0 +1,14 @@
+import "./web-components/ApplicationElement.js";
+import "./web-components/BlogElement.js";
+import "./web-components/BookElement.js";
+import "./web-components/ChipElement.js";
+import "./web-components/CodeElement.js";
+import "./web-components/FilmElement.js";
+import "./web-components/OnlineImageElement.js";
+import "./web-components/OwnDrawingElement.js";
+import "./web-components/OwnPhotoElement.js";
+import "./web-components/PinterestElement.js";
+import "./web-components/SoundElement.js";
+import "./web-components/VideoGameElement.js";
+import "./web-components/WebsiteElement.js";
+import "./web-components/YouTubeElement.js";

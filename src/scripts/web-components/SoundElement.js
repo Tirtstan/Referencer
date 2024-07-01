@@ -3,7 +3,8 @@ import Sound from "../media/Sound";
 
 class SoundElement extends HTMLElement {
     connectedCallback() {
-        this.innerHTML = `<div class="info-panel inner-panel">
+        this.innerHTML = `<form>
+        <div class="info-panel inner-panel">
                         <label for="txtLink"><u>Link:</u><span class="required"> *</span></label>
                         <input
                             type="url"
@@ -40,9 +41,12 @@ class SoundElement extends HTMLElement {
                                 id="dtAccessedWhen"
                                 class="input-device input-box-1" />
                             <label for="btnFormat"><u>Format:</u></label>
-                            <button id="btnFormat" class="input-device button-1">Format</button>
+                            <button type="button" id="btnFormat" class="input-device button-1">Format</button>
                         </div>
-                    </div>`;
+                    </div>
+                    </form>`;
+
+        const form = this.querySelector("form");
 
         const btnFormat = document.getElementById("btnFormat");
 
@@ -58,6 +62,12 @@ class SoundElement extends HTMLElement {
         const date = new Date();
         txtYear.value = date.getFullYear();
         dtAccessedWhen.valueAsDate = date;
+
+        form.onkeydown = (e) => {
+            if (e.key === "Enter") {
+                e.preventDefault();
+            }
+        };
 
         btnFormat.addEventListener("click", () => {
             if (Utilities.areNullOrEmpty(txtTitle.value, txtLink.value)) {

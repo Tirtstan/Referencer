@@ -3,7 +3,8 @@ import VideoGame from "../media/VideoGame";
 
 class VideoGameElement extends HTMLElement {
     connectedCallback() {
-        this.innerHTML = `<div class="info-panel inner-panel">
+        this.innerHTML = `<form>
+        <div class="info-panel inner-panel">
                         <label for="txtGameTitle"><u>Game Title:</u><span class="required"> *</span></label>
                         <input
                             type="text"
@@ -24,7 +25,7 @@ class VideoGameElement extends HTMLElement {
                             name="platform"
                             id="txtPlatform"
                             class="input-device input-box-1"
-                            placeholder="Platform" />
+                            placeholder="eg. PC, PlayStation, Xbox" />
                         <div class="grid-input">
                             <label for="txtPubName"><u>Publication Name:</u></label>
                             <input
@@ -50,9 +51,12 @@ class VideoGameElement extends HTMLElement {
                                 class="input-device input-box-1"
                                 placeholder="Year" />
                             <label for="btnFormat"><u>Format:</u></label>
-                            <button id="btnFormat" class="input-device button-1">Format</button>
+                            <button type="button" id="btnFormat" class="input-device button-1">Format</button>
                         </div>
-                    </div>`;
+                    </div>
+                    </form>`;
+
+        const form = this.querySelector("form");
 
         const btnFormat = document.getElementById("btnFormat");
 
@@ -68,6 +72,12 @@ class VideoGameElement extends HTMLElement {
         const txtReferenceList = document.getElementById("txtReferenceList");
 
         txtYear.value = new Date().getFullYear();
+
+        form.onkeydown = (e) => {
+            if (e.key === "Enter") {
+                e.preventDefault();
+            }
+        };
 
         btnFormat.addEventListener("click", () => {
             if (Utilities.areNullOrEmpty(txtGameTitle.value, txtPlatform.value)) {

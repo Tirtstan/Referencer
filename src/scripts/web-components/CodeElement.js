@@ -3,7 +3,8 @@ import CodeSnippet from "../media/CodeSnippet";
 
 class CodeElement extends HTMLElement {
     connectedCallback() {
-        this.innerHTML = `<div class="info-panel inner-panel">
+        this.innerHTML = `<form>
+        <div class="info-panel inner-panel">
                         <label for="txtAuthors"><u>Authors:</u></label>
                         <div class="next-to">
                             <input
@@ -12,8 +13,8 @@ class CodeElement extends HTMLElement {
                                 id="txtAuthors"
                                 class="input-device input-box-1"
                                 placeholder="Publisher Or Full Names" />
-                            <button id="btnAdd" class="input-device button-1 add-button">Add</button>
-                            <button id="btnClear" class="input-device button-1">Clear</button>
+                            <button type="button" id="btnAdd" class="input-device button-1 add-button">Add</button>
+                            <button type="button" id="btnClear" class="input-device button-1">Clear</button>
                         </div>
                         <div id="pnlAuthors" class="input-device chip-input"></div>
                         <label for="txtTitle"><u>Title:</u><span class="required"> *</span></label>
@@ -60,9 +61,12 @@ class CodeElement extends HTMLElement {
                                 id="dtAccessedWhen"
                                 class="input-device input-box-1" />
                             <label for="btnFormat"><u>Format:</u></label>
-                            <button id="btnFormat" class="input-device button-1">Format</button>
+                            <button type="button" id="btnFormat" class="input-device button-1">Format</button>
                         </div>
-                    </div>`;
+                    </div>
+                    </form>`;
+
+        const form = this.querySelector("form");
 
         const btnAdd = document.getElementById("btnAdd");
         const btnClear = document.getElementById("btnClear");
@@ -84,14 +88,26 @@ class CodeElement extends HTMLElement {
         let authors = [];
         const date = new Date();
         dtAccessedWhen.valueAsDate = date;
-
         document.onkeydown = (e) => {
-            if (e.key === "Enter") {
-                btnAdd.click();
+            if (txtAuthors === document.activeElement && e.key === "Enter") {
+                addAuthor();
             }
         };
 
-        btnAdd.addEventListener("click", () => {
+        form.onkeydown = (e) => {
+            if (e.key === "Enter") {
+                e.preventDefault();
+            }
+        };
+
+        form.addEventListener("reset", () => {
+            authors = [];
+            pnlAuthors.innerHTML = "";
+        });
+
+        btnAdd.addEventListener("click", addAuthor);
+
+        function addAuthor() {
             if (Utilities.isNullOrEmpty(txtAuthors.value)) {
                 return;
             }
@@ -99,7 +115,7 @@ class CodeElement extends HTMLElement {
             authors.push(txtAuthors.value);
             txtAuthors.value = "";
             displayAllAuthors();
-        });
+        }
 
         function displayAllAuthors() {
             pnlAuthors.innerHTML = "";
