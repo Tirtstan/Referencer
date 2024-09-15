@@ -127,7 +127,8 @@ class BookElement extends HTMLElement {
             const removeButtons = document.querySelectorAll("button[id^='btnRemove']");
             for (let i = 0; i < removeButtons.length; i++) {
                 removeButtons[i].addEventListener("click", () => {
-                    const index = removeButtons[i].parentElement.parentElement.getAttribute("index");
+                    const index =
+                        removeButtons[i].parentElement.parentElement.getAttribute("index");
                     authors.splice(index, 1);
 
                     displayAllAuthors();
