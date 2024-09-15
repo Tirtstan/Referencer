@@ -61,6 +61,11 @@ slctMedia.addEventListener("change", (event) => {
 btnClearInfo.addEventListener("click", () => {
     const form = pnlMedia.querySelector("form");
     form.reset();
+
+    const dtAccessedWhen = document.getElementById("dtAccessedWhen");
+    if (dtAccessedWhen) {
+        dtAccessedWhen.valueAsDate = new Date();
+    }
 });
 
 btnCopy.addEventListener("click", () => {
@@ -73,7 +78,8 @@ btnCopy.addEventListener("click", () => {
 
 // https://lukelowrey.com/css-variable-theme-switcher/
 const storedTheme =
-    localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    localStorage.getItem("theme") ||
+    (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
 if (storedTheme) document.documentElement.setAttribute("data-theme", storedTheme);
 
 toggle.onclick = function () {
