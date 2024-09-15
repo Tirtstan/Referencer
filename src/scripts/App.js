@@ -62,9 +62,15 @@ btnClearInfo.addEventListener("click", () => {
     const form = pnlMedia.querySelector("form");
     form.reset();
 
+    const date = new Date();
     const dtAccessedWhen = document.getElementById("dtAccessedWhen");
     if (dtAccessedWhen) {
-        dtAccessedWhen.valueAsDate = new Date();
+        dtAccessedWhen.valueAsDate = date;
+    }
+
+    const txtYear = document.getElementById("txtYear");
+    if (txtYear) {
+        txtYear.value = date.getFullYear();
     }
 });
 
